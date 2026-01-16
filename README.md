@@ -32,17 +32,17 @@ Platform informasi resmi sekolah yang mencakup profil, publikasi berita, agenda,
 - Jalankan `php artisan migrate` untuk menyiapkan struktur database (atau gunakan dump `.sql` yang tersedia).
 - Untuk fitur email atau notifikasi, pastikan setting SMTP di `.env` sudah benar:
 
-![smtp](https://user-images.githubusercontent.com/60762912/171605856-20ef75ea-e2cb-459d-9a24-ef7c5f9bc85f.PNG)
+
 
 - Contoh setting .env:
 
-![env](https://user-images.githubusercontent.com/60762912/171605874-405c8f6d-e123-494d-802c-e34cf6226f9e.PNG)
+
 
 ## Screenshot Tampilan Antarmuka
 
 *(Bagian ini dapat Anda sesuaikan dengan screenshot project MTs Nurul Falaah Soreang)*
 
-![Preview](https://user-images.githubusercontent.com/60762912/171592715-80036c85-820f-4ca0-9615-a063f07046bd.png)
+
 
 ## Catatan Untuk Akses Admin
 
@@ -50,7 +50,7 @@ Platform informasi resmi sekolah yang mencakup profil, publikasi berita, agenda,
 - Pastikan akun admin sudah terdaftar di tabel `users` atau melalui seeder jika tersedia.
 - Berikut adalah gambaran manajemen tabel di database:
 
-![database](https://user-images.githubusercontent.com/60762912/171594659-f678061b-94ab-4164-b213-e0ad207c8706.PNG)
+
 
 
 <p align="center">
