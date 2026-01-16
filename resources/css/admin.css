@@ -1,0 +1,73 @@
+/* Control Panel CSS - Hanya untuk custom animations yang tidak bisa di-handle Tailwind */
+
+/* File ini minimal - semua styling menggunakan Tailwind CSS */
+
+/* Override TinyMCE styling to match Admin Inputs */
+.tox-tinymce {
+    border-radius: 0 !important;
+    border: 2px solid #000000 !important;
+    /* border-gray-200 */
+    transition: border-color 0.15s ease-in-out;
+}
+
+.tox-tinymce,
+.tox-tinymce .tox-editor-header,
+.tox-tinymce .tox-edit-area,
+.tox-tinymce .tox-edit-area__iframe,
+.tox-tinymce .tox-menubar,
+.tox-tinymce .tox-toolbar,
+.tox-tinymce .tox-statusbar {
+    border-radius: 0 !important;
+}
+
+/* Dark mode overrides */
+:is(html.dark, .dark) .tox-tinymce {
+    border-color: #5a5a5a !important;
+    /* border-slate-600 */
+}
+
+/* Focus state - Wrap the whole editor including toolbar */
+.tox-tinymce.tox-focused {
+    border-color: #16a34a !important;
+    /* border-green-600 */
+}
+
+/* Remove default focus ring from edit area if any to prevent double border */
+.tox-edit-area::before {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Emoji Picker Styles */
+emoji-picker {
+    --background: #ffffff;
+    --border-color: #e2e8f0;
+    --num-columns: 8;
+}
+
+.dark emoji-picker,
+emoji-picker.dark {
+    --background: #1e293b;
+    /* slate-800 */
+    --border-color: #334155;
+    /* slate-700 */
+    --input-border-color: #475569;
+    --input-font-color: #f1f5f9;
+    --button-hover-background: #334155;
+}
+
+/* Pagination Mobile Adjustments */
+@media (max-width: 639px) {
+
+    nav[role="navigation"] button,
+    nav[role="navigation"] a,
+    nav[role="navigation"] span {
+        padding: 0.35rem 0.6rem !important;
+        font-size: 0.7rem !important;
+    }
+
+    nav[role="navigation"] svg {
+        width: 1rem !important;
+        height: 1rem !important;
+    }
+}

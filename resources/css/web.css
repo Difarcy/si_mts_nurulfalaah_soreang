@@ -1,0 +1,289 @@
+/* Website CSS - Custom animations dan utilities untuk web pages */
+
+/* Tailwind v4 - Import semua (base, components, utilities) */
+@import "tailwindcss";
+
+/* Hide asterisks in labels for required fields */
+label .text-red-600,
+label .text-red-500 {
+    display: none;
+}
+
+/* Marquee Animation - Keyframes untuk marquee text berjalan */
+/* Digunakan dengan Tailwind: animate-[marquee_40s_linear_infinite] */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 2rem));
+    }
+}
+
+/* Scroll Right Animation for Activity Photos */
+@keyframes scrollRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+.animate-scroll-right {
+    animation: scrollRight 40s linear infinite;
+}
+
+/* Scroll Left Animation for Activity Photos */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(-33.333%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-scroll-left {
+    animation: scrollLeft 40s linear infinite;
+}
+
+/* Emoji Picker Styles */
+emoji-picker {
+    --background: #ffffff;
+    --border-color: #e2e8f0;
+    pointer-events: auto;
+}
+
+.dark emoji-picker,
+emoji-picker.dark {
+    --background: #1e293b;
+    /* slate-800 */
+    --border-color: #334155;
+    /* slate-700 */
+    --input-border-color: #475569;
+    --input-font-color: #f1f5f9;
+    --button-hover-background: #334155;
+}
+
+.emoji-picker-container,
+.reply-emoji-picker {
+    pointer-events: auto !important;
+}
+
+/* SPMB Page Animations & Modern UI Utilities */
+@keyframes slow-zoom {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.animate-slow-zoom {
+    animation: slow-zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-soft {
+    animation: pulse-soft 8s ease-in-out infinite;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+.slide-up {
+    transform: translateY(60px);
+}
+
+.slide-right {
+    transform: translateX(-60px);
+}
+
+.slide-left {
+    transform: translateX(60px);
+}
+
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.delay-500 {
+    transition-delay: 0.5s;
+}
+
+.text-gradient-green {
+    background: linear-gradient(135deg, #22c55e 0%, #10b981 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-item.active {
+    border-color: rgba(34, 197, 94, 0.5);
+    box-shadow: 0 20px 50px -15px rgba(34, 197, 94, 0.2);
+}
+
+.faq-item-active-icon {
+    transform: rotate(180deg);
+    color: #16a34a;
+}
+
+/* Scroll Trigger Animations untuk SPMB Page */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    animation: fade-in-up 0.8s ease-out forwards;
+    animation-play-state: paused;
+}
+
+.scroll-animate-left {
+    opacity: 0;
+    animation: fade-in-left 0.8s ease-out forwards;
+    animation-play-state: paused;
+}
+
+.scroll-animate-right {
+    opacity: 0;
+    animation: fade-in-right 0.8s ease-out forwards;
+    animation-play-state: paused;
+}
+
+.scroll-animate-scale {
+    opacity: 0;
+    animation: scale-in 0.8s ease-out forwards;
+    animation-play-state: paused;
+}
+
+/* Stagger delays untuk multiple elements */
+.scroll-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.scroll-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.scroll-delay-300 {
+    animation-delay: 0.3s;
+}
+
+.scroll-delay-400 {
+    animation-delay: 0.4s;
+}
+
+.scroll-delay-500 {
+    animation-delay: 0.5s;
+}
+
+/* Intersection Observer Trigger State */
+.scroll-in {
+    animation-play-state: running;
+}

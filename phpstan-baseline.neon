@@ -1,0 +1,1615 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method App\\Core\\Services\\FileUploadService\:\:deleteImages\(\) has parameter \$paths with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Core/Services/FileUploadService.php
+
+		-
+			message: '#^Method App\\Core\\Services\\FileUploadService\:\:uploadImage\(\) has parameter \$allowedMimes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Core/Services/FileUploadService.php
+
+		-
+			message: '#^Method App\\Core\\Services\\FileUploadService\:\:uploadImages\(\) has parameter \$allowedMimes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Core/Services/FileUploadService.php
+
+		-
+			message: '#^Method App\\Core\\Services\\FileUploadService\:\:uploadImages\(\) has parameter \$files with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Core/Services/FileUploadService.php
+
+		-
+			message: '#^Method App\\Core\\Services\\FileUploadService\:\:uploadImages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Core/Services/FileUploadService.php
+
+		-
+			message: '#^Method App\\Core\\Services\\FileUploadService\:\:validateImage\(\) has parameter \$allowedMimes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Core/Services/FileUploadService.php
+
+		-
+			message: '#^Method App\\Core\\Services\\FileUploadService\:\:validateImage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Core/Services/FileUploadService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:calculateKeywordMatchScore\(\) has parameter \$intentKeywords with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:calculateKeywordMatchScore\(\) has parameter \$userKeywords with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:formatResponse\(\) has parameter \$match with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:formatResponse\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:getFallbackResponse\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:logConversation\(\) has parameter \$botResponse with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:logConversation\(\) has parameter \$ip with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:logConversation\(\) has parameter \$matchedIntent with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:logConversation\(\) has parameter \$sessionId with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:logConversation\(\) has parameter \$startTime with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:logConversation\(\) has parameter \$ua with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:logConversation\(\) has parameter \$userMessage with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:matchBuiltInIntents\(\) has parameter \$keywords with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:matchBuiltInIntents\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:matchRuleBasedIntents\(\) has parameter \$userKeywords with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:matchRuleBasedIntents\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:processMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:searchSimilarFaqs\(\) has parameter \$keywords with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\ChatbotService\:\:searchSimilarFaqs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>contact_wa" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>kontak_person" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Domain/Chatbot/Services/ChatbotService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\TextProcessingService\:\:extractKeywords\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/TextProcessingService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\TextProcessingService\:\:jaccardSimilarity\(\) has parameter \$arr1 with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/TextProcessingService.php
+
+		-
+			message: '#^Method App\\Domain\\Chatbot\\Services\\TextProcessingService\:\:jaccardSimilarity\(\) has parameter \$arr2 with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/TextProcessingService.php
+
+		-
+			message: '#^Property App\\Domain\\Chatbot\\Services\\TextProcessingService\:\:\$stopWords type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Chatbot/Services/TextProcessingService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getAgendaTerbaru\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getBanners\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getFotoKegiatan\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getHighlightNews\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getHomeData\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getInfoTerkini\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getLatestArticles\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getLatestNews\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getPrestasiSiswa\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getSchoolProfile\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getTickerItems\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\HomeDataService\:\:getVideoKegiatan\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>timestamp" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Domain/Content/Services/HomeDataService.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:createPost\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:handleBodyAndMetaLogic\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:handleContentImagesLogic\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:handlePublicationTimeLogics\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:handleScheduledTimeLogic\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:handleSlugLogic\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:handleTagsLogic\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:handleThumbnailLogic\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:prepareData\(\) has parameter \$validatedData with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:prepareData\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Content\\Services\\PostService\:\:updatePost\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Offset 0 on non\-empty\-list\<string\> on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>image_metadata" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Domain/Content/Services/PostService.php
+
+		-
+			message: '#^Method App\\Domain\\Media\\Services\\YouTubeService\:\:formatViews\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Domain/Media/Services/YouTubeService.php
+
+		-
+			message: '#^Method App\\Domain\\Media\\Services\\YouTubeService\:\:formatViews\(\) has parameter \$views with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Domain/Media/Services/YouTubeService.php
+
+		-
+			message: '#^Method App\\Domain\\Media\\Services\\YouTubeService\:\:getVideoDetails\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Domain/Media/Services/YouTubeService.php
+
+		-
+			message: '#^Method App\\Enums\\PostStatus\:\:values\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Enums/PostStatus.php
+
+		-
+			message: '#^Method App\\Enums\\PostType\:\:values\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Enums/PostType.php
+
+		-
+			message: '#^Parameter \#1 \$view of function view expects view\-string\|null, string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/Admin/ActivityPhotoController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\ActivityVideoController\:\:create\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/ActivityVideoController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\ActivityVideoController\:\:destroy\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/ActivityVideoController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\ActivityVideoController\:\:edit\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/ActivityVideoController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\ActivityVideoController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/ActivityVideoController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\ActivityVideoController\:\:store\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/ActivityVideoController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\ActivityVideoController\:\:update\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/ActivityVideoController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\AuthController\:\:adminAuthenticate\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/AuthController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\AuthController\:\:adminLogin\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/AuthController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\AuthController\:\:changePassword\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/AuthController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\AuthController\:\:changeUsername\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/AuthController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\AuthController\:\:logout\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/AuthController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\AuthController\:\:showChangePassword\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/AuthController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\AuthController\:\:showChangeUsername\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/AuthController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:approve\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:bulkApprove\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:destroy\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:markAllAsRead\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:markAsRead\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:markAsUnread\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:reject\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:reply\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\CommentController\:\:show\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\DashboardController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/DashboardController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\HelpController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/HelpController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\ImageUploadController\:\:store\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/ImageUploadController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\InboxController\:\:destroy\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/InboxController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\InboxController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/InboxController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\InboxController\:\:markAsRead\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/InboxController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\InboxController\:\:markAsUnread\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/InboxController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\InboxController\:\:show\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/InboxController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\PublicationController\:\:redirectArtikel\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/PublicationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\PublicationController\:\:redirectBerita\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/PublicationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\SiteInformationController\:\:update\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/SiteInformationController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\SpmbSetting\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/SpmbSettingController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\SpmbSettingController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/SpmbSettingController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\SpmbSettingController\:\:update\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/SpmbSettingController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\StudentAchievementController\:\:formatBytes\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/StudentAchievementController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\StudentAchievementController\:\:formatBytes\(\) has parameter \$bytes with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Http/Controllers/Admin/StudentAchievementController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\StudentAchievementController\:\:formatBytes\(\) has parameter \$precision with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Http/Controllers/Admin/StudentAchievementController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\StudentAchievementController\:\:parseSize\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/StudentAchievementController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\StudentAchievementController\:\:parseSize\(\) has parameter \$size with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Http/Controllers/Admin/StudentAchievementController.php
+
+		-
+			message: '#^Parameter \#1 \$num of function round expects float\|int, \(array\<string\>\|string\|null\) given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Admin/StudentAchievementController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Admin\\VisualIdentityController\:\:updateBannerOrder\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Admin/VisualIdentityController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 3
+			path: app/Http/Controllers/Api/ChatbotController.php
+
+		-
+			message: '#^Call to static method first\(\) on an unknown class App\\Http\\Controllers\\Web\\SchoolProfile\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Http/Controllers/Web/ApiController.php
+
+		-
+			message: '#^Called ''pluck'' on Laravel collection, but could have been retrieved as a query\.$#'
+			identifier: larastan.noUnnecessaryCollectionCall
+			count: 1
+			path: app/Http/Controllers/Web/ApiController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\CommentController\:\:store\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/CommentController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\CommentLikeController\:\:toggle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/CommentLikeController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ContactController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ContactController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ContactController\:\:store\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ContactController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\GalleryController\:\:dokumentasi\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/GalleryController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\GalleryController\:\:fotoKegiatan\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/GalleryController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\GalleryController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/GalleryController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\GalleryController\:\:prestasiSiswa\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/GalleryController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\GalleryController\:\:showPrestasiSiswa\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/GalleryController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\GalleryController\:\:videoKegiatan\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/GalleryController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Announcement\:\:\$is_active\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Schedule\:\:\$is_active\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:agenda\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:artikel\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:berita\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:byTag\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:globalSearch\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:pengumuman\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:show\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:showAgenda\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\InformationController\:\:showAnnouncement\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/InformationController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:getSidebarData\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:informasiSekolah\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:kepalaSekolahGuru\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:prestasi\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:sejarah\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:strukturOrganisasi\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\ProfileController\:\:visiMisi\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/ProfileController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\SpmbController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/SpmbController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\UnderConstructionController\:\:index\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/UnderConstructionController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Web\\UnderConstructionController\:\:socialMediaUnavailable\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Web/UnderConstructionController.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\PostRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/PostRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\PostRequest\:\:withValidator\(\) has parameter \$validator with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Http/Requests/Admin/PostRequest.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>type" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Requests/Admin/PostRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreActivityPhotoRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreActivityPhotoRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreActivityPhotoRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreActivityPhotoRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreAnnouncementRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreAnnouncementRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreAnnouncementRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreAnnouncementRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreScheduleRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreScheduleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreScheduleRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreScheduleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreStudentAchievementRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreStudentAchievementRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\StoreStudentAchievementRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/StoreStudentAchievementRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateActivityPhotoRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateActivityPhotoRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateActivityPhotoRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateActivityPhotoRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateAnnouncementRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateAnnouncementRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateAnnouncementRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateAnnouncementRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateScheduleRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateScheduleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateScheduleRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateScheduleRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateStudentAchievementRequest\:\:messages\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateStudentAchievementRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Admin\\UpdateStudentAchievementRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Admin/UpdateStudentAchievementRequest.php
+
+		-
+			message: '#^Method App\\Models\\ActivityPhoto\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ActivityPhoto.php
+
+		-
+			message: '#^Method App\\Models\\ActivityPhoto\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ActivityPhoto.php
+
+		-
+			message: '#^Method App\\Models\\ActivityPhoto\:\:scopeOrdered\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ActivityPhoto.php
+
+		-
+			message: '#^Method App\\Models\\ActivityPhoto\:\:scopeOrdered\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ActivityPhoto.php
+
+		-
+			message: '#^Class App\\Models\\ActivityVideo uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ActivityVideo.php
+
+		-
+			message: '#^Method App\\Models\\ActivityVideo\:\:getEmbedUrlAttribute\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ActivityVideo.php
+
+		-
+			message: '#^Method App\\Models\\ActivityVideo\:\:getThumbnailUrlAttribute\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ActivityVideo.php
+
+		-
+			message: '#^Method App\\Models\\ActivityVideo\:\:getYoutubeIdAttribute\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ActivityVideo.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:search\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:statusFilter\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Call to function method_exists\(\) with \$this\(App\\Models\\Announcement\) and ''scopeStatusFilter'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:applySorting\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:applySorting\(\) has parameter \$sortMapping with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeApplyFilters\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeApplyFilters\(\) has parameter \$sortMapping with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeApplyFilters\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeOrdered\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeOrdered\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeSearch\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeSearch\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeStatusFilter\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeStatusFilter\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Announcement\:\:scopeStatusFilter\(\) has parameter \$status with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Announcement.php
+
+		-
+			message: '#^Method App\\Models\\Banner\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Banner.php
+
+		-
+			message: '#^Method App\\Models\\Banner\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Banner.php
+
+		-
+			message: '#^Method App\\Models\\Banner\:\:scopeOrdered\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Banner.php
+
+		-
+			message: '#^Method App\\Models\\Banner\:\:scopeOrdered\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Banner.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeLowConfidence\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeLowConfidence\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeMethod\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeMethod\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeRecent\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeRecent\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeSession\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotConversation\:\:scopeSession\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotConversation.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotFaq\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotFaq.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotFaq\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotFaq.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotFaq\:\:scopeCategory\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotFaq.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotFaq\:\:scopeCategory\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotFaq.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotFaq\:\:scopePopular\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotFaq.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotFaq\:\:scopePopular\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotFaq.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotIntent\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotIntent.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotIntent\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotIntent.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotIntent\:\:scopeByPriority\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotIntent.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotIntent\:\:scopeByPriority\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotIntent.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotIntent\:\:scopeCategory\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/ChatbotIntent.php
+
+		-
+			message: '#^Method App\\Models\\ChatbotIntent\:\:scopeCategory\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/ChatbotIntent.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:children\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:likes\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:parent\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:post\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:scopeApproved\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:scopeApproved\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:scopeNewest\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:scopeNewest\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:scopeUnread\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\Comment\:\:scopeUnread\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Comment.php
+
+		-
+			message: '#^Method App\\Models\\CommentLike\:\:comment\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/CommentLike.php
+
+		-
+			message: '#^Method App\\Models\\CommentLike\:\:user\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/CommentLike.php
+
+		-
+			message: '#^Method App\\Models\\Contact\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Contact.php
+
+		-
+			message: '#^Method App\\Models\\Contact\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Contact.php
+
+		-
+			message: '#^Method App\\Models\\Contact\:\:scopeOrdered\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Contact.php
+
+		-
+			message: '#^Method App\\Models\\Contact\:\:scopeOrdered\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Contact.php
+
+		-
+			message: '#^Class App\\Models\\InboxMessage uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/InboxMessage.php
+
+		-
+			message: '#^Method App\\Models\\InboxMessage\:\:scopeUnread\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/InboxMessage.php
+
+		-
+			message: '#^Method App\\Models\\InboxMessage\:\:scopeUnread\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/InboxMessage.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:search\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:statusFilter\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Class App\\Models\\Post uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:applySorting\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:applySorting\(\) has parameter \$sortMapping with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:approvedComments\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:author\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:comments\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeApplyFilters\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeApplyFilters\(\) has parameter \$sortMapping with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeApplyFilters\(\) return type with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeByTag\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeByTag\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeOfType\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeOfType\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopePublished\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopePublished\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeSearch\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:scopeSearch\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\Post\:\:views\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Post.php
+
+		-
+			message: '#^Method App\\Models\\PostView\:\:post\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/PostView.php
+
+		-
+			message: '#^Method App\\Models\\Schedule\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Schedule.php
+
+		-
+			message: '#^Method App\\Models\\Schedule\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Schedule.php
+
+		-
+			message: '#^Method App\\Models\\Schedule\:\:scopeOrdered\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Schedule.php
+
+		-
+			message: '#^Method App\\Models\\Schedule\:\:scopeOrdered\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/Schedule.php
+
+		-
+			message: '#^Class App\\Models\\SpmbFaq uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/SpmbFaq.php
+
+		-
+			message: '#^Class App\\Models\\SpmbRequirement uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/SpmbRequirement.php
+
+		-
+			message: '#^Class App\\Models\\SpmbSetting uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/SpmbSetting.php
+
+		-
+			message: '#^Class App\\Models\\SpmbTimeline uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/SpmbTimeline.php
+
+		-
+			message: '#^Method App\\Models\\StudentAchievement\:\:scopeActive\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/StudentAchievement.php
+
+		-
+			message: '#^Method App\\Models\\StudentAchievement\:\:scopeActive\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/StudentAchievement.php
+
+		-
+			message: '#^Method App\\Models\\StudentAchievement\:\:scopeOrdered\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/StudentAchievement.php
+
+		-
+			message: '#^Method App\\Models\\StudentAchievement\:\:scopeOrdered\(\) has parameter \$query with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Models/StudentAchievement.php
+
+		-
+			message: '#^PHPDoc tag @use has invalid type Database\\Factories\\UserFactory\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Type Database\\Factories\\UserFactory in generic type Illuminate\\Database\\Eloquent\\Factories\\HasFactory\<Database\\Factories\\UserFactory\> in PHPDoc tag @use is not subtype of template type TFactory of Illuminate\\Database\\Eloquent\\Factories\\Factory of trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory\.$#'
+			identifier: generics.notSubtype
+			count: 1
+			path: app/Models/User.php

@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="6.14.3@d0b040a91f280f071c1abcb1b77ce3822058725a">
+  <file src="app/Core/Services/FileUploadService.php">
+    <FalsableReturnStatement>
+      <code><![CDATA[$path]]></code>
+    </FalsableReturnStatement>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[deleteImages]]></code>
+      <code><![CDATA[uploadImages]]></code>
+      <code><![CDATA[validateImage]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Core/Services/NotificationService.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[customError]]></code>
+      <code><![CDATA[customSuccess]]></code>
+      <code><![CDATA[error]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Domain/Chatbot/Services/ChatbotService.php">
+    <InvalidOperand>
+      <code><![CDATA[$matchCount += 0.8]]></code>
+      <code><![CDATA[$matchCount += 1.0]]></code>
+      <code><![CDATA[$matchCount / count($userKeywords)]]></code>
+    </InvalidOperand>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[ChatbotConversation::create([
+            'session_id' => $sessionId,
+            'user_message' => $userMessage,
+            'bot_response' => $botResponse['message'] ?? json_encode($botResponse),
+            'intent_matched' => $matchedIntent['intent'] ?? null,
+            'confidence_score' => $matchedIntent['confidence'] ?? 0,
+            'response_time_ms' => $responseTime,
+            'method' => $botResponse['method'] ?? 'unknown',
+            'ip_address' => $ip,
+            'user_agent' => $ua,
+        ])]]></code>
+      <code><![CDATA[ChatbotFaq::active()]]></code>
+      <code><![CDATA[ChatbotFaq::active()]]></code>
+      <code><![CDATA[ChatbotFaq::find($bestMatch['faq_id'])]]></code>
+      <code><![CDATA[ChatbotIntent::active()]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_address')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_map_coordinates')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_whatsapp')]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[SpmbSetting::first()]]></code>
+      <code><![CDATA[SpmbSetting::first()]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Domain/Chatbot/Services/TextProcessingService.php">
+    <InvalidOperand>
+      <code><![CDATA[1 - ($distance / $maxLen)]]></code>
+    </InvalidOperand>
+  </file>
+  <file src="app/Domain/Content/Services/HomeDataService.php">
+    <UndefinedMagicMethod>
+      <code><![CDATA[ActivityPhoto::active()]]></code>
+      <code><![CDATA[ActivityVideo::where('is_active', true)]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Banner::active()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[SchoolProfile::firstOrCreate([], [
+                'nama_sekolah' => 'MTs Nurul Falaah Soreang',
+            ])]]></code>
+      <code><![CDATA[StudentAchievement::active()]]></code>
+      <code><![CDATA[VisualIdentity::first()]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Domain/Content/Services/PostService.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Post::create($postData)]]></code>
+      <code><![CDATA[Post::published()]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$post->body]]></code>
+      <code><![CDATA[$post->body]]></code>
+      <code><![CDATA[$post->excerpt]]></code>
+      <code><![CDATA[$post->excerpt]]></code>
+      <code><![CDATA[$post->images]]></code>
+      <code><![CDATA[$post->is_featured]]></code>
+      <code><![CDATA[$post->is_featured]]></code>
+      <code><![CDATA[$post->meta_description]]></code>
+      <code><![CDATA[$post->published_at]]></code>
+      <code><![CDATA[$post->published_at]]></code>
+      <code><![CDATA[$post->published_at]]></code>
+      <code><![CDATA[$post->slug]]></code>
+      <code><![CDATA[$post->status]]></code>
+      <code><![CDATA[$post->status]]></code>
+      <code><![CDATA[$post->thumbnail_path]]></code>
+      <code><![CDATA[$post->thumbnail_path]]></code>
+      <code><![CDATA[$post->thumbnail_path]]></code>
+      <code><![CDATA[$post->thumbnail_path]]></code>
+      <code><![CDATA[$post->title]]></code>
+      <code><![CDATA[$post->type]]></code>
+      <code><![CDATA[$post->type]]></code>
+      <code><![CDATA[$post?->thumbnail_path]]></code>
+      <code><![CDATA[$post?->thumbnail_path]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UnusedVariable>
+      <code><![CDATA[$shouldAutoExcerpt]]></code>
+      <code><![CDATA[$shouldAutoMeta]]></code>
+    </UnusedVariable>
+  </file>
+  <file src="app/Domain/Dashboard/Services/DashboardStatsService.php">
+    <UndefinedMagicMethod>
+      <code><![CDATA[ActivityPhoto::count()]]></code>
+      <code><![CDATA[ActivityPhoto::where('is_active', true)]]></code>
+      <code><![CDATA[Announcement::count()]]></code>
+      <code><![CDATA[Announcement::where('is_active', true)]]></code>
+      <code><![CDATA[Banner::count()]]></code>
+      <code><![CDATA[Banner::where('is_active', true)]]></code>
+      <code><![CDATA[Contact::count()]]></code>
+      <code><![CDATA[Contact::where('is_active', true)]]></code>
+      <code><![CDATA[Post::select('id', 'title', 'type', 'status', 'updated_at')]]></code>
+      <code><![CDATA[Post::selectRaw('
+            COUNT(*) as total,
+            SUM(CASE WHEN status = ? AND (published_at IS NULL OR published_at <= NOW()) THEN 1 ELSE 0 END) as published,
+            SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as draft,
+            SUM(CASE WHEN type = ? THEN 1 ELSE 0 END) as total_berita,
+            SUM(CASE WHEN type = ? AND status = ? AND (published_at IS NULL OR published_at <= NOW()) THEN 1 ELSE 0 END) as published_berita,
+            SUM(CASE WHEN type = ? THEN 1 ELSE 0 END) as total_artikel,
+            SUM(CASE WHEN type = ? AND status = ? AND (published_at IS NULL OR published_at <= NOW()) THEN 1 ELSE 0 END) as published_artikel
+        ', [
+            PostStatus::PUBLISHED->value,
+            PostStatus::DRAFT->value,
+            PostType::BERITA->value,
+            PostType::BERITA->value,
+            PostStatus::PUBLISHED->value,
+            PostType::ARTIKEL->value,
+            PostType::ARTIKEL->value,
+            PostStatus::PUBLISHED->value,
+        ])]]></code>
+      <code><![CDATA[Schedule::count()]]></code>
+      <code><![CDATA[Schedule::where('is_active', true)]]></code>
+      <code><![CDATA[StudentAchievement::count()]]></code>
+      <code><![CDATA[StudentAchievement::where('is_active', true)]]></code>
+    </UndefinedMagicMethod>
+    <UnusedClass>
+      <code><![CDATA[DashboardStatsService]]></code>
+    </UnusedClass>
+  </file>
+  <file src="app/Domain/Media/Services/YouTubeService.php">
+    <InvalidOperand>
+      <code><![CDATA[round($n / 1000, 1)]]></code>
+      <code><![CDATA[round($n / 1000000, 1)]]></code>
+      <code><![CDATA[round($n / 1000000000, 1)]]></code>
+    </InvalidOperand>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getVideoDetails]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Enums/PostStatus.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[isValid]]></code>
+      <code><![CDATA[label]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/ActivityPhotoController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[create]]></code>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[edit]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[store]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[ActivityPhoto::create([
+                        'judul' => $defaultJudul,
+                        'deskripsi' => '',
+                        'gambar' => $imagePath,
+                        'urutan' => ($validated['urutan'] ?? 0) + $index,
+                        'is_active' => true,  // Auto-active when uploaded
+                    ])]]></code>
+      <code><![CDATA[ActivityPhoto::ordered()]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$fotoKegiatan->gambar]]></code>
+      <code><![CDATA[$fotoKegiatan->gambar]]></code>
+      <code><![CDATA[$fotoKegiatan->urutan]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Admin/ActivityVideoController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[create]]></code>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[edit]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[store]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <PossiblyUnusedProperty>
+      <code><![CDATA[$youTubeService]]></code>
+    </PossiblyUnusedProperty>
+    <UndefinedMagicMethod>
+      <code><![CDATA[ActivityVideo::latest()]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$activityVideo->youtube_id]]></code>
+      <code><![CDATA[$video->youtube_id]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Admin/AnnouncementController.php">
+    <InvalidArgument>
+      <code><![CDATA[function($query) use ($q) {
+                $query->where('judul', 'like', "%{$q}%")
+                      ->orWhere('isi', 'like', "%{$q}%");
+            }]]></code>
+    </InvalidArgument>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[create]]></code>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[edit]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[store]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Announcement::create($validated)]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$pengumuman->urutan]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedMethod>
+      <code><![CDATA[where]]></code>
+    </UndefinedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/AuthController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[adminAuthenticate]]></code>
+      <code><![CDATA[adminLogin]]></code>
+      <code><![CDATA[changePassword]]></code>
+      <code><![CDATA[changeUsername]]></code>
+      <code><![CDATA[logout]]></code>
+      <code><![CDATA[showChangePassword]]></code>
+      <code><![CDATA[showChangeUsername]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/CommentController.php">
+    <InvalidArgument>
+      <code><![CDATA[function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('comment', 'like', "%{$search}%");
+            }]]></code>
+    </InvalidArgument>
+    <InvalidTemplateParam>
+      <code><![CDATA[$allComments->groupBy('parent_id')]]></code>
+    </InvalidTemplateParam>
+    <NoInterfaceProperties>
+      <code><![CDATA[$currentUser->name]]></code>
+      <code><![CDATA[$currentUser->username]]></code>
+    </NoInterfaceProperties>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[approve]]></code>
+      <code><![CDATA[bulkApprove]]></code>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[markAllAsRead]]></code>
+      <code><![CDATA[markAsRead]]></code>
+      <code><![CDATA[markAsUnread]]></code>
+      <code><![CDATA[reject]]></code>
+      <code><![CDATA[reply]]></code>
+      <code><![CDATA[show]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Comment::create([
+            'post_id' => $comment->post_id,
+            'parent_id' => $parentId,
+            'is_admin' => true,
+            'name' => $validated['admin_reply_by'],
+            'email' => 'admin@local',
+            'comment' => $validated['admin_reply'],
+            'is_approved' => true,
+            'is_read' => true,
+        ])]]></code>
+      <code><![CDATA[Comment::selectRaw('
+            COUNT(*) as total,
+            SUM(CASE WHEN is_approved = false THEN 1 ELSE 0 END) as pending,
+            SUM(CASE WHEN is_read = false THEN 1 ELSE 0 END) as unread
+        ')]]></code>
+      <code><![CDATA[Comment::where('is_read', false)]]></code>
+      <code><![CDATA[Comment::whereIn('id', $request->ids)]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$comment->admin_replied_at]]></code>
+      <code><![CDATA[$comment->admin_reply]]></code>
+      <code><![CDATA[$comment->admin_reply_by]]></code>
+      <code><![CDATA[$comment->comment]]></code>
+      <code><![CDATA[$comment->created_at]]></code>
+      <code><![CDATA[$comment->email]]></code>
+      <code><![CDATA[$comment->id]]></code>
+      <code><![CDATA[$comment->id]]></code>
+      <code><![CDATA[$comment->id]]></code>
+      <code><![CDATA[$comment->is_approved]]></code>
+      <code><![CDATA[$comment->is_read]]></code>
+      <code><![CDATA[$comment->is_read]]></code>
+      <code><![CDATA[$comment->name]]></code>
+      <code><![CDATA[$comment->post]]></code>
+      <code><![CDATA[$comment->post_id]]></code>
+      <code><![CDATA[$comment->post_id]]></code>
+      <code><![CDATA[$comment->post_id]]></code>
+      <code><![CDATA[$replyTo->id]]></code>
+      <code><![CDATA[$request->ids]]></code>
+      <code><![CDATA[$request->q]]></code>
+      <code><![CDATA[$request->read]]></code>
+      <code><![CDATA[$request->sort]]></code>
+      <code><![CDATA[$request->status]]></code>
+      <code><![CDATA[$threadRoot->parent_id]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedMethod>
+      <code><![CDATA[where]]></code>
+    </UndefinedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/DashboardController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[ActivityPhoto::count()]]></code>
+      <code><![CDATA[Announcement::count()]]></code>
+      <code><![CDATA[Comment::count()]]></code>
+      <code><![CDATA[Comment::where('is_approved', false)]]></code>
+      <code><![CDATA[Comment::where('is_read', false)]]></code>
+      <code><![CDATA[InboxMessage::count()]]></code>
+      <code><![CDATA[InboxMessage::where('is_read', false)]]></code>
+      <code><![CDATA[InboxMessage::where('is_read', false)]]></code>
+      <code><![CDATA[Post::count()]]></code>
+      <code><![CDATA[Post::select('type', DB::raw('count(*) as count'))]]></code>
+      <code><![CDATA[Post::where('status', 'draft')]]></code>
+      <code><![CDATA[Post::where('status', 'published')]]></code>
+      <code><![CDATA[Schedule::count()]]></code>
+      <code><![CDATA[StudentAchievement::count()]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/HelpController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/ImageUploadController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[store]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/InboxController.php">
+    <InvalidArgument>
+      <code><![CDATA[function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('message', 'like', "%{$search}%");
+            }]]></code>
+    </InvalidArgument>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[markAsRead]]></code>
+      <code><![CDATA[markAsUnread]]></code>
+      <code><![CDATA[show]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$message->is_read]]></code>
+      <code><![CDATA[$request->q]]></code>
+      <code><![CDATA[$request->sort]]></code>
+      <code><![CDATA[$request->status]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedMethod>
+      <code><![CDATA[where]]></code>
+    </UndefinedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/PostController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[create]]></code>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[edit]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[show]]></code>
+      <code><![CDATA[store]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <PossiblyUnusedParam>
+      <code><![CDATA[$post]]></code>
+    </PossiblyUnusedParam>
+    <TooManyArguments>
+      <code><![CDATA[select]]></code>
+    </TooManyArguments>
+    <UndefinedMagicMethod>
+      <code><![CDATA[applyFilters]]></code>
+      <code><![CDATA[ofType]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$post->type]]></code>
+      <code><![CDATA[$post->type]]></code>
+      <code><![CDATA[$post->type]]></code>
+      <code><![CDATA[$post->type]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Admin/PublicationController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[redirectArtikel]]></code>
+      <code><![CDATA[redirectBerita]]></code>
+    </PossiblyUnusedMethod>
+    <TooManyArguments>
+      <code><![CDATA[select]]></code>
+    </TooManyArguments>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Post::count()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[ofType]]></code>
+      <code><![CDATA[published]]></code>
+      <code><![CDATA[search]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/ScheduleController.php">
+    <InvalidArgument>
+      <code><![CDATA[function($query) use ($q) {
+                $query->where('judul', 'like', '%' . $q . '%')
+                    ->orWhere('deskripsi', 'like', '%' . $q . '%')
+                    ->orWhere('lokasi', 'like', '%' . $q . '%');
+            }]]></code>
+    </InvalidArgument>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[create]]></code>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[edit]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[store]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Schedule::create($validated)]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$agenda->urutan]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedMethod>
+      <code><![CDATA[where]]></code>
+    </UndefinedMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/SchoolProfileController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[SchoolProfile::firstOrCreate([], [
+            'nama_sekolah' => 'MTs Nurul Falaah Soreang',
+        ])]]></code>
+      <code><![CDATA[SchoolProfile::firstOrCreate([], [
+            'nama_sekolah' => 'MTs Nurul Falaah Soreang',
+        ])]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Http/Controllers/Admin/SiteInformationController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[destroyKontak]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[storeKontak]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Contact::create($validated)]]></code>
+      <code><![CDATA[Contact::find($kontakData['id'])]]></code>
+      <code><![CDATA[Contact::ordered()]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(
+                    ['key' => $key],
+                    ['value' => $request->input($key) ?? '', 'deskripsi' => ucfirst(str_replace('_', ' ', $key))]
+                )]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_alamat'], ['value' => $request->input('site_address')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_email'], ['value' => $request->input('site_email')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_facebook_url'], ['value' => $request->input('social_facebook')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_instagram_url'], ['value' => $request->input('social_instagram')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_tiktok_url'], ['value' => $request->input('social_tiktok')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_twitter_url'], ['value' => $request->input('social_twitter')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_whatsapp'], ['value' => $request->input('site_whatsapp')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'footer_youtube_url'], ['value' => $request->input('social_youtube')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'top_bar_email'], ['value' => $request->input('site_email')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'top_bar_facebook_url'], ['value' => $request->input('social_facebook')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'top_bar_instagram_url'], ['value' => $request->input('social_instagram')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'top_bar_phone'], ['value' => $request->input('site_phone')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'top_bar_tiktok_url'], ['value' => $request->input('social_tiktok')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'top_bar_twitter_url'], ['value' => $request->input('social_twitter')])]]></code>
+      <code><![CDATA[InfoText::updateOrCreate(['key' => 'top_bar_youtube_url'], ['value' => $request->input('social_youtube')])]]></code>
+      <code><![CDATA[InfoText::where('key', 'footer_alamat')]]></code>
+      <code><![CDATA[InfoText::where('key', 'footer_email')]]></code>
+      <code><![CDATA[InfoText::where('key', 'footer_facebook_url')]]></code>
+      <code><![CDATA[InfoText::where('key', 'footer_instagram_url')]]></code>
+      <code><![CDATA[InfoText::where('key', 'footer_tiktok_url')]]></code>
+      <code><![CDATA[InfoText::where('key', 'footer_whatsapp')]]></code>
+      <code><![CDATA[InfoText::where('key', 'footer_youtube_url')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_address')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_email')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_footer_description')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_map_coordinates')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_phone')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_whatsapp')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_facebook')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_instagram')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_tiktok')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_twitter')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_youtube')]]></code>
+      <code><![CDATA[InfoText::where('key', 'top_bar_phone')]]></code>
+    </UndefinedMagicMethod>
+    <UnusedVariable>
+      <code><![CDATA[$legacyAddress]]></code>
+      <code><![CDATA[$legacyEmail]]></code>
+      <code><![CDATA[$legacyFacebook]]></code>
+      <code><![CDATA[$legacyInstagram]]></code>
+      <code><![CDATA[$legacyPhone]]></code>
+      <code><![CDATA[$legacyTiktok]]></code>
+      <code><![CDATA[$legacyWhatsapp]]></code>
+      <code><![CDATA[$legacyYoutube]]></code>
+      <code><![CDATA[$validated]]></code>
+    </UnusedVariable>
+  </file>
+  <file src="app/Http/Controllers/Admin/SpmbSettingController.php">
+    <InvalidOperand>
+      <code><![CDATA[date('Y') + 1]]></code>
+      <code><![CDATA[date('Y') + 1]]></code>
+    </InvalidOperand>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[SpmbFaq::create([
+                            'question' => $faq['question'],
+                            'answer' => $faq['answer'],
+                            'urutan' => $index
+                        ])]]></code>
+      <code><![CDATA[SpmbFaq::orderBy('urutan')]]></code>
+      <code><![CDATA[SpmbFaq::truncate()]]></code>
+      <code><![CDATA[SpmbRequirement::create([
+                            'content' => $req['content'],
+                            'type' => $req['type'],
+                            'urutan' => $index
+                        ])]]></code>
+      <code><![CDATA[SpmbRequirement::orderBy('urutan')]]></code>
+      <code><![CDATA[SpmbRequirement::truncate()]]></code>
+      <code><![CDATA[SpmbSetting::create([
+                'is_open' => false,
+                'academic_year' => date('Y') . '/' . (date('Y') + 1),
+                'contact_wa' => '', // Empty default
+                'description' => 'Informasi SPMB belum diatur.'
+            ])]]></code>
+      <code><![CDATA[SpmbSetting::first()]]></code>
+      <code><![CDATA[SpmbSetting::firstOrNew()]]></code>
+      <code><![CDATA[SpmbTimeline::create([
+                            'activity' => $timeline['activity'],
+                            'start_date' => $timeline['start_date'],
+                            'end_date' => $timeline['end_date'],
+                            'description' => $timeline['description'],
+                            'urutan' => $index
+                        ])]]></code>
+      <code><![CDATA[SpmbTimeline::orderBy('urutan')]]></code>
+      <code><![CDATA[SpmbTimeline::truncate()]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$request->faqs]]></code>
+      <code><![CDATA[$request->requirements]]></code>
+      <code><![CDATA[$request->timelines]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Admin/StudentAchievementController.php">
+    <InvalidArgument>
+      <code><![CDATA[$size]]></code>
+      <code><![CDATA[function ($q) use ($search) {
+                $q->where('judul', 'like', "%{$search}%")
+                    ->orWhere('nama_siswa', 'like', "%{$search}%")
+                    ->orWhere('deskripsi', 'like', "%{$search}%");
+            }]]></code>
+    </InvalidArgument>
+    <InvalidLiteralArgument>
+      <code><![CDATA['bkmgtpezy']]></code>
+    </InvalidLiteralArgument>
+    <InvalidOperand>
+      <code><![CDATA[$bytes /= pow(1024, $pow)]]></code>
+      <code><![CDATA[($bytes ? log($bytes) : 0) / log(1024)]]></code>
+      <code><![CDATA[round($bytes, $precision)]]></code>
+    </InvalidOperand>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[create]]></code>
+      <code><![CDATA[destroy]]></code>
+      <code><![CDATA[edit]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[store]]></code>
+      <code><![CDATA[update]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[StudentAchievement::create($validated)]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$prestasiSiswa->foto_sertifikat]]></code>
+      <code><![CDATA[$prestasiSiswa->foto_sertifikat]]></code>
+      <code><![CDATA[$prestasiSiswa->foto_sertifikat]]></code>
+      <code><![CDATA[$prestasiSiswa->gambar]]></code>
+      <code><![CDATA[$prestasiSiswa->gambar]]></code>
+      <code><![CDATA[$prestasiSiswa->is_active]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedMethod>
+      <code><![CDATA[where]]></code>
+    </UndefinedMethod>
+    <UnusedVariable>
+      <code><![CDATA[$maxUpload]]></code>
+    </UnusedVariable>
+  </file>
+  <file src="app/Http/Controllers/Admin/VisualIdentityController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[destroyBanner]]></code>
+      <code><![CDATA[destroyPromosi]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[toggleBanner]]></code>
+      <code><![CDATA[update]]></code>
+      <code><![CDATA[updateBannerOrder]]></code>
+      <code><![CDATA[updateSettings]]></code>
+      <code><![CDATA[uploadBanner]]></code>
+      <code><![CDATA[uploadPromosi]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Banner::count()]]></code>
+      <code><![CDATA[Banner::count()]]></code>
+      <code><![CDATA[Banner::create([
+                        'gambar' => $gambarPath,
+                        'urutan' => $maxUrutan + 1,
+                        'is_active' => true,
+                    ])]]></code>
+      <code><![CDATA[Banner::max('urutan')]]></code>
+      <code><![CDATA[Banner::ordered()]]></code>
+      <code><![CDATA[Banner::where('id', $item['id'])]]></code>
+      <code><![CDATA[Banner::where('urutan', '>', $deletedUrutan)]]></code>
+      <code><![CDATA[VisualIdentity::first()]]></code>
+      <code><![CDATA[VisualIdentity::first()]]></code>
+      <code><![CDATA[VisualIdentity::firstOrNew()]]></code>
+      <code><![CDATA[VisualIdentity::firstOrNew()]]></code>
+      <code><![CDATA[VisualIdentity::firstOrNew()]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$banner->gambar]]></code>
+      <code><![CDATA[$banner->is_active]]></code>
+      <code><![CDATA[$banner->urutan]]></code>
+      <code><![CDATA[$request->order]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Api/ChatbotController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[chat]]></code>
+      <code><![CDATA[clearCache]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedClass>
+      <code><![CDATA[\Log]]></code>
+      <code><![CDATA[\Log]]></code>
+    </UndefinedClass>
+  </file>
+  <file src="app/Http/Controllers/Web/ApiController.php">
+    <InvalidArgument>
+      <code><![CDATA[$agendaResults]]></code>
+      <code><![CDATA[$pengumumanResults]]></code>
+      <code><![CDATA[function ($q) use ($query) {
+                $q->where('judul', 'like', "%{$query}%")
+                    ->orWhere('isi', 'like', "%{$query}%");
+            }]]></code>
+    </InvalidArgument>
+    <InvalidTemplateParam>
+      <code><![CDATA[Announcement::query()
+            ->where(function ($q) use ($query) {
+                $q->where('judul', 'like', "%{$query}%")
+                    ->orWhere('isi', 'like', "%{$query}%");
+            })
+            ->latest('tanggal')
+            ->take(5)
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->judul,
+                    'type' => 'pengumuman',
+                    'excerpt' => strip_tags($item->isi),
+                    'url' => route('informasi.pengumuman'),
+                ];
+            })]]></code>
+      <code><![CDATA[Schedule::query()
+            ->where('judul', 'like', "%{$query}%")
+            ->latest('tanggal_mulai')
+            ->take(5)
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->judul,
+                    'type' => 'agenda',
+                    'excerpt' => $item->deskripsi,
+                    'url' => route('informasi.agenda'),
+                ];
+            })]]></code>
+    </InvalidTemplateParam>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[lastPostUpdate]]></code>
+      <code><![CDATA[search]]></code>
+      <code><![CDATA[tagSuggestions]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedClass>
+      <code><![CDATA[SchoolProfile]]></code>
+    </UndefinedClass>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::whereNotNull('tags')]]></code>
+      <code><![CDATA[active]]></code>
+      <code><![CDATA[ordered]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$item->deskripsi]]></code>
+      <code><![CDATA[$item->id]]></code>
+      <code><![CDATA[$item->id]]></code>
+      <code><![CDATA[$item->isi]]></code>
+      <code><![CDATA[$item->judul]]></code>
+      <code><![CDATA[$item->judul]]></code>
+    </UndefinedMagicPropertyFetch>
+    <UndefinedMethod>
+      <code><![CDATA[where]]></code>
+    </UndefinedMethod>
+  </file>
+  <file src="app/Http/Controllers/Web/CommentController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[store]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Comment::create([
+            'post_id' => $post->id,
+            'parent_id' => $parentId,
+            'is_admin' => false,
+            'name' => $name,
+            'email' => $email,
+            'comment' => $validated['comment'],
+            'is_approved' => false, // Menunggu persetujuan admin
+            'is_read' => false,
+        ])]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[approved]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$request->anonymous]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Web/CommentLikeController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[toggle]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[CommentLike::create([
+                'comment_id' => $comment->id,
+                'user_id' => $userId,
+                'session_id' => $userId ? null : $sessionId,
+                'ip_address' => $request->ip(),
+            ])]]></code>
+      <code><![CDATA[count]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$comment->id]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Web/ContactController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[store]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Contact::active()]]></code>
+      <code><![CDATA[InboxMessage::create($validated)]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_address')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_email')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_map_coordinates')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_phone')]]></code>
+      <code><![CDATA[InfoText::where('key', 'site_whatsapp')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_facebook')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_instagram')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_tiktok')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_twitter')]]></code>
+      <code><![CDATA[InfoText::where('key', 'social_youtube')]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Http/Controllers/Web/GalleryController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[dokumentasi]]></code>
+      <code><![CDATA[fotoKegiatan]]></code>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[prestasiSiswa]]></code>
+      <code><![CDATA[showPrestasiSiswa]]></code>
+      <code><![CDATA[videoKegiatan]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[StudentAchievement::active()]]></code>
+      <code><![CDATA[\App\Models\ActivityPhoto::latest()]]></code>
+      <code><![CDATA[\App\Models\ActivityVideo::where('is_active', true)]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$prestasiSiswa->is_active]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Web/HomeController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[index]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Controllers/Web/InformationController.php">
+    <InvalidArgument>
+      <code><![CDATA[(object) [
+                    'type_label' => ucfirst($post->type),
+                    'type_slug' => $post->type,
+                    'title' => $post->title,
+                    'desc' => $post->excerpt ?: \Illuminate\Support\Str::limit(strip_tags($post->body), 150),
+                    'date' => $post->published_at,
+                    'image' => $post->thumbnail_path,
+                    'url' => route('informasi.show', ['type' => $post->type, 'slug' => $post->slug]),
+                    'sort_date' => $post->published_at,
+                ]]]></code>
+    </InvalidArgument>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[agenda]]></code>
+      <code><![CDATA[artikel]]></code>
+      <code><![CDATA[berita]]></code>
+      <code><![CDATA[byTag]]></code>
+      <code><![CDATA[globalSearch]]></code>
+      <code><![CDATA[pengumuman]]></code>
+      <code><![CDATA[show]]></code>
+      <code><![CDATA[showAgenda]]></code>
+      <code><![CDATA[showAnnouncement]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[approved]]></code>
+      <code><![CDATA[increment]]></code>
+      <code><![CDATA[increment]]></code>
+    </UndefinedMagicMethod>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$announcement->id]]></code>
+      <code><![CDATA[$announcement->is_active]]></code>
+      <code><![CDATA[$schedule->id]]></code>
+      <code><![CDATA[$schedule->is_active]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Http/Controllers/Web/ProfileController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[informasiSekolah]]></code>
+      <code><![CDATA[kepalaSekolahGuru]]></code>
+      <code><![CDATA[prestasi]]></code>
+      <code><![CDATA[sejarah]]></code>
+      <code><![CDATA[strukturOrganisasi]]></code>
+      <code><![CDATA[visiMisi]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[Announcement::active()]]></code>
+      <code><![CDATA[Post::published()]]></code>
+      <code><![CDATA[Schedule::active()]]></code>
+      <code><![CDATA[SchoolProfile::firstOrCreate([], [
+            'nama_sekolah' => 'MTs Nurul Falaah Soreang',
+        ])]]></code>
+      <code><![CDATA[StudentAchievement::active()]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Http/Controllers/Web/SpmbController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[SpmbSetting::first()]]></code>
+      <code><![CDATA[StudentAchievement::where('is_active', true)]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="app/Http/Controllers/Web/UnderConstructionController.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[index]]></code>
+      <code><![CDATA[socialMediaUnavailable]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/PostRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected function prepareForValidation(): void]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+      <code><![CDATA[withValidator]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/StoreActivityPhotoRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/StoreAnnouncementRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/StoreScheduleRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/StoreStudentAchievementRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/UpdateActivityPhotoRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/UpdateAnnouncementRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/UpdateScheduleRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Http/Requests/Admin/UpdateStudentAchievementRequest.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function messages(): array]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[authorize]]></code>
+      <code><![CDATA[rules]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/ActivityPhoto.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected static function booted(): void]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeOrdered]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/ActivityVideo.php">
+    <MissingTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </MissingTemplateParam>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getEmbedUrlAttribute]]></code>
+      <code><![CDATA[getThumbnailUrlAttribute]]></code>
+      <code><![CDATA[getYoutubeIdAttribute]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedThisPropertyFetch>
+      <code><![CDATA[$this->youtube_id]]></code>
+      <code><![CDATA[$this->youtube_id]]></code>
+      <code><![CDATA[$this->youtube_url]]></code>
+    </UndefinedThisPropertyFetch>
+  </file>
+  <file src="app/Models/Announcement.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected static function booted(): void]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeOrdered]]></code>
+      <code><![CDATA[scopeSearch]]></code>
+      <code><![CDATA[scopeStatusFilter]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/Banner.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected static function booted(): void]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeOrdered]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/ChatbotConversation.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeLowConfidence]]></code>
+      <code><![CDATA[scopeMethod]]></code>
+      <code><![CDATA[scopeRecent]]></code>
+      <code><![CDATA[scopeSession]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/ChatbotFaq.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[incrementViewCount]]></code>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeCategory]]></code>
+      <code><![CDATA[scopePopular]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/ChatbotIntent.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeByPriority]]></code>
+      <code><![CDATA[scopeCategory]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/Comment.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[children]]></code>
+      <code><![CDATA[parent]]></code>
+      <code><![CDATA[post]]></code>
+      <code><![CDATA[scopeApproved]]></code>
+      <code><![CDATA[scopeNewest]]></code>
+      <code><![CDATA[scopeUnread]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/CommentLike.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[comment]]></code>
+      <code><![CDATA[user]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/Contact.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeOrdered]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/InboxMessage.php">
+    <MissingTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </MissingTemplateParam>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeUnread]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/Post.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected static function booted(): void]]></code>
+    </MissingOverrideAttribute>
+    <MissingTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </MissingTemplateParam>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[approvedComments]]></code>
+      <code><![CDATA[author]]></code>
+      <code><![CDATA[comments]]></code>
+      <code><![CDATA[incrementViewCount]]></code>
+      <code><![CDATA[scopeByTag]]></code>
+      <code><![CDATA[scopeOfType]]></code>
+      <code><![CDATA[scopePublished]]></code>
+      <code><![CDATA[scopeSearch]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicPropertyAssignment>
+      <code><![CDATA[$post->excerpt]]></code>
+      <code><![CDATA[$post->excerpt]]></code>
+      <code><![CDATA[$post->slug]]></code>
+      <code><![CDATA[$post->slug]]></code>
+    </UndefinedMagicPropertyAssignment>
+    <UndefinedMagicPropertyFetch>
+      <code><![CDATA[$post->body]]></code>
+      <code><![CDATA[$post->body]]></code>
+      <code><![CDATA[$post->excerpt]]></code>
+      <code><![CDATA[$post->title]]></code>
+      <code><![CDATA[$post->title]]></code>
+    </UndefinedMagicPropertyFetch>
+  </file>
+  <file src="app/Models/PostView.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[post]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/Schedule.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected static function booted(): void]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeOrdered]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/SpmbFaq.php">
+    <MissingTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </MissingTemplateParam>
+  </file>
+  <file src="app/Models/SpmbRequirement.php">
+    <MissingTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </MissingTemplateParam>
+  </file>
+  <file src="app/Models/SpmbSetting.php">
+    <MissingTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </MissingTemplateParam>
+  </file>
+  <file src="app/Models/SpmbTimeline.php">
+    <MissingTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </MissingTemplateParam>
+  </file>
+  <file src="app/Models/StudentAchievement.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected static function booted(): void]]></code>
+    </MissingOverrideAttribute>
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeActive]]></code>
+      <code><![CDATA[scopeOrdered]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="app/Models/User.php">
+    <InvalidTemplateParam>
+      <code><![CDATA[HasFactory]]></code>
+    </InvalidTemplateParam>
+    <MissingOverrideAttribute>
+      <code><![CDATA[protected function casts(): array]]></code>
+    </MissingOverrideAttribute>
+    <UndefinedDocblockClass>
+      <code><![CDATA[User]]></code>
+    </UndefinedDocblockClass>
+  </file>
+  <file src="app/Providers/AppServiceProvider.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function register(): void]]></code>
+    </MissingOverrideAttribute>
+    <UndefinedMagicMethod>
+      <code><![CDATA[SchoolProfile::firstOrCreate([], ['nama_sekolah' => 'MTs Nurul Falaah Soreang'])]]></code>
+      <code><![CDATA[VisualIdentity::first()]]></code>
+    </UndefinedMagicMethod>
+    <UnusedClass>
+      <code><![CDATA[AppServiceProvider]]></code>
+    </UnusedClass>
+  </file>
+  <file src="app/Traits/Filterable.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[scopeApplyFilters]]></code>
+      <code><![CDATA[scopeApplyFilters]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[search]]></code>
+      <code><![CDATA[statusFilter]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="database/migrations/2026_01_07_220205_add_status_to_announcements_table.php">
+    <UndefinedClass>
+      <code><![CDATA[\DB]]></code>
+      <code><![CDATA[\DB]]></code>
+    </UndefinedClass>
+  </file>
+  <file src="database/migrations/2026_01_07_230227_add_status_to_agendas_table.php">
+    <UndefinedClass>
+      <code><![CDATA[\DB]]></code>
+      <code><![CDATA[\DB]]></code>
+    </UndefinedClass>
+  </file>
+  <file src="database/seeders/AdminUserSeeder.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[run]]></code>
+    </PossiblyUnusedMethod>
+    <UndefinedMagicMethod>
+      <code><![CDATA[User::create([
+            'name' => 'Admin',
+            'username' => 'admin_nfs_soreang',
+            'password' => Hash::make('Sekolah-NFS-Aman-2026!'),
+        ])]]></code>
+    </UndefinedMagicMethod>
+  </file>
+  <file src="database/seeders/DatabaseSeeder.php">
+    <UnusedClass>
+      <code><![CDATA[DatabaseSeeder]]></code>
+    </UnusedClass>
+  </file>
+</files>

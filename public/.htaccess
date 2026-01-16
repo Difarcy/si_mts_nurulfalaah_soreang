@@ -1,0 +1,8 @@
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 5M
+    php_value post_max_size 8M
+</IfModule>
+<IfModule mod_php8.c>
+    php_value upload_max_filesize 5M
+    php_value post_max_size 8M
+</IfModule>
