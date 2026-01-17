@@ -34,7 +34,7 @@
                 </div>
 
                 <form action="{{ route('cpanel.visual-identity.update') }}" method="POST" enctype="multipart/form-data"
-                    class="space-y-6" data-unsaved-changes="true">
+                    class="space-y-6" data-unsaved-changes="true" data-notify="loading">
                     @csrf
                     @method('PUT')
 
@@ -160,7 +160,7 @@
 
                         <!-- Form Upload dengan Drag & Drop Card -->
                         <form action="{{ route('cpanel.visual-identity.banner.upload') }}" method="POST"
-                            enctype="multipart/form-data" id="uploadForm" data-unsaved-changes="true" @if(!$canUpload)
+                            enctype="multipart/form-data" id="uploadForm" data-unsaved-changes="true" data-notify="loading" @if(!$canUpload)
                             class="opacity-50 pointer-events-none" @endif>
                             @csrf
                             @if ($errors->any())
@@ -266,7 +266,7 @@
                                 1920 × 600 px</p>
 
                             <form action="{{ route('cpanel.visual-identity.promosi.upload') }}" method="POST"
-                                enctype="multipart/form-data" id="promosiForm" data-unsaved-changes="true">
+                                enctype="multipart/form-data" id="promosiForm" data-unsaved-changes="true" data-notify="loading">
                                 @csrf
                                 @if(isset($inline) && $inline)
                                     <input type="hidden" name="_redirect_after_save"
@@ -343,7 +343,7 @@
                                 semua slide banner</p>
 
                             <form action="{{ route('cpanel.visual-identity.settings.update') }}" method="POST"
-                                enctype="multipart/form-data" id="settings-form" data-unsaved-changes="true">
+                                enctype="multipart/form-data" id="settings-form" data-unsaved-changes="true" data-notify="loading">
                                 @csrf
                                 @method('POST')
                                 @if(isset($inline) && $inline)
@@ -497,7 +497,7 @@
             <div
                 class="mx-4 sm:mx-6 pt-4 pb-6 border-t border-gray-200 dark:border-slate-700 mt-6 flex items-center justify-end gap-3">
                 <button type="button" id="visual-identity-save-all-btn"
-                    class="px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-all duration-200 shadow-sm hover:shadow-md rounded disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none min-w-25"
+                    class="px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-all duration-200 shadow-sm hover:shadow-md rounded disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none min-w-20 sm:min-w-25"
                     disabled>
                     Simpan
                 </button>

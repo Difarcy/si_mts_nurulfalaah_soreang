@@ -44,13 +44,13 @@
             <!-- Menu Navigasi (Desktop Only) -->
             <nav class="hidden lg:flex lg:w-auto lg:flex-nowrap lg:justify-end lg:gap-5 xl:gap-6 font-sans">
                 <a href="{{ route('web.home') }}"
-                    class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-xs md:text-[13px] lg:text-sm uppercase {{ request()->routeIs('home') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}">
+                    class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-sm md:text-base uppercase {{ request()->routeIs('home') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}">
                     BERANDA
                 </a>
                 <!-- Menu PROFIL dengan Dropdown -->
                 <div class="relative group" id="profil-dropdown">
                     <button
-                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-xs md:text-[13px] lg:text-sm uppercase flex items-center gap-1 {{ ((request()->routeIs('profil.*') || request()->routeIs('profil')) && !request()->routeIs('profil.kepala-madrasah')) ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}"
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-sm md:text-base uppercase flex items-center gap-1 {{ ((request()->routeIs('profil.*') || request()->routeIs('profil')) && !request()->routeIs('profil.kepala-madrasah')) ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}"
                         id="profil-toggle">
                         PROFIL
                         <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none"
@@ -85,7 +85,7 @@
                 <!-- Menu INFORMASI dengan Dropdown -->
                 <div class="relative group" id="informasi-dropdown">
                     <button
-                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-xs md:text-[13px] lg:text-sm uppercase flex items-center gap-1 {{ request()->routeIs('informasi.*') || request()->routeIs('pengumuman') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white' }}"
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-sm md:text-base uppercase flex items-center gap-1 {{ request()->routeIs('informasi.*') || request()->routeIs('pengumuman') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white' }}"
                         id="informasi-toggle">
                         INFORMASI
                         <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none"
@@ -119,14 +119,14 @@
                 </div>
                 <!-- Menu SPMB (Langsung) -->
                 <a href="{{ route('spmb.index') }}"
-                    class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-xs md:text-[13px] lg:text-sm uppercase {{ request()->routeIs('spmb.index') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white' }}">
+                    class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-sm md:text-base uppercase {{ request()->routeIs('spmb.index') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white' }}">
                     SPMB
                 </a>
 
                 <!-- Menu PORTAL (RDM & EMIS) -->
                 <div class="relative group" id="portal-dropdown">
                     <button
-                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-xs md:text-[13px] lg:text-sm uppercase flex items-center gap-1 hover:border-b-2 hover:border-white"
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-sm md:text-base uppercase flex items-center gap-1 hover:border-b-2 hover:border-white"
                         id="portal-toggle">
                         PORTAL
                         <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none"
@@ -153,7 +153,7 @@
                 <!-- Menu GALERI dengan Dropdown -->
                 <div class="relative group" id="galeri-dropdown">
                     <button
-                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-xs md:text-[13px] lg:text-sm uppercase flex items-center gap-1 {{ (request()->routeIs('galeri.*') || request()->routeIs('galeri')) ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}"
+                        class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-sm md:text-base uppercase flex items-center gap-1 {{ (request()->routeIs('galeri.*') || request()->routeIs('galeri')) ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}"
                         id="galeri-toggle">
                         GALERI
                         <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none"
@@ -178,7 +178,7 @@
                     </div>
                 </div>
                 <a href="{{ route('contact') }}"
-                    class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-xs md:text-[13px] lg:text-sm uppercase {{ request()->routeIs('contact') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}">
+                    class="text-white hover:text-gray-200 transition-colors duration-200 font-bold px-2 py-2 text-sm md:text-base uppercase {{ request()->routeIs('contact') ? 'border-b-2 border-white' : 'hover:border-b-2 hover:border-white border-b-2 border-transparent' }}">
                     KONTAK
                 </a>
                 <!-- Icon Search -->

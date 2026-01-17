@@ -35,7 +35,7 @@ class StudentAchievement extends Model
 
     public function scopeOrdered($query)
     {
-        return $query->orderBy('updated_at', 'desc')->orderBy('tanggal_prestasi', 'desc');
+        return $query->orderBy('updated_at', 'desc');
     }
 
     protected static function booted(): void

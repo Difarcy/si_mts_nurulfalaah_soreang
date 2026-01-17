@@ -43,7 +43,7 @@ class StudentAchievementController extends Controller
 
         switch ($request->get('sort', 'latest')) {
             case 'oldest':
-                $query->orderBy('tanggal_prestasi', 'asc');
+                $query->orderBy('updated_at', 'asc');
                 break;
             case 'title_asc':
                 $query->orderBy('judul', 'asc');
@@ -51,8 +51,10 @@ class StudentAchievementController extends Controller
             case 'title_desc':
                 $query->orderBy('judul', 'desc');
                 break;
+            case 'latest':
             default:
                 $query->orderBy('updated_at', 'desc');
+                break;
         }
 
         $prestasi = $query->paginate(15)->appends($request->query());

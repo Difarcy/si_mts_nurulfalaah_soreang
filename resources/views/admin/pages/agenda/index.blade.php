@@ -136,8 +136,9 @@
                                                             $start = \Carbon\Carbon::parse($item->waktu_mulai)->format('H.i');
                                                             $endTime = $item->waktu_selesai ? \Carbon\Carbon::parse($item->waktu_selesai)->format('H:i') : null;
                                                             $end = ($endTime && $endTime !== '00:00') ? str_replace(':', '.', $endTime) : 'Selesai';
+                                                            $hasEndTime = $endTime && $endTime !== '00:00';
                                                         @endphp
-                                                        {{ $start }} WIB – {{ $end }}
+                                                        {{ $start }} {{ $hasEndTime ? '– ' . $end . ' WIB' : 'WIB – Selesai' }}
                                                     </div>
                                                 @endif
                                                 @if($item->lokasi)

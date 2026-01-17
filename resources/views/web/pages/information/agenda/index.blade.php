@@ -61,9 +61,9 @@
                                         <!-- Konten -->
                                         <div class="w-full p-5 sm:p-6">
                                             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-3">
-                                                <h3
-                                                    class="text-base sm:text-xl font-bold text-gray-900 dark:text-slate-100">
-                                                    <a href="{{ route('informasi.agenda.show', $item->id) }}" class="hover:text-green-700 dark:hover:text-green-400 transition-colors">
+                                                <h3 class="text-base sm:text-xl font-bold text-gray-900 dark:text-slate-100">
+                                                    <a href="{{ route('informasi.agenda.show', $item->id) }}"
+                                                        class="hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                                         {{ $item->judul }}
                                                     </a>
                                                 </h3>
@@ -77,7 +77,8 @@
 
                                             <div class="space-y-2 mb-4">
                                                 @if($item->waktu_mulai || $item->waktu_selesai)
-                                                    <div class="flex items-start gap-2 text-xs sm:text-sm text-gray-600 dark:text-slate-400">
+                                                    <div
+                                                        class="flex items-start gap-2 text-xs sm:text-sm text-gray-600 dark:text-slate-400">
                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                             class="h-4 w-4 sm:h-5 sm:w-5 text-green-700 dark:text-green-400 shrink-0 mt-0.5"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,13 +91,15 @@
                                                                 $start = \Carbon\Carbon::parse($item->waktu_mulai)->format('H.i');
                                                                 $endTime = $item->waktu_selesai ? \Carbon\Carbon::parse($item->waktu_selesai)->format('H:i') : null;
                                                                 $end = ($endTime && $endTime !== '00:00') ? str_replace(':', '.', $endTime) : 'Selesai';
+                                                                $hasEndTime = $endTime && $endTime !== '00:00';
                                                             @endphp
-                                                            {{ $start }} WIB – {{ $end }}
+                                                            {{ $start }} {{ $hasEndTime ? '– ' . $end . ' WIB' : 'WIB – Selesai' }}
                                                         </span>
                                                     </div>
                                                 @endif
                                                 @if($item->lokasi)
-                                                    <div class="flex items-start gap-2 text-xs sm:text-sm text-gray-600 dark:text-slate-400">
+                                                    <div
+                                                        class="flex items-start gap-2 text-xs sm:text-sm text-gray-600 dark:text-slate-400">
                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                             class="h-4 w-4 sm:h-5 sm:w-5 text-green-700 dark:text-green-400 shrink-0 mt-0.5"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -112,7 +115,8 @@
                                             </div>
 
                                             @if($item->deskripsi)
-                                                <div class="text-xs sm:text-base text-gray-700 dark:text-slate-300 leading-relaxed text-justify line-clamp-3">
+                                                <div
+                                                    class="text-xs sm:text-base text-gray-700 dark:text-slate-300 leading-relaxed text-justify line-clamp-3">
                                                     {{ strip_tags($item->deskripsi) }}
                                                 </div>
                                             @endif
@@ -128,10 +132,12 @@
                         <div
                             class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-12 text-center">
                             @if(request('q'))
-                                <p class="text-sm sm:text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2">Hasil Pencarian Tidak
+                                <p class="text-sm sm:text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2">Hasil Pencarian
+                                    Tidak
                                     Ditemukan
                                 </p>
-                                <p class="text-xs sm:text-base text-slate-500 dark:text-slate-400">Tidak ada agenda yang sesuai dengan pencarian
+                                <p class="text-xs sm:text-base text-slate-500 dark:text-slate-400">Tidak ada agenda yang sesuai
+                                    dengan pencarian
                                     "<strong>{{ request('q') }}</strong>"</p>
                             @else
                                 <p class="text-sm sm:text-lg text-gray-500 dark:text-slate-400">Belum ada agenda</p>
@@ -148,8 +154,7 @@
                 @endphp
                 <!-- Premium Calendar Widget Design -->
                 <div class="p-4">
-                    <h3
-                        class="text-lg sm:text-xl font-bold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700 dark:text-green-500"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -159,8 +164,8 @@
                     </h3>
                     <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-gray-100 dark:border-slate-700 overflow-hidden p-1"
                         data-calendar-init="true" data-selected-month="{{ $selectedMonth }}"
-                        data-selected-year="{{ $selectedYear }}" data-now-year="{{ $now->year }}" data-now-month="{{ $now->month }}"
-                        data-now-day="{{ $now->day }}">
+                        data-selected-year="{{ $selectedYear }}" data-now-year="{{ $now->year }}"
+                        data-now-month="{{ $now->month }}" data-now-day="{{ $now->day }}">
 
                         <!-- Minimalist Header -->
                         <div id="calendar-header"
@@ -171,7 +176,8 @@
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-5 w-5 transform group-hover:-translate-x-0.5 transition-transform" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M15 19l-7-7 7-7" />
                                 </svg>
                             </button>
 
@@ -187,7 +193,8 @@
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-5 w-5 transform group-hover:translate-x-0.5 transition-transform" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M9 5l7 7-7 7" />
                                 </svg>
                             </button>
                         </div>
@@ -216,8 +223,8 @@
                                     <div class="aspect-square p-0.5">
                                         <div
                                             class="w-full h-full flex items-center justify-center text-base font-medium rounded-lg transition-all duration-300 cursor-pointer
-                                                        {{ $isCurrentMonth ? ($isSunday ? 'text-red-500 font-medium' : 'text-gray-700 dark:text-slate-300') : 'text-gray-300 dark:text-slate-600' }}
-                                                        {{ $isToday ? '!bg-gradient-to-br !from-green-600 !to-green-700 !text-white !font-bold shadow-lg shadow-green-200 dark:shadow-none scale-105' : '!hover:bg-green-200 dark:hover:bg-green-900/40 !hover:text-green-900 dark:hover:!text-green-200 !hover:font-semibold' }}">
+                                                                {{ $isCurrentMonth ? ($isSunday ? 'text-red-500 font-medium' : 'text-gray-700 dark:text-slate-300') : 'text-gray-300 dark:text-slate-600' }}
+                                                                {{ $isToday ? '!bg-gradient-to-br !from-green-600 !to-green-700 !text-white !font-bold shadow-lg shadow-green-200 dark:shadow-none scale-105' : '!hover:bg-green-200 dark:hover:bg-green-900/40 !hover:text-green-900 dark:hover:!text-green-200 !hover:font-semibold' }}">
                                             {{ $currentDateCalendar->day }}
                                         </div>
                                     </div>
@@ -244,7 +251,7 @@
                     'socialMediaFirst' => false,
                     'schoolProfile' => null
                 ])
+                </div>
             </div>
         </div>
-    </div>
 @endsection

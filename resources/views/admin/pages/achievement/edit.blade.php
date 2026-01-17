@@ -222,9 +222,9 @@
                     </div>
                     <div class="flex items-center justify-end gap-3 translate-y-2">
                         <a href="{{ route('cpanel.prestasi-siswa.index') }}" id="cancel-btn"
-                            class="inline-flex items-center justify-center px-3 py-1.5 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded">Batal</a>
+                            class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">Batal</a>
                         <button type="submit" id="publish-btn" disabled
-                            class="inline-flex items-center justify-center px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed rounded">Simpan</button>
+                            class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed rounded shadow-sm">Simpan</button>
                     </div>
                 </div>
             </div>

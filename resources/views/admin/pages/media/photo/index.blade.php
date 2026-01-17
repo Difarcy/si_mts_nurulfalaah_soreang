@@ -99,7 +99,7 @@
 
                 {{-- Form upload ke server --}}
                 <form action="{{ route('cpanel.foto-kegiatan.store') }}" method="POST" enctype="multipart/form-data"
-                    id="uploadForm">
+                    id="uploadForm" data-notify="loading">
                     @csrf
                     <div class="bg-white dark:bg-slate-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 flex-1 overflow-y-auto">
                         {{-- Header modal --}}
@@ -161,12 +161,12 @@
                     <div
                         class="bg-gray-50 dark:bg-slate-800/50 px-6 py-4 border-t border-gray-200 dark:border-slate-700 flex items-center justify-end gap-3">
                         <button type="button"
-                            class="js-close-upload-modal px-4 py-1.5 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">
+                            class="js-close-upload-modal inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">
                             Batal
                         </button>
                         {{-- Submit button (disabled hingga ada file) --}}
                         <button type="submit" id="submitBtn" disabled
-                            class="inline-flex items-center justify-center px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-600 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition-colors rounded">
+                            class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-green-700 hover:bg-green-600 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed transition-colors rounded">
                             <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>

@@ -35,13 +35,12 @@
                     </div>
                 @endif
 
-                <div
-                    class="prose prose-base max-w-none dark:prose-invert animate-on-scroll text-black dark:text-slate-100">
+                <div class="prose prose-base max-w-none dark:prose-invert animate-on-scroll text-black dark:text-slate-100">
                     @if($schoolProfile->deskripsi_sekolah)
                         {!! $schoolProfile->deskripsi_sekolah !!}
                     @else
                         <div class="flex items-center justify-center py-12">
-                            <p class="text-sm sm:text-base font-semibold text-gray-400 dark:text-slate-500 text-center">
+                            <p class="text-base font-semibold text-gray-400 dark:text-slate-500 text-center">
                                 Belum Ada Deskripsi Profil Sekolah
                             </p>
                         </div>
@@ -61,7 +60,7 @@
                                 {!! $schoolProfile->sejarah !!}
                             @else
                                 <div class="flex items-center justify-center py-12">
-                                    <p class="text-sm sm:text-base font-semibold text-gray-400 dark:text-slate-500 text-center">
+                                    <p class="text-base font-semibold text-gray-400 dark:text-slate-500 text-center">
                                         Belum Ada Sejarah Singkat Sekolah
                                     </p>
                                 </div>
@@ -82,7 +81,7 @@
                     'articleEmptyMessage' => 'Belum ada berita',
                     'schoolProfile' => null
                 ])
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 @endsection

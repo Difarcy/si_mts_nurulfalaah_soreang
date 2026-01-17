@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\CommentLike;
+use App\Models\InfoText;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -138,14 +139,7 @@ class CommentController extends Controller
             $likedCommentIds = $likesQuery->pluck('comment_id')->all();
         }
 
-        $currentUser = Auth::user();
         $defaultReplyBy = 'Admin';
-
-        if ($currentUser) {
-            $name = $currentUser->name ?: $currentUser->username;
-            // Jika namanya Administrator, ganti jadi Admin. Jika bukan, gunakan nama asli.
-            $defaultReplyBy = ($name === 'Administrator') ? 'Admin' : $name;
-        }
 
         return view('admin.pages.comments.show', compact('comment', 'threadRoot', 'commentsByParent', 'likedCommentIds', 'defaultReplyBy'));
     }
@@ -170,12 +164,14 @@ class CommentController extends Controller
             }
         }
 
+        $adminEmail = InfoText::where('key', 'site_email')->value('value') ?: 'admin@local';
+
         Comment::create([
             'post_id' => $comment->post_id,
             'parent_id' => $parentId,
             'is_admin' => true,
             'name' => $validated['admin_reply_by'],
-            'email' => 'admin@local',
+            'email' => $adminEmail,
             'comment' => $validated['admin_reply'],
             'is_approved' => true,
             'is_read' => true,

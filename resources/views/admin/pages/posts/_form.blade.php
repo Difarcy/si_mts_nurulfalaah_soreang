@@ -391,8 +391,8 @@
 
 
         <div class="flex items-center justify-end gap-3">
-            <a href="{{ route('cpanel.publikasi.index', request()->query()) }}" id="cancel-btn" class="inline-flex items-center justify-center px-3 py-1.5 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">Batal</a>
-            <x-button type="submit" id="submit-btn" :disabled="!$post->id" class="focus:ring-0! focus:ring-offset-0! px-3! py-1.5! text-base! shadow-sm">
+            <a href="{{ route('cpanel.publikasi.index', request()->query()) }}" id="cancel-btn" class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">Batal</a>
+            <x-button type="submit" id="submit-btn" :disabled="!$post->id" class="min-w-20 sm:min-w-25 focus:ring-0! focus:ring-offset-0! px-3! py-1.5! sm:px-4! text-base! shadow-sm">
                 <span id="submit-btn-text">{{ $post->id ? 'Simpan' : 'Publish' }}</span>
             </x-button>
         </div>

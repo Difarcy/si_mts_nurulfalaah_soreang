@@ -37,7 +37,7 @@
                     </a>
                 </h3>
                 @if($post->excerpt)
-                    <p class="text-xs sm:text-base text-gray-600 dark:text-slate-400 line-clamp-2 mb-1 text-justify">
+                    <p class="text-base text-gray-600 dark:text-slate-400 line-clamp-2 mb-1 text-justify">
                         {{ $post->excerpt }}
                     </p>
                 @endif

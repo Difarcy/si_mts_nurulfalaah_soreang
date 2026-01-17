@@ -234,7 +234,7 @@
                             <!-- Action Button -->
                             <div class="flex justify-end pt-4 border-t border-gray-200 dark:border-slate-700 mt-6">
                                 <button type="submit" id="ppdb-save-btn"
-                                    class="px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-all duration-200 shadow-sm hover:shadow-md rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 min-w-25 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
+                                    class="px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-all duration-200 shadow-sm hover:shadow-md rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 min-w-20 sm:min-w-25 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
                                     disabled>
                                     Simpan
                                 </button>

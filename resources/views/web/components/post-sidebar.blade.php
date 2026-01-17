@@ -22,11 +22,11 @@
 ])
 
 @php
-    $footerFacebook = \App\Models\InfoText::where('key', 'footer_facebook_url')->first();
-    $footerInstagram = \App\Models\InfoText::where('key', 'footer_instagram_url')->first();
-    $footerTwitter = \App\Models\InfoText::where('key', 'footer_twitter_url')->first();
-    $footerYoutube = \App\Models\InfoText::where('key', 'footer_youtube_url')->first();
-    $footerTiktok = \App\Models\InfoText::where('key', 'footer_tiktok_url')->first();
+    $footerFacebook = \App\Models\InfoText::where('key', '=', 'footer_facebook_url', 'and')->first();
+    $footerInstagram = \App\Models\InfoText::where('key', '=', 'footer_instagram_url', 'and')->first();
+    $footerTwitter = \App\Models\InfoText::where('key', '=', 'footer_twitter_url', 'and')->first();
+    $footerYoutube = \App\Models\InfoText::where('key', '=', 'footer_youtube_url', 'and')->first();
+    $footerTiktok = \App\Models\InfoText::where('key', '=', 'footer_tiktok_url', 'and')->first();
 
     $facebookUrlValue = $footerFacebook?->value ?? route('social-media-unavailable');
     $instagramUrlValue = $footerInstagram?->value ?? route('social-media-unavailable');
@@ -63,10 +63,10 @@
                                     {{ $article->title }}
                                 </h4>
                                 <p
-                                    class="text-sm sm:text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
+                                    class="text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
                                     {{ \Illuminate\Support\Str::limit(strip_tags($article->excerpt ?? $article->body), 100, '...') }}
                                 </p>
-                                <p class="text-xs sm:text-sm text-gray-500 dark:text-slate-400">
+                                <p class="text-xs sm:text-xs text-gray-500 dark:text-slate-400">
                                     {{ $dateObj->translatedFormat('d F Y') }} | {{ $dateObj->format('H.i') }} WIB
                                 </p>
                             </a>
@@ -120,10 +120,10 @@
                                     {{ $article->title }}
                                 </h4>
                                 <p
-                                    class="text-sm sm:text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
+                                    class="text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
                                     {{ \Illuminate\Support\Str::limit(strip_tags($article->excerpt ?? $article->body), 100, '...') }}
                                 </p>
-                                <p class="text-xs sm:text-sm text-gray-500 dark:text-slate-400">
+                                <p class="text-xs sm:text-xs text-gray-500 dark:text-slate-400">
                                     {{ $dateObj->translatedFormat('d F Y') }} | {{ $dateObj->format('H.i') }} WIB
                                 </p>
                             </a>
@@ -162,10 +162,10 @@
                                     {{ $info->title ?? $info->judul }}
                                 </h4>
                                 <p
-                                    class="text-sm sm:text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
+                                    class="text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
                                     {{ \Illuminate\Support\Str::limit(strip_tags($info->isi ?? ($info->body ?? '')), 100, '...') }}
                                 </p>
-                                <p class="text-xs sm:text-sm text-gray-500 dark:text-slate-400">
+                                <p class="text-xs sm:text-xs text-gray-500 dark:text-slate-400">
                                     {{ $dateObj->translatedFormat('d F Y') }} | {{ $dateObj->format('H.i') }} WIB
                                 </p>
                             </a>
@@ -226,17 +226,18 @@
                                             <h4 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-slate-100 mb-1 line-clamp-2 hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                                 {{ $judul }}
                                             </h4>
-                                            <p class="text-sm sm:text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
+                                            <p class="text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
                                                 {{ \Illuminate\Support\Str::limit(strip_tags($isObject ? $item->deskripsi : ($item['deskripsi'] ?? '')), 80, '...') }}
                                             </p>
-                                            <p class="text-xs sm:text-sm text-gray-500 dark:text-slate-400">
+                                            <p class="text-xs sm:text-xs text-gray-500 dark:text-slate-400">
                                                 @if($waktuMulai)
                                                     @php
                                                         $start = \Carbon\Carbon::parse($waktuMulai)->format('H.i');
                                                         $endTime = $waktuSelesai ? \Carbon\Carbon::parse($waktuSelesai)->format('H:i') : null;
                                                         $end = ($endTime && $endTime !== '00:00') ? str_replace(':', '.', $endTime) : 'Selesai';
+                                                        $hasEndTime = $endTime && $endTime !== '00:00';
                                                     @endphp
-                                                    {{ $start }} WIB – {{ $end }}
+                                                    {{ $start }} {{ $hasEndTime ? '– ' . $end . ' WIB' : 'WIB – Selesai' }}
                                                 @endif
                                             </p>
                                         </div>
@@ -252,18 +253,19 @@
                                         {{ $judul }}
                                     </h4>
                                     <p
-                                        class="text-sm sm:text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
+                                        class="text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
                                         {{ \Illuminate\Support\Str::limit(strip_tags($isObject ? $item->deskripsi : ($item['deskripsi'] ?? '')), 100, '...') }}
                                     </p>
-                                    <p class="text-xs sm:text-sm text-gray-500 dark:text-slate-400">
+                                    <p class="text-xs sm:text-xs text-gray-500 dark:text-slate-400">
                                         {{ $dateObj->translatedFormat('d F Y') }}
                                         @if($waktuMulai)
                                             @php
                                                 $start = \Carbon\Carbon::parse($waktuMulai)->format('H.i');
                                                 $endTime = $waktuSelesai ? \Carbon\Carbon::parse($waktuSelesai)->format('H:i') : null;
                                                 $end = ($endTime && $endTime !== '00:00') ? str_replace(':', '.', $endTime) : 'Selesai';
+                                                $hasEndTime = $endTime && $endTime !== '00:00';
                                             @endphp
-                                            | {{ $start }} WIB – {{ $end }}
+                                            | {{ $start }} {{ $hasEndTime ? '– ' . $end . ' WIB' : 'WIB – Selesai' }}
                                         @endif
                                     </p>
                                 </a>
@@ -309,13 +311,13 @@
                         <p class="text-base sm:text-lg text-gray-700 dark:text-slate-200 font-bold text-center">
                             {{ $schoolProfile->kepala_sekolah_nama ?? 'Kepala Madrasah' }}
                         </p>
-                        <p class="text-xs sm:text-sm text-gray-600 dark:text-slate-400 mt-1 text-center">
+                        <p class="text-xs sm:text-xs text-gray-600 dark:text-slate-400 mt-1 text-center">
                             - Kepala Madrasah -
                         </p>
                     </div>
                     <div class="mb-0">
                         <div
-                            class="prose prose-sm dark:prose-invert max-w-none text-sm sm:text-base text-gray-700 dark:text-slate-300 leading-relaxed text-justify line-clamp-5 [&>p]:mb-0 [&>p]:inline [&>p+p]:before:content-['_']">
+                            class="prose prose-sm dark:prose-invert max-w-none text-base text-gray-700 dark:text-slate-300 leading-relaxed text-justify line-clamp-5 [&>p]:mb-0 [&>p]:inline [&>p+p]:before:content-['_']">
                             @if($schoolProfile->kepala_sekolah_sambutan)
                                 {!! $schoolProfile->kepala_sekolah_sambutan !!}
                             @else

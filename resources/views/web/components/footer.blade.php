@@ -5,7 +5,7 @@
             <!-- Logo dan Nama Sekolah -->
             @php
                 // Use ViewServiceProvider shared data
-                $visualIdentity = $visualIdentity ?? \App\Models\VisualIdentity::first();
+                $visualIdentity = $visualIdentity ?? \App\Models\VisualIdentity::first(['*']);
                 $logoPath = $visualIdentity && $visualIdentity->logo_path ? ('storage/' . $visualIdentity->logo_path) : 'images/logo/logo.png';
                 // Cache busting: untuk storage gunakan updated_at, untuk file default gunakan filemtime
                 if ($visualIdentity && $visualIdentity->logo_path) {
@@ -51,18 +51,18 @@
                     </a>
                 </div>
                 @php
-                    $footerDescription = $siteFooterDescription ?? \App\Models\InfoText::where('key', 'site_footer_description')->first();
+                    $footerDescription = $siteFooterDescription ?? \App\Models\InfoText::where('key', '=', 'site_footer_description', 'and')->first(['*']);
                 @endphp
                 <p class="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed mb-4">
                     {{ $footerDescription?->value ?? '' }}
                 </p>
                 @php
                     // Use ViewServiceProvider shared data (fallback to direct query if not available)
-                    $footerFacebook = $facebookUrl ?? \App\Models\InfoText::where('key', 'footer_facebook_url')->first();
-                    $footerInstagram = $instagramUrl ?? \App\Models\InfoText::where('key', 'footer_instagram_url')->first();
-                    $footerTwitter = $twitterUrl ?? \App\Models\InfoText::where('key', 'footer_twitter_url')->first();
-                    $footerYoutube = $youtubeUrl ?? \App\Models\InfoText::where('key', 'footer_youtube_url')->first();
-                    $footerTiktok = $tiktokUrl ?? \App\Models\InfoText::where('key', 'footer_tiktok_url')->first();
+                    $footerFacebook = $facebookUrl ?? \App\Models\InfoText::where('key', '=', 'footer_facebook_url', 'and')->first(['*']);
+                    $footerInstagram = $instagramUrl ?? \App\Models\InfoText::where('key', '=', 'footer_instagram_url', 'and')->first(['*']);
+                    $footerTwitter = $twitterUrl ?? \App\Models\InfoText::where('key', '=', 'footer_twitter_url', 'and')->first(['*']);
+                    $footerYoutube = $youtubeUrl ?? \App\Models\InfoText::where('key', '=', 'footer_youtube_url', 'and')->first(['*']);
+                    $footerTiktok = $tiktokUrl ?? \App\Models\InfoText::where('key', '=', 'footer_tiktok_url', 'and')->first(['*']);
                     $facebookUrlValue = ($footerFacebook && is_object($footerFacebook) && $footerFacebook->value) ? $footerFacebook->value : (is_string($footerFacebook) ? $footerFacebook : route('social-media-unavailable'));
                     $instagramUrlValue = ($footerInstagram && is_object($footerInstagram) && $footerInstagram->value) ? $footerInstagram->value : (is_string($footerInstagram) ? $footerInstagram : route('social-media-unavailable'));
                     $twitterUrlValue = ($footerTwitter && is_object($footerTwitter) && $footerTwitter->value) ? $footerTwitter->value : (is_string($footerTwitter) ? $footerTwitter : route('social-media-unavailable'));
@@ -120,7 +120,7 @@
 
             <!-- Menu Cepat -->
             <div>
-                <h3 class="text-sm sm:text-lg font-bold mb-4">Menu Cepat</h3>
+                <h3 class="text-sm sm:text-xl font-bold mb-4">Menu Cepat</h3>
                 <ul class="space-y-2">
                     <li>
                         <a href="{{ route('web.home') }}"
@@ -151,7 +151,7 @@
 
             <!-- Layanan Publik -->
             <div>
-                <h3 class="text-sm sm:text-lg font-bold mb-4">Layanan Publik</h3>
+                <h3 class="text-sm sm:text-xl font-bold mb-4">Layanan Publik</h3>
                 <ul class="space-y-2">
                     <li>
                         <a href="{{ route('informasi.berita') }}"
@@ -182,7 +182,7 @@
 
             <!-- Kontak -->
             <div>
-                <h3 class="text-sm sm:text-lg font-bold mb-4">Kontak</h3>
+                <h3 class="text-sm sm:text-xl font-bold mb-4">Kontak</h3>
 
                 <!-- Footer Search -->
                 <div id="footer-search-container" class="relative mb-4" data-search-url="{{ route('search.global') }}"
@@ -200,9 +200,9 @@
                 <ul class="space-y-3">
                     @php
                         // Use ViewServiceProvider shared data (fallback to direct query if not available)
-                        $footerAlamat = $alamat ?? \App\Models\InfoText::where('key', 'site_address')->first();
-                        $footerEmail = $email ?? \App\Models\InfoText::where('key', 'site_email')->first();
-                        $footerWhatsapp = $whatsapp ?? \App\Models\InfoText::where('key', 'site_whatsapp')->first();
+                        $footerAlamat = $alamat ?? \App\Models\InfoText::where('key', '=', 'site_address', 'and')->first(['*']);
+                        $footerEmail = $email ?? \App\Models\InfoText::where('key', '=', 'site_email', 'and')->first(['*']);
+                        $footerWhatsapp = $whatsapp ?? \App\Models\InfoText::where('key', '=', 'site_whatsapp', 'and')->first(['*']);
                     @endphp
                     @if($footerAlamat && $footerAlamat->value)
                         <li class="flex items-start gap-2">

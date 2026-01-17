@@ -82,7 +82,7 @@
 
                     <div class="relative">
                         <select id="sort-select" name="sort"
-                            class=\"bg-white dark:bg-slate-900 border-2 border-gray-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 px-4 p-2 sm:py-1.5 pr-10 text-base font-semibold focus:border-green-600 focus:outline-none appearance-none cursor-pointer min-w-35 rounded\">
+                            class="bg-white dark:bg-slate-900 border-2 border-gray-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 px-4 p-2 sm:py-1.5 pr-10 text-base font-semibold focus:border-green-600 focus:outline-none appearance-none cursor-pointer min-w-35 rounded">
                             <option value="latest" {{ request('sort', 'latest') === 'latest' ? 'selected' : '' }}>Terbaru
                             </option>
                             <option value="oldest" {{ request('sort') === 'oldest' ? 'selected' : '' }}>Terlama</option>

@@ -29,13 +29,30 @@ class ChatbotContextService
         $branding = VisualIdentity::first(['tagline', 'judul', 'deskripsi']);
 
         // 2. Ambil Profil & Pimpinan
-        $profile = SchoolProfile::first(['nama_sekolah', 'kepala_sekolah_nama', 'visi', 'misi']);
+        $profile = SchoolProfile::first(['nama_sekolah', 'kepala_sekolah_nama', 'visi', 'misi', 'sejarah', 'deskripsi_sekolah']);
 
         // 3. Ambil Data Akademik & Info Terkini
-        $latestNews = Post::published()->latest('published_at')->take(3)->pluck('title')->toArray();
-        $announcements = Announcement::where('status', '=', 'publish')->latest()->take(2)->pluck('judul')->toArray();
-        $agendas = Schedule::where('status', '=', 'publish')->where('tanggal_mulai', '>=', now()->toDateString())->latest()->take(2)->pluck('judul')->toArray();
-        $achievements = StudentAchievement::where('is_active', '=', true)->latest()->take(3)->pluck('judul')->toArray();
+        // 3. Ambil Data Akademik & Info Terkini (Lebih Detail)
+        $latestNews = Post::published()
+            ->latest('published_at')
+            ->take(3)
+            ->get(['title', 'published_at', 'excerpt', 'type']);
+
+        $announcements = Announcement::where('status', '=', 'publish')
+            ->latest()
+            ->take(2)
+            ->get(['judul', 'isi']);
+
+        $agendas = Schedule::where('status', '=', 'publish')
+            ->where('tanggal_mulai', '>=', now()->toDateString())
+            ->orderBy('tanggal_mulai', 'asc')
+            ->take(3)
+            ->get(['judul', 'tanggal_mulai', 'lokasi']);
+
+        $achievements = StudentAchievement::where('is_active', '=', true)
+            ->latest()
+            ->take(5)
+            ->get(['judul', 'nama_siswa', 'tingkat_prestasi', 'jenis_prestasi']);
 
         // 4. Ambil Data SPMB (Pendaftaran)
         $spmb = SpmbSetting::first(['*']);
@@ -68,11 +85,55 @@ class ChatbotContextService
         if ($site['address'])
             $context .= "- Alamat: {$site['address']}\n";
 
-        // Berita & Pengumuman (Jujur jika kosong)
-        $context .= "- Berita Terbaru: " . (!empty($latestNews) ? implode(', ', $latestNews) : 'Belum ada berita baru.') . "\n";
-        $context .= "- Pengumuman: " . (!empty($announcements) ? implode(', ', $announcements) : 'Tidak ada pengumuman aktif.') . "\n";
-        $context .= "- Agenda Terdekat: " . (!empty($agendas) ? implode(', ', $agendas) : 'Belum ada agenda terjadwal.') . "\n";
-        $context .= "- Prestasi: " . (!empty($achievements) ? implode(', ', $achievements) : 'Belum ada data prestasi terbaru.') . "\n\n";
+        // Data Berita (Lebih Detail)
+        $context .= "=== BERITA & ARTIKEL TERBARU ===\n";
+        if ($latestNews->isEmpty()) {
+            $context .= "Belum ada berita terbaru.\n";
+        } else {
+            foreach ($latestNews as $news) {
+                $date = $news->published_at ? $news->published_at->isoFormat('D MMMM Y') : '-';
+                $type = ucfirst($news->type);
+                $desc = \Illuminate\Support\Str::limit($news->excerpt, 100);
+                $context .= "- [{$date}] {$type}: {$news->title} ({$desc})\n";
+            }
+        }
+        $context .= "\n";
+
+        // Data Pengumuman
+        $context .= "=== PENGUMUMAN PENTING ===\n";
+        if ($announcements->isEmpty()) {
+            $context .= "Tidak ada pengumuman aktif.\n";
+        } else {
+            foreach ($announcements as $info) {
+                $desc = \Illuminate\Support\Str::limit(strip_tags($info->isi), 100);
+                $context .= "- {$info->judul}: {$desc}\n";
+            }
+        }
+        $context .= "\n";
+
+        // Agenda
+        $context .= "=== AGENDA MENDATANG ===\n";
+        if ($agendas->isEmpty()) {
+            $context .= "Belum ada agenda terjadwal.\n";
+        } else {
+            foreach ($agendas as $agenda) {
+                $date = $agenda->tanggal_mulai ? Carbon::parse($agenda->tanggal_mulai)->isoFormat('D MMMM Y') : '-';
+                $loc = $agenda->lokasi ? " di {$agenda->lokasi}" : "";
+                $context .= "- {$date}: {$agenda->judul}{$loc}\n";
+            }
+        }
+        $context .= "\n";
+
+        // Prestasi
+        $context .= "=== PRESTASI SISWA KEBANGGAAN ===\n";
+        if ($achievements->isEmpty()) {
+            $context .= "Belum ada data prestasi terbaru.\n";
+        } else {
+            foreach ($achievements as $ach) {
+                $context .= "- {$ach->judul} oleh {$ach->nama_siswa} (Tingkat: {$ach->tingkat_prestasi}, Jenis: {$ach->jenis_prestasi})\n";
+            }
+        }
+        $context .= "\n";
 
         // Detail SPMB (Sangat Akurat)
         if ($spmb) {
@@ -96,6 +157,16 @@ class ChatbotContextService
         $vision = InfoText::where('key', '=', 'site_vision')->value('value');
         if ($vision) {
             $context .= "=== VISI & MISI SEKOLAH ===\n" . strip_tags($vision) . "\n\n";
+        } elseif ($profile && $profile->visi) {
+            // Fallback jika InfoText kosong tapi di profil ada
+            $context .= "=== VISI & MISI SEKOLAH ===\n";
+            $context .= "Visi: " . strip_tags($profile->visi) . "\n";
+            $context .= "Misi: " . strip_tags($profile->misi) . "\n\n";
+        }
+
+        // Tambahkan Sejarah
+        if ($profile && $profile->sejarah) {
+            $context .= "=== SEJARAH & LATAR BELAKANG SEKOLAH ===\n" . strip_tags($profile->sejarah) . "\n\n";
         }
 
         $context .= "=== PUSAT PENGETAHUAN & BIJAKSANA (VALUES) ===\n";
@@ -110,6 +181,24 @@ class ChatbotContextService
             foreach ($contacts as $c)
                 $context .= "- {$c->label}: {$c->nilai}\n";
             $context .= "\n";
+        }
+
+        // 7. Tambahan FAQ SPMB & Galeri (Agar lebih pintar)
+        $faqs = SpmbFaq::orderBy('urutan')->get(['question', 'answer']);
+        if (!$faqs->isEmpty()) {
+            $context .= "=== PERTANYAAN UMUM (FAQ) SEPUTAR SPMB ===\n";
+            foreach ($faqs as $faq) {
+                $answer = strip_tags($faq->answer);
+                $context .= "T: {$faq->question}\nJ: {$answer}\n";
+            }
+            $context .= "\n";
+        }
+
+        // Info Galeri Singkat
+        $latestPhotos = \App\Models\ActivityPhoto::where('is_active', true)->latest()->take(3)->pluck('judul')->toArray();
+        if (!empty($latestPhotos)) {
+            $context .= "=== DOKUMENTASI KEGIATAN TERBARU ===\n";
+            $context .= "Kami aktif mendokumentasikan kegiatan sekolah, diantaranya: " . implode(', ', $latestPhotos) . ".\n\n";
         }
 
         $context .= "INSTRUKSI PENTING:\n";

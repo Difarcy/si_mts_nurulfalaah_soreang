@@ -22,8 +22,7 @@
                 @else
                     <div
                         class="w-full min-h-80 bg-gray-200 dark:bg-slate-700 rounded-xl flex items-center justify-center animate-on-scroll">
-                        <span
-                            class="text-sm sm:text-base text-gray-400 dark:text-slate-500 font-semibold text-center px-4">Belum
+                        <span class="text-base text-gray-400 dark:text-slate-500 font-semibold text-center px-4">Belum
                             Ada Struktur
                             Organisasi</span>
                     </div>
@@ -40,7 +39,7 @@
                     'articleEmptyMessage' => 'Belum ada berita',
                     'schoolProfile' => null
                 ])
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 @endsection

@@ -104,15 +104,7 @@ window.initCommentDetail = function (options = {}) {
         });
     }
 
-    const replyBody = document.getElementById('reply-body');
-    if (replyBody) {
-        replyBody.addEventListener('click', function (e) {
-            // Don't block clicks on emoji trigger button
-            if (!e.target.closest('#emoji-trigger-btn')) {
-                e.stopPropagation();
-            }
-        });
-    }
+
 
     // Store listener functions globally to avoid duplicates
     let emojiPickerListeners = {
@@ -177,7 +169,6 @@ window.initCommentDetail = function (options = {}) {
                     replyTextarea.value = (before + emoji + after);
                     replyTextarea.selectionStart = replyTextarea.selectionEnd = start + emoji.length;
                     replyTextarea.focus({ preventScroll: true });
-                    // Don't hide emoji picker - let user select multiple emojis
                 }
             }, { once: false });
         };
@@ -242,14 +233,7 @@ window.initCommentDetail = function (options = {}) {
         emojiPickerListeners.closeOutside = closeEmojiPickerOutside;
     }
 
-    // Show loading on form submit
-    const forms = document.querySelectorAll('form[action*="reply"]');
-    forms.forEach(form => {
-        form.addEventListener('submit', function () {
-            const loadingModal = document.getElementById('loading-modal');
-            if (loadingModal) loadingModal.classList.remove('hidden');
-        });
-    });
+
 
     // Auto open if there are errors (after reload)
     if (hasErrors) {

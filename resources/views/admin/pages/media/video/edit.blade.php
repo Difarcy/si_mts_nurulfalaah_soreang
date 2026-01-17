@@ -36,9 +36,9 @@
                             <span class="text-red-600 dark:text-red-500">*</span></label>
                         <div class="relative">
                             <input type="text" name="judul" id="judul" value="{{ old('judul', $activityVideo->judul) }}"
-                                required maxlength="255"
-                                class=\"w-full border-2 border-gray-200 dark:border-slate-600 px-3 py-1.5 text-base bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-green-600 focus:outline-none rounded\"
-                                placeholder="Masukan Judul Video">
+                                required maxlength="255" class="w-full border-2 border-gray-200 dark:border-slate-600 px-3
+                                    py-1.5 text-base bg-white dark:bg-slate-900 text-slate-900 dark:text-white
+                                    focus:border-green-600 focus:outline-none rounded" placeholder="Masukan Judul Video">
                         </div>
                         @error('judul')
                             <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
@@ -66,11 +66,11 @@
 
                     <div class="pt-4 border-t border-gray-200 dark:border-slate-700 flex items-center justify-end gap-3">
                         <a href="{{ route('cpanel.activity-videos.index') }}" id="cancel-btn"
-                            class="inline-flex items-center justify-center px-3 py-1.5 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">
+                            class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">
                             Batal
                         </a>
                         <button type="submit" id="submit-btn" disabled
-                            class="inline-flex items-center justify-center px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-colors rounded opacity-50 cursor-not-allowed">
+                            class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-colors rounded opacity-50 cursor-not-allowed shadow-sm">
                             Simpan
                         </button>
                     </div>

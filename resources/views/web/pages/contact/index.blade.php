@@ -42,8 +42,7 @@
                                             $formattedWa = "+62 " . $wa;
                                         }
                                     @endphp
-                                    <span
-                                        class="text-black dark:text-slate-300 text-sm sm:text-base">{{ $formattedWa }}</span>
+                                    <span class="text-black dark:text-slate-300 text-base">{{ $formattedWa }}</span>
                                 </li>
                             @endif
                             @if($sitePhone)
@@ -67,8 +66,7 @@
                                             $formattedPh = "+62 " . $ph;
                                         }
                                     @endphp
-                                    <span
-                                        class="text-black dark:text-slate-300 text-sm sm:text-base">{{ $formattedPh }}</span>
+                                    <span class="text-black dark:text-slate-300 text-base">{{ $formattedPh }}</span>
                                 </li>
                             @endif
                             @if($siteEmail)
@@ -80,7 +78,7 @@
                                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                     </div>
-                                    <span class="text-black dark:text-slate-300 text-sm sm:text-base">{{ $siteEmail }}</span>
+                                    <span class="text-black dark:text-slate-300 text-base">{{ $siteEmail }}</span>
                                 </li>
                             @endif
                         </ul>
@@ -99,7 +97,7 @@
                                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
-                                <p class="text-black dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-62.5">
+                                <p class="text-black dark:text-slate-100 text-base leading-relaxed max-w-62.5">
                                     {!! nl2br(e($siteAddress)) !!}
                                 </p>
                             </div>
@@ -112,8 +110,8 @@
                     <!-- Facebook -->
                     <a href="{{ $socialFacebook }}" target="_blank" rel="noopener noreferrer"
                         class="group w-10 h-10 sm:w-14 sm:h-14 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300 rounded-none overflow-hidden">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 group-hover:scale-110 transition-all duration-300" fill="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 group-hover:scale-110 transition-all duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                         </svg>
@@ -121,8 +119,8 @@
                     <!-- Instagram -->
                     <a href="{{ $socialInstagram }}" target="_blank" rel="noopener noreferrer"
                         class="group w-10 h-10 sm:w-14 sm:h-14 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:border-pink-200 dark:hover:border-pink-800 transition-all duration-300 rounded-none overflow-hidden">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-pink-600 group-hover:scale-110 transition-all duration-300" fill="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-pink-600 group-hover:scale-110 transition-all duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-2.5a1 1 0 110 2 1 1 0 010-2z" />
                         </svg>
@@ -131,8 +129,8 @@
                     <a href="{{ $socialTwitter }}" target="_blank" rel="noopener noreferrer"
                         class="group w-10 h-10 sm:w-14 sm:h-14 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-slate-600 transition-all duration-300 rounded-none overflow-hidden"
                         aria-label="X (Twitter)">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black dark:text-white group-hover:scale-110 transition-all duration-300" fill="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black dark:text-white group-hover:scale-110 transition-all duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
@@ -140,8 +138,8 @@
                     <!-- YouTube -->
                     <a href="{{ $socialYoutube }}" target="_blank" rel="noopener noreferrer"
                         class="group w-10 h-10 sm:w-14 sm:h-14 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-red-50 dark:hover:bg-red-900/20 hover:border-red-200 dark:hover:border-red-800 transition-all duration-300 rounded-none overflow-hidden">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-600 group-hover:scale-110 transition-all duration-300" fill="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-red-600 group-hover:scale-110 transition-all duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
                         </svg>
@@ -149,8 +147,8 @@
                     <!-- TikTok -->
                     <a href="{{ $socialTiktok }}" target="_blank" rel="noopener noreferrer"
                         class="group w-10 h-10 sm:w-14 sm:h-14 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-slate-700 hover:border-gray-300 dark:hover:border-slate-600 transition-all duration-300 rounded-none overflow-hidden">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black dark:text-white group-hover:scale-110 transition-all duration-300" fill="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-black dark:text-white group-hover:scale-110 transition-all duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                         </svg>
@@ -164,25 +162,25 @@
                     @csrf
                     <input type="text" name="name" value="{{ old('name') }}" placeholder="Nama Lengkap" autocomplete="name"
                         required
-                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none">
+                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none">
                     @error('name') <p class="text-red-500 text-xs italic">{{ $message }}</p> @enderror
 
                     <input type="email" name="email" value="{{ old('email') }}" placeholder="Alamat Email"
                         autocomplete="email" required
-                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none">
+                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none">
                     @error('email') <p class="text-red-500 text-xs italic">{{ $message }}</p> @enderror
 
                     <input type="text" name="phone" value="{{ old('phone') }}" placeholder="Nomor Telepon / WhatsApp"
                         autocomplete="tel"
-                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none">
+                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none">
                     @error('phone') <p class="text-red-500 text-xs italic">{{ $message }}</p> @enderror
 
                     <textarea name="message" rows="8" placeholder="Tulis pesan Anda di sini..." required
-                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none resize-none">{{ old('message') }}</textarea>
+                        class="w-full border border-gray-300 dark:border-slate-600 p-3 text-base focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white dark:bg-slate-800 rounded-none resize-none">{{ old('message') }}</textarea>
                     @error('message') <p class="text-red-500 text-xs italic">{{ $message }}</p> @enderror
 
                     <button type="submit"
-                        class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-6 sm:px-8 text-sm sm:text-base uppercase transition-colors rounded-none">
+                        class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-6 sm:px-8 text-base uppercase transition-colors rounded-none">
                         KIRIM PESAN
                     </button>
                 </form>

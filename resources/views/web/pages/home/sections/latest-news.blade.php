@@ -105,7 +105,7 @@
                 </div>
 
                 <h2
-                    class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-3 animate-on-scroll">
+                    class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-3 animate-on-scroll">
                     <span class="w-px h-6 sm:h-8 bg-green-700 dark:bg-green-500"></span>
                     Berita Terbaru
                 </h2>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="w-full p-4 flex flex-col grow">
                                 <h3
-                                    class="text-sm sm:text-lg font-bold text-gray-900 dark:text-slate-100 mb-1 line-clamp-2 hover:text-green-700 dark:hover:text-green-400 transition-colors">
+                                    class="text-sm sm:text-lg md:text-xl font-bold text-gray-900 dark:text-slate-100 mb-1 line-clamp-2 hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                     <a href="{{ route('informasi.show', ['type' => $item->type, 'slug' => $item->slug]) }}"
                                         class="hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                         {{ $item->title }}
@@ -143,7 +143,7 @@
                                     {{ $item->excerpt }}
                                 </p>
                                 <div class="mt-auto flex items-center justify-between">
-                                    <p class="text-[10px] sm:text-sm text-gray-500 dark:text-slate-400">
+                                    <p class="text-xs sm:text-xs text-gray-500 dark:text-slate-400">
                                         {{ $date }} | {{ $time }}
                                     </p>
                                     <a href="{{ route('informasi.show', ['type' => $item->type, 'slug' => $item->slug]) }}"
@@ -201,7 +201,7 @@
                 <!-- Artikel -->
                 <div class="mt-6 animate-on-scroll">
                     <h2
-                        class="text-lg sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-3">
+                        class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-3">
                         <span class="w-px h-6 sm:h-8 bg-green-700 dark:bg-green-500"></span>
                         Artikel Terbaru
                     </h2>
@@ -228,7 +228,7 @@
                                     <div class="w-full sm:w-[62%] p-2 sm:p-2.5 flex flex-col justify-between">
                                         <div>
                                             <h3
-                                                class="text-sm sm:text-lg font-bold text-gray-900 dark:text-slate-100 mb-0.5 line-clamp-2 hover:text-green-700 dark:hover:text-green-400 transition-colors">
+                                                class="text-sm sm:text-xl font-bold text-gray-900 dark:text-slate-100 mb-0.5 line-clamp-2 hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                                 <a href="{{ route('informasi.show', ['type' => $item->type, 'slug' => $item->slug]) }}"
                                                     class="hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                                     {{ $item->title }}
@@ -240,7 +240,7 @@
                                             </p>
                                         </div>
                                         <div class="flex items-center justify-between">
-                                            <p class="text-[10px] sm:text-sm text-gray-500 dark:text-slate-400">
+                                            <p class="text-xs sm:text-xs text-gray-500 dark:text-slate-400">
                                                 {{ $date }} | {{ $time }}
                                             </p>
                                             <a href="{{ route('informasi.show', ['type' => $item->type, 'slug' => $item->slug]) }}"
@@ -305,13 +305,13 @@
                             <p class="text-sm sm:text-lg text-gray-700 dark:text-slate-200 font-bold text-center">
                                 {{ $globalSchoolProfile->kepala_sekolah_nama ?? 'Kepala Madrasah' }}
                             </p>
-                            <p class="text-[10px] sm:text-sm text-gray-600 dark:text-slate-400 mt-1 text-center">
+                            <p class="text-xs sm:text-xs text-gray-600 dark:text-slate-400 mt-1 text-center">
                                 - Kepala Madrasah -
                             </p>
                         </div>
                         <div class="mb-0">
                             <div
-                                class="prose prose-sm dark:prose-invert max-w-none text-xs sm:text-base text-gray-700 dark:text-slate-300 leading-relaxed text-justify line-clamp-5 [&>p]:mb-0 [&>p]:inline [&>p+p]:before:content-['_']">
+                                class="prose prose-sm dark:prose-invert max-w-none text-xs sm:text-base text-black dark:text-slate-200 leading-relaxed text-justify line-clamp-5 [&>p]:mb-0 [&>p]:inline [&>p+p]:before:content-['_']">
                                 @if($globalSchoolProfile && $globalSchoolProfile->kepala_sekolah_sambutan)
                                     {!! $globalSchoolProfile->kepala_sekolah_sambutan !!}
                                 @else

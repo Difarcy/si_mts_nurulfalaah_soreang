@@ -43,13 +43,13 @@
 
                         {{-- Content --}}
                         <div class="flex flex-col px-1">
-                            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 line-clamp-2 leading-snug h-10"
+                            <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 line-clamp-2 leading-snug h-10"
                                 title="{{ $item->judul }}">
                                 {{ $item->judul }}
                             </h3>
 
                             <!-- Info Meta (Time) -->
-                            <div class="flex items-center gap-3 text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1">
+                            <div class="flex items-center gap-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
                                 <span class="flex items-center gap-1" title="Dipublish">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -72,7 +72,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <p class="text-sm sm:text-lg md:text-xl font-semibold text-gray-400 dark:text-slate-500 text-center">
+                    <p class="text-base sm:text-lg font-semibold text-gray-400 dark:text-slate-500 text-center">
                         Belum Ada Video Kegiatan
                     </p>
                 </div>

@@ -15,7 +15,7 @@
             <div class="lg:col-span-2">
                 <article>
                     <div class="space-y-4">
-                        <h1 class="text-xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                        <h1 class="text-xl sm:text-[35px] font-bold text-slate-900 dark:text-slate-100 leading-tight">
                             {{ $schedule->judul }}
                         </h1>
 
@@ -44,45 +44,50 @@
                         </div>
 
                         <div
-                            class="flex flex-wrap items-start gap-6 text-xs sm:text-sm text-black dark:text-slate-400 border-b border-gray-200 dark:border-slate-700 pb-6 mb-6">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-700 dark:text-green-500 shrink-0" fill="none"
+                            class="grid grid-cols-1 md:grid-cols-3 gap-8 text-black dark:text-slate-400 border-b border-gray-200 dark:border-slate-700 pb-8 mb-8">
+                            {{-- Tanggal --}}
+                            <div class="flex flex-col items-center text-center">
+                                <svg class="w-8 h-8 text-green-700 dark:text-green-500 mb-3" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                                     </path>
                                 </svg>
-                                <div>
-                                    <span class="font-bold text-black dark:text-slate-200 block">Tanggal:</span>
+                                <span
+                                    class="font-bold text-xl text-slate-900 dark:text-slate-100 block mb-1">Tanggal:</span>
+                                <span class="text-base leading-relaxed">
                                     {{ $schedule->tanggal_mulai->translatedFormat('d F Y') }}
                                     @if($schedule->tanggal_selesai && $schedule->tanggal_selesai != $schedule->tanggal_mulai)
                                         - {{ $schedule->tanggal_selesai->translatedFormat('d F Y') }}
                                     @endif
-                                </div>
+                                </span>
                             </div>
 
+                            {{-- Waktu --}}
                             @if($schedule->waktu_mulai)
-                                <div class="flex items-center gap-3">
-                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-700 dark:text-green-500 shrink-0" fill="none"
+                                <div class="flex flex-col items-center text-center">
+                                    <svg class="w-8 h-8 text-green-700 dark:text-green-500 mb-3" fill="none"
                                         stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
-                                    <div>
-                                        <span class="font-bold text-black dark:text-slate-200 block">Waktu:</span>
+                                    <span class="font-bold text-xl text-slate-900 dark:text-slate-100 block mb-1">Waktu:</span>
+                                    <span class="text-base leading-relaxed">
                                         @php
                                             $start = \Carbon\Carbon::parse($schedule->waktu_mulai)->format('H.i');
                                             $endTime = $schedule->waktu_selesai ? \Carbon\Carbon::parse($schedule->waktu_selesai)->format('H:i') : null;
                                             $end = ($endTime && $endTime !== '00:00') ? str_replace(':', '.', $endTime) : 'Selesai';
+                                            $hasEndTime = $endTime && $endTime !== '00:00';
                                         @endphp
-                                        {{ $start }} WIB – {{ $end }}
-                                    </div>
+                                        {{ $start }} {{ $hasEndTime ? '– ' . $end . ' WIB' : 'WIB – Selesai' }}
+                                    </span>
                                 </div>
                             @endif
 
+                            {{-- Lokasi --}}
                             @if($schedule->lokasi)
-                                <div class="flex items-center gap-3">
-                                    <svg class="w-4 h-4 sm:w-5 sm:w-5 text-green-700 dark:text-green-500 shrink-0" fill="none"
+                                <div class="flex flex-col items-center text-center">
+                                    <svg class="w-8 h-8 text-green-700 dark:text-green-500 mb-3" fill="none"
                                         stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
@@ -90,17 +95,15 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <div>
-                                        <span class="font-bold text-black dark:text-slate-200 block">Lokasi:</span>
-                                        {{ $schedule->lokasi }}
-                                    </div>
+                                    <span class="font-bold text-xl text-slate-900 dark:text-slate-100 block mb-1">Lokasi:</span>
+                                    <span class="text-base leading-relaxed">{{ $schedule->lokasi }}</span>
                                 </div>
                             @endif
                         </div>
 
                         <!-- Content -->
                         <div
-                            class="prose prose-sm sm:prose-lg max-w-none prose-slate dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg">
+                            class="prose prose-base max-w-none prose-slate dark:prose-invert prose-p:text-black dark:prose-p:text-slate-100 prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-xl sm:prose-h1:text-[35px] prose-h2:text-lg sm:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-xl prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg">
                             {!! $schedule->deskripsi !!}
                         </div>
 
@@ -159,5 +162,5 @@
                     'articleFirst' => true,
                     'schoolProfile' => null
                 ])
-                        </div>
+                                                </div>
 @endsection

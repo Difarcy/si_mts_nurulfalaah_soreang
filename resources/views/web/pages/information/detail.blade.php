@@ -52,7 +52,7 @@
                     data-fallback-image="{{ asset('images/background/default-backgrounds.png') }}"
                     data-post-type="{{ $post->type }}" data-post-slug="{{ $post->slug }}">
                     <div class="space-y-4">
-                        <h1 class="text-xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                        <h1 class="text-xl sm:text-[35px] font-bold text-slate-900 dark:text-slate-100 leading-tight">
                             {{ $post->title }}
                         </h1>
 
@@ -95,17 +95,12 @@
                         </div>
 
                         @php
-                            // Use InfoText for Top Bar settings (social links)
-                            $facebookUrl = \App\Models\InfoText::where('key', 'top_bar_facebook_url')->value('value');
-                            $instagramUrl = \App\Models\InfoText::where('key', 'top_bar_instagram_url')->value('value');
-                            $youtubeUrl = \App\Models\InfoText::where('key', 'top_bar_youtube_url')->value('value');
-                            $tiktokUrl = \App\Models\InfoText::where('key', 'top_bar_tiktok_url')->value('value');
-
-                            // Fallback
-                            $facebookUrl = !empty($facebookUrl) ? $facebookUrl : route('social-media-unavailable');
-                            $instagramUrl = !empty($instagramUrl) ? $instagramUrl : route('social-media-unavailable');
-                            $youtubeUrl = !empty($youtubeUrl) ? $youtubeUrl : route('social-media-unavailable');
-                            $tiktokUrl = !empty($tiktokUrl) ? $tiktokUrl : route('social-media-unavailable');
+                            // Use InfoText for social links if not provided by controller or shared data
+                            $facebookUrl = \App\Models\InfoText::where('key', '=', 'top_bar_facebook_url', 'and')->value('value') ?? route('social-media-unavailable');
+                            $instagramUrl = \App\Models\InfoText::where('key', '=', 'top_bar_instagram_url', 'and')->value('value') ?? route('social-media-unavailable');
+                            $youtubeUrl = \App\Models\InfoText::where('key', '=', 'top_bar_youtube_url', 'and')->value('value') ?? route('social-media-unavailable');
+                            $tiktokUrl = \App\Models\InfoText::where('key', '=', 'top_bar_tiktok_url', 'and')->value('value') ?? route('social-media-unavailable');
+                            $twitterUrl = \App\Models\InfoText::where('key', '=', 'top_bar_twitter_url', 'and')->value('value') ?? route('social-media-unavailable');
                         @endphp
 
                         <!-- Social Media Icons (Follow) -->
@@ -193,7 +188,7 @@
                         @endif
 
                         <div
-                            class="prose prose-sm sm:prose-lg max-w-none prose-slate dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-xl sm:prose-h1:text-4xl prose-h2:text-lg sm:prose-h2:text-3xl prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-none prose-pre:bg-slate-900 dark:prose-pre:bg-slate-800 prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-table:w-full prose-th:border prose-td:border prose-th:border-slate-300 dark:prose-th:border-slate-700 prose-td:border-slate-300 dark:prose-td:border-slate-700">
+                            class="prose prose-base max-w-none prose-slate dark:prose-invert prose-p:text-black dark:prose-p:text-slate-100 prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-xl sm:prose-h1:text-[35px] prose-h2:text-lg sm:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-xl prose-a:text-green-700 dark:prose-a:text-green-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-none prose-pre:bg-slate-900 dark:prose-pre:bg-slate-800 prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-table:w-full prose-th:border prose-td:border prose-th:border-slate-300 dark:prose-th:border-slate-700 prose-td:border-slate-300 dark:prose-td:border-slate-700">
                             <div class="editor-content overflow-x-auto">
                                 {!! $post->body !!}
                             </div>
@@ -295,7 +290,7 @@
                 <!-- Suggested Posts Section (hanya untuk berita) -->
                 @if($post->type === 'berita' && $suggestedPosts->isNotEmpty())
                     <section class="mt-10">
-                        <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Berita yang Disarankan
+                        <h2 class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">Berita yang Disarankan
                         </h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                             @foreach($suggestedPosts as $item)
@@ -336,13 +331,13 @@
 
                 <!-- Comments Section -->
                 <section class="mt-10">
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Komentar ({{ $commentsCount }})
+                    <h2 class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Komentar ({{ $commentsCount }})
                     </h2>
 
                     @if($comments->isNotEmpty())
                         <div class="space-y-2 mb-8">
                             @foreach($comments as $comment)
-                                @include('web.pages.information._comment_node', ['comment' => $comment, 'commentsByParent' => $commentsByParent, 'likedCommentIds' => $likedCommentIds])
+                                @include('web.pages.information._comment_node', ['comment' => $comment, 'commentsByParent' => $commentsByParent, 'likedCommentIds' => $likedCommentIds, 'level' => 0])
                             @endforeach
                         </div>
                     @else
@@ -355,7 +350,7 @@
                             class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl">
                             <div
                                 class="px-4 pt-4 pb-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-                                <h3 class="text-base font-bold text-slate-900 dark:text-slate-100">Balas Komentar</h3>
+                                <h3 class="text-base sm:text-xl font-bold text-slate-900 dark:text-slate-100">Balas Komentar</h3>
                                 <button type="button"
                                     class="inline-reply-close w-9 h-9 inline-flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -375,7 +370,7 @@
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
                                             <label for="inline-reply-name"
-                                                class="block text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Nama
+                                                class="block text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Nama
                                                 <span class="text-red-600 dark:text-red-500">*</span></label>
                                             <input type="text" id="inline-reply-name" name="name" maxlength="100" required
                                                 autocomplete="name"
@@ -384,7 +379,7 @@
                                         </div>
                                         <div>
                                             <label for="inline-reply-email"
-                                                class="block text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Email
+                                                class="block text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Email
                                                 <span
                                                     class="text-red-600 dark:text-red-500 inline-reply-email-required">*</span></label>
                                             <input type="email" id="inline-reply-email" name="email" maxlength="120"
@@ -398,7 +393,7 @@
                                         <label class="flex items-center gap-2 cursor-pointer">
                                             <input type="checkbox" name="anonymous" value="1"
                                                 class="inline-reply-anonymous rounded border-gray-300 dark:border-slate-600 text-green-700 focus:ring-green-600">
-                                            <span class="text-sm sm:text-base text-slate-700 dark:text-slate-300">Komentar
+                                            <span class="text-base text-slate-700 dark:text-slate-300">Komentar
                                                 sebagai
                                                 Anonymous</span>
                                         </label>
@@ -406,13 +401,13 @@
 
                                     <div>
                                         <label for="inline-reply-comment"
-                                            class="block text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Komentar
+                                            class="block text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Komentar
                                             <span class="text-red-600 dark:text-red-500">*</span></label>
                                         <!-- Emoji Wrapper -->
                                         <div class="relative group">
                                             <textarea id="inline-reply-comment" name="comment" rows="5" required
                                                 autocomplete="on"
-                                                class="inline-reply-text text-sm sm:text-base w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-2 pb-12 focus:ring-2 focus:ring-green-600 focus:border-green-600"
+                                                class="inline-reply-text text-base w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-2 pb-12 focus:ring-2 focus:ring-green-600 focus:border-green-600"
                                                 placeholder="Tulis balasan..."></textarea>
 
                                             <!-- Emoji Trigger -->
@@ -436,9 +431,9 @@
                                     <div
                                         class="pt-3 border-t border-slate-200 dark:border-slate-700 flex items-center justify-end gap-3">
                                         <button type="button"
-                                            class="inline-reply-cancel px-5 py-2 text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">Batal</button>
+                                            class="inline-reply-cancel px-5 py-2 text-base font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">Batal</button>
                                         <button type="submit"
-                                            class="px-5 py-2 text-sm sm:text-base font-semibold text-white bg-green-700 rounded-lg hover:bg-green-800 transition-colors">Kirim</button>
+                                            class="px-5 py-2 text-base font-semibold text-white bg-green-700 rounded-lg hover:bg-green-800 transition-colors">Kirim</button>
                                     </div>
                                 </form>
                             </div>
@@ -447,7 +442,7 @@
 
                     <!-- Leave a Reply Form -->
                     <div class="pt-6">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Tinggalkan Komentar</h3>
+                        <h3 class="text-lg sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Tinggalkan Komentar</h3>
 
                         @if(session('comment_success'))
                             <div
@@ -473,7 +468,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label for="name"
-                                        class="block text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Nama
+                                        class="block text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Nama
                                         <span class="text-red-600 dark:text-red-500">*</span></label>
                                     <input type="text" id="name" name="name" value="{{ old('name') }}" required
                                         autocomplete="name"
@@ -482,7 +477,7 @@
                                 </div>
                                 <div>
                                     <label for="email"
-                                        class="block text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Email
+                                        class="block text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Email
                                         <span class="text-red-600 dark:text-red-500" id="email-required">*</span></label>
                                     <input type="email" id="email" name="email" value="{{ old('email') }}" required
                                         autocomplete="email"
@@ -495,7 +490,7 @@
                                     <input type="checkbox" id="anonymous" name="anonymous" value="1"
                                         class="rounded border-gray-300 dark:border-slate-600 text-green-700 focus:ring-green-600"
                                         {{ old('anonymous') ? 'checked' : '' }}>
-                                    <span class="text-sm sm:text-base text-slate-700 dark:text-slate-300">Komentar sebagai
+                                    <span class="text-base text-slate-700 dark:text-slate-300">Komentar sebagai
                                         Anonymous</span>
                                 </label>
                                 <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Centang jika Anda tidak ingin
@@ -503,13 +498,13 @@
                             </div>
                             <div>
                                 <label for="comment"
-                                    class="block text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Komentar
+                                    class="block text-base font-semibold text-slate-700 dark:text-slate-300 mb-2">Komentar
                                     <span class="text-red-600 dark:text-red-500">*</span></label>
 
                                 <!-- Emoji Wrapper -->
                                 <div class="relative">
                                     <textarea id="comment" name="comment" rows="6" required autocomplete="on"
-                                        class="text-sm sm:text-base w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-none px-4 py-2 pb-12 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                                        class="text-base w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-none px-4 py-2 pb-12 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
                                         placeholder="Tulis komentar Anda di sini...">{{ old('comment') }}</textarea>
 
                                     <!-- Emoji Trigger -->
@@ -533,7 +528,7 @@
                             </div>
                             <div>
                                 <button type="submit"
-                                    class="px-6 py-2 bg-green-700 text-white font-semibold rounded-none hover:bg-green-800 text-sm sm:text-base transition-colors">
+                                    class="px-6 py-2 bg-green-700 text-white font-semibold rounded-none hover:bg-green-800 text-base transition-colors">
                                     Kirim Komentar
                                 </button>
                                 <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">* Komentar akan ditinjau oleh

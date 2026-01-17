@@ -20,7 +20,7 @@
         </div>
 
         <form action="{{ route('cpanel.agenda.update', $agenda) }}" method="POST" id="agenda-form"
-            data-unsaved-changes="true"
+            data-notify="loading" data-unsaved-changes="true"
             class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 p-6 space-y-6 rounded">
             @csrf
             @method('PUT')
@@ -164,9 +164,9 @@
 
                     <div class="flex items-center justify-end gap-3">
                         <a href="{{ route('cpanel.agenda.index') }}" id="cancel-btn"
-                            class="inline-flex items-center justify-center px-3 py-1.5 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">Batal</a>
+                            class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-700 transition-colors rounded shadow-sm">Batal</a>
                         <button type="submit" id="submit-btn"
-                            class="inline-flex items-center justify-center px-4 py-1.5 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-colors min-w-20 rounded">
+                            class="inline-flex min-w-20 sm:min-w-25 items-center justify-center px-3 py-1.5 sm:px-4 text-base font-semibold text-white bg-green-700 hover:bg-green-800 transition-colors rounded shadow-sm">
                             Simpan
                         </button>
                     </div>

@@ -62,8 +62,7 @@
                                             {{ $item->title }}
                                         </a>
                                     </h3>
-                                    <p
-                                        class="text-xs sm:text-base text-gray-600 dark:text-slate-400 line-clamp-2 mb-3 flex-1 text-justify">
+                                    <p class="text-base text-gray-600 dark:text-slate-400 line-clamp-2 mb-3 flex-1 text-justify">
                                         {{ $item->desc }}
                                     </p>
                                     <div class="mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -116,8 +115,7 @@
                                         class="text-sm sm:text-lg font-semibold text-gray-900 dark:text-slate-100 mb-1 line-clamp-2 hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                         {{ $info->title }}
                                     </h4>
-                                    <p
-                                        class="text-xs sm:text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
+                                    <p class="text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
                                         {{ \Illuminate\Support\Str::limit(strip_tags($info->isi), 100, '...') }}
                                     </p>
                                     <p class="text-[10px] sm:text-sm text-gray-500 dark:text-slate-400">
@@ -160,8 +158,7 @@
                                         class="text-sm sm:text-lg font-semibold text-gray-900 dark:text-slate-100 mb-1 line-clamp-2 hover:text-green-700 dark:hover:text-green-400 transition-colors">
                                         {{ $item->judul }}
                                     </h4>
-                                    <p
-                                        class="text-xs sm:text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
+                                    <p class="text-base text-gray-600 dark:text-slate-300 line-clamp-2 mb-1 text-justify">
                                         {{ \Illuminate\Support\Str::limit(strip_tags($item->deskripsi), 100, '...') }}
                                     </p>
                                     <p class="text-[10px] sm:text-sm text-gray-500 dark:text-slate-400">
@@ -171,8 +168,9 @@
                                                 $start = \Carbon\Carbon::parse($waktuMulai)->format('H.i');
                                                 $endTime = $waktuSelesai ? \Carbon\Carbon::parse($waktuSelesai)->format('H:i') : null;
                                                 $end = ($endTime && $endTime !== '00:00') ? str_replace(':', '.', $endTime) : 'Selesai';
+                                                $hasEndTime = $endTime && $endTime !== '00:00';
                                             @endphp
-                                            | {{ $start }} WIB – {{ $end }}
+                                            | {{ $start }} {{ $hasEndTime ? '– ' . $end . ' WIB' : 'WIB – Selesai' }}
                                         @endif
                                     </p>
                                 </a>

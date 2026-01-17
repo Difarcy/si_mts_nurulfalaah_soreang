@@ -50,7 +50,8 @@
                             </div>
                             <div class="pt-1">
                                 <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">{{ $comment->name }}</h2>
-                                <p class="text-base font-medium text-slate-500 dark:text-slate-400 mb-1">{{ $comment->email }}
+                                <p class="text-base font-medium text-slate-500 dark:text-slate-400 mb-1">
+                                    {{ $comment->email }}
                                 </p>
                                 @if($comment->is_approved)
                                     <span
@@ -112,10 +113,11 @@
                 <!-- Riwayat Pesan (Optional Accordion) -->
                 @if($comment->parent_id || $threadRoot->id !== $comment->id || $commentsByParent->has($comment->id))
                     <div class="mt-8">
-                        <h3 class="text-base font-bold text-slate-400 uppercase tracking-wider mb-4 px-2">Konteks Percakapan</h3>
+                        <h3 class="text-base font-bold text-slate-400 uppercase tracking-wider mb-4 px-2">Konteks Percakapan
+                        </h3>
                         <div
                             class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded shadow-sm p-6 opacity-75 hover:opacity-100 transition-opacity">
-                            @include('admin.pages.comments._thread_node', ['comment' => $threadRoot, 'commentsByParent' => $commentsByParent, 'likedCommentIds' => $likedCommentIds])
+                                   @include('admin.pages.comments._thread_node', ['comment' => $threadRoot, 'commentsByParent' => $commentsByParent, 'likedCommentIds' => $likedCommentIds, 'level' => 0])
                         </div>
                     </div>
                 @endif
@@ -204,8 +206,8 @@
 
                 <!-- Body -->
                 <div id="reply-body" class="flex-1 overflow-y-auto bg-white dark:bg-slate-800">
-                    <form action="{{ route('cpanel.comments.reply', $comment) }}" method="POST"
-                        class="flex flex-col h-full">
+                    <form action="{{ route('cpanel.comments.reply', $comment) }}" method="POST" class="flex flex-col h-full"
+                        data-notify="loading">
                         @csrf
 
                         <!-- Meta Inputs -->
@@ -260,7 +262,7 @@
                                 Kirim
                             </button>
                             <button type="button" id="clear-reply-btn"
-                                class="px-4 py-1.5 bg-slate-500 hover:bg-slate-600 dark:bg-slate-600 dark:hover:bg-slate-700 text-white text-base font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                                class="px-4 py-1.5 bg-slate-500 hover:bg-slate-600 dark:bg-slate-600 dark:hover:bg-slate-700 text-white text-base font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
                                 title="Hapus draf">
                                 Clear
                             </button>
@@ -269,20 +271,7 @@
                 </div>
             </div>
         </div>
-        <!-- LOADING MODAL -->
-        <div id="loading-modal"
-            class="fixed inset-0 z-60 items-center justify-center bg-black/50 hidden transition-opacity">
-            <div
-                class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-2xl flex flex-col items-center transform scale-100 transition-transform">
-                <div class="relative w-16 h-16 mb-4">
-                    <div class="absolute inset-0 border-4 border-blue-100 dark:border-blue-900 rounded-full"></div>
-                    <div class="absolute inset-0 border-4 border-blue-600 rounded-full border-t-transparent animate-spin">
-                    </div>
-                </div>
-                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">Mengirim Balasan</h3>
-                <p class="text-base text-slate-500 dark:text-slate-400 mt-2">Mohon tunggu sebentar...</p>
-            </div>
-        </div>
+
     </div>
 
 
