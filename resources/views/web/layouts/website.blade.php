@@ -47,10 +47,8 @@
         @include('web.components.footer')
     </div>
 
-    {{-- Chatbot Widget (All pages except contact) --}}
-    @if(!request()->routeIs('contact'))
-        @include('web.components.chatbot-widget')
-    @endif
+    {{-- Chatbot Widget (All pages) --}}
+    @include('web.components.chatbot-widget')
 
     <x-notifications />
 

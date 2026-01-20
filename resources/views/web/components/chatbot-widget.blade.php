@@ -3,7 +3,7 @@
 
     {{-- Chat Button (Floating) --}}
     <button id="chatbot-toggle-btn"
-        class="group relative flex items-center justify-center h-8 px-5 bg-green-700 dark:bg-green-700 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 z-50 overflow-hidden"
+        class="group relative flex items-center justify-center h-8 w-36 bg-green-700 dark:bg-green-700 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 z-50 overflow-hidden"
         aria-label="Buka Chatbot" title="Asisten Virtual">
 
         <span id="chatbot-text"
@@ -78,10 +78,9 @@
 
         {{-- Typing Indicator --}}
         <div id="chatbot-typing" class="hidden px-5 py-2 bg-white dark:bg-[#111827]">
-            <div class="flex items-center gap-1">
-                <span class="w-1.5 h-1.5 bg-slate-200 rounded-full animate-bounce [animation-delay:0ms]"></span>
-                <span class="w-1.5 h-1.5 bg-slate-200 rounded-full animate-bounce [animation-delay:150ms]"></span>
-                <span class="w-1.5 h-1.5 bg-slate-200 rounded-full animate-bounce [animation-delay:300ms]"></span>
+            <div class="flex items-center gap-2 ml-1">
+                <span class="text-xs text-slate-400 dark:text-slate-500 font-medium italic animate-pulse">Sedang
+                    berpikir...</span>
             </div>
         </div>
 

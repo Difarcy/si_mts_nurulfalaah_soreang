@@ -312,14 +312,14 @@ class ChatbotWidget {
                 <div class="flex items-center gap-2">
                     <span class="text-base font-bold text-slate-900 dark:text-slate-200">Nafa</span>
                 </div>
-                <div class="w-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg rounded-tl-none shadow-sm">
-                    <p class="text-sm leading-relaxed text-gray-900 dark:text-gray-100">${text}</p>
+                <div class="w-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg rounded-tl-none shadow-sm overflow-hidden box-border">
+                    <p class="text-sm leading-relaxed text-gray-900 dark:text-gray-100 break-words whitespace-pre-wrap max-w-full overflow-hidden">${text}</p>
                 </div>
             `;
         } else {
             messageDiv.innerHTML = `
-                <div class="max-w-[85%] bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 p-4 rounded-lg rounded-tr-none shadow-sm">
-                    <p class="text-sm leading-relaxed">${text}</p>
+                <div class="max-w-[85%] bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 p-4 rounded-lg rounded-tr-none shadow-sm overflow-hidden box-border">
+                    <p class="text-sm leading-relaxed break-words whitespace-pre-wrap max-w-full overflow-hidden">${text}</p>
                 </div>
             `;
         }

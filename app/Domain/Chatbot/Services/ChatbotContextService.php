@@ -141,7 +141,8 @@ class ChatbotContextService
 
         // --- MULAI MEMBANGUN KONTEKS ---
         $now = now()->isoFormat('dddd, D MMMM Y [jam] HH:mm');
-        $context = "Anda adalah Nafa, asisten virtual resmi MTs Nurul Falaah Soreang.\n";
+        $schoolName = $profile->nama_sekolah ?? 'Sekolah Kami';
+        $context = "Anda adalah Nafa, asisten virtual resmi {$schoolName}.\n";
         $context .= "WAKTU SISTEM SAAT INI: {$now} WIB\n\n";
 
         if ($currentPageUrl || $currentPageTitle) {
@@ -194,23 +195,23 @@ class ChatbotContextService
 
         // --- SECTION A: DATA STATIS (IDENTITAS PERMANEN) ---
         $context .= "=== [STATUS PERMANEN & IDENTITAS SEKOLAH] ===\n";
-        $context .= "- Nama Resmi: " . ($profile->nama_sekolah ?? 'MTs Nurul Falaah Soreang') . "\n";
-        $context .= "- NPSN: 20278189 (Akreditasi B)\n";
+        $context .= "- Nama Resmi: " . ($profile->nama_sekolah ?? '-') . "\n";
+        $context .= "- NPSN: -\n";
         if ($profile && $profile->deskripsi_sekolah) {
             $context .= "- Tentang Sekolah: " . strip_tags($profile->deskripsi_sekolah) . "\n";
         }
         if ($profile && $profile->sejarah) {
             $context .= "- Sejarah Singkat: " . \Illuminate\Support\Str::limit(strip_tags($profile->sejarah), 500) . "\n";
         }
-        $context .= "- Yayasan: Yayasan Nurul Falaah Soreang\n";
+        $context .= "- Yayasan: -\n";
         $context .= "- Kepala Madrasah: " . ($profile->kepala_sekolah_nama ?? '-') . "\n";
-        $context .= "- Alamat: " . ($site['address'] ?? 'Soreang, Bandung') . "\n";
+        $context .= "- Alamat: " . ($site['address'] ?? '-') . "\n";
         $context .= "- Statistik Aktivitas Website: [{$stats['total_berita']} Konten Terbit], [{$stats['total_prestasi']} Prestasi Siswa], [{$stats['total_foto']} Galeri Foto], [{$stats['total_video']} Video Kegiatan].\n";
         if (!empty($topTags))
             $context .= "- Topik Sering Dibahas: " . implode(', ', $topTags) . ".\n";
-        $context .= "- Fasilitas: Masjid, Lab Komputer, Perpustakaan, Aula, Lapangan, Kantin Sehat.\n";
-        $context .= "- Ekstrakurikuler: Pramuka, OSIS, Kaligrafi, Seni Islami, Olahraga.\n";
-        $context .= "- Keunggulan: Akhlakul Karimah, Tahfidz Al-Qur'an, dan Teknologi Informasi.\n\n";
+        $context .= "- Fasilitas: Belum ada data fasilitas.\n";
+        $context .= "- Ekstrakurikuler: Belum ada data ekstrakurikuler.\n";
+        $context .= "- Keunggulan: Belum ada data keunggulan.\n\n";
 
         // --- SECTION B: DATA DINAMIS (SELALU BERUBAH/REAL-TIME) ---
         $context .= "=== [DATA DINAMIS & UPDATE TERKINI] ===\n";
@@ -287,6 +288,9 @@ class ChatbotContextService
             $context .= ">> STATUS PENDAFTARAN (SPMB {$spmb->academic_year}):\n";
             $context .= "- Status Saat Ini: {$status}\n";
             $context .= "- Biaya Pendaftaran: {$biaya}\n";
+            if (!empty($spmbRequirements)) {
+                $context .= "- Syarat Pendaftaran: " . implode(', ', $spmbRequirements) . "\n";
+            }
             if (!$spmbTimeline->isEmpty()) {
                 $context .= "- Alur Terdekat: ";
                 foreach ($spmbTimeline->take(2) as $t) {

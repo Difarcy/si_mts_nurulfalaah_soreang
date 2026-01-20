@@ -18,15 +18,25 @@
             <div class="flex items-center gap-3 sm:gap-4">
                 <a href="{{ route('web.home') }}"
                     class="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity">
-                    <img src="{{ $logoSrc }}" alt="Logo MTs Nurul Falaah Soreang"
+                    <img src="{{ $logoSrc }}"
+                        alt="Logo {{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
                         class="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 object-contain shrink-0">
                     <div class="flex flex-col justify-center">
+                        @php
+                            $namaLengkap = $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang';
+                            // Logika pemisahan untuk tampilan dua baris
+                            $parts = explode('Soreang', $namaLengkap);
+                            $mainName = trim($parts[0] ?? $namaLengkap);
+                            $locName = count($parts) > 1 ? 'Soreang' : '';
+                        @endphp
                         <span class="text-base md:text-lg lg:text-xl font-bold text-white leading-tight font-sans">
-                            MTs Nurul Falaah
+                            {{ $mainName }}
                         </span>
-                        <span class="text-base md:text-lg lg:text-xl font-bold text-white leading-tight font-sans">
-                            Soreang
-                        </span>
+                        @if($locName)
+                            <span class="text-base md:text-lg lg:text-xl font-bold text-white leading-tight font-sans">
+                                {{ $locName }}
+                            </span>
+                        @endif
                     </div>
                 </a>
             </div>
@@ -69,7 +79,11 @@
                             </a>
                             <a href="{{ route('profil.visi-misi') }}"
                                 class="block px-4 py-2 text-sm md:text-base font-bold text-slate-900 dark:text-white hover:bg-green-800 hover:text-white dark:hover:bg-green-800 dark:hover:text-white transition-colors duration-150 {{ request()->routeIs('profil.visi-misi') ? 'bg-green-800 text-white dark:bg-green-800 dark:text-white' : '' }}">
-                                Visi & Misi
+                                Visi, Misi, Tujuan
+                            </a>
+                            <a href="{{ route('profil.kepala-madrasah') }}"
+                                class="block px-4 py-2 text-sm md:text-base font-bold text-slate-900 dark:text-white hover:bg-green-800 hover:text-white dark:hover:bg-green-800 dark:hover:text-white transition-colors duration-150 {{ request()->routeIs('profil.kepala-madrasah') ? 'bg-green-800 text-white dark:bg-green-800 dark:text-white' : '' }}">
+                                Kepala Madrasah
                             </a>
                             <a href="{{ route('profil.struktur-organisasi') }}"
                                 class="block px-4 py-2 text-sm md:text-base font-bold text-slate-900 dark:text-white hover:bg-green-800 hover:text-white dark:hover:bg-green-800 dark:hover:text-white transition-colors duration-150 {{ request()->routeIs('profil.struktur-organisasi') ? 'bg-green-800 text-white dark:bg-green-800 dark:text-white' : '' }}">

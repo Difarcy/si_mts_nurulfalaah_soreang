@@ -23,9 +23,9 @@
                     class="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight leading-tight drop-shadow-md">
                     {{ $globalSchoolProfile->nama_sekolah ?? 'MTs NURUL FALAAH SOREANG' }}
                 </h1>
-                @if($setting->hero_slogan)
+                @if($setting?->hero_slogan)
                     <p class="text-lg md:text-xl text-white max-w-2xl mx-auto font-medium leading-relaxed">
-                        {{ $setting->hero_slogan }}
+                        {{ $setting?->hero_slogan }}
                     </p>
                 @endif
 
@@ -35,7 +35,7 @@
                         Lihat Prosedur
                     </a>
                     @php
-                        $waNumber = $setting->contact_wa ?? '6282117123456';
+                        $waNumber = $setting?->contact_wa ?? '6282117123456';
                         $waRaw = preg_replace('/[^0-9]/', '', $waNumber);
                         $waBase = preg_replace('/^62|^0/', '', $waRaw);
                         $formattedWaHero = '+62 ' . substr($waBase, 0, 3) . '-' . substr($waBase, 3, 4) . '-' . substr($waBase, 7);
@@ -61,7 +61,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                     <!-- Status Pendaftaran -->
                     @php
-                        $status = $setting->registration_status ?? 'closed';
+                        $status = $setting?->registration_status ?? 'closed';
                     @endphp
 
                     @if ($status == 'open')
@@ -141,7 +141,7 @@
                             </div>
                             <h3
                                 class="text-2xl font-black text-purple-800 dark:text-white group-hover:text-white leading-tight transition-colors">
-                                {{ $setting->quota ? $setting->quota . ' Siswa' : '-' }}
+                                {{ $setting?->quota ? $setting?->quota . ' Siswa' : '-' }}
                             </h3>
                         </div>
                     </div>
@@ -162,11 +162,11 @@
                             </div>
                             <h3
                                 class="text-2xl font-black text-pink-800 dark:text-white group-hover:text-white leading-tight transition-colors">
-                                @if (isset($setting->registration_fee))
-                                    @if ($setting->registration_fee == 0)
+                                @if (isset($setting?->registration_fee))
+                                    @if ($setting?->registration_fee == 0)
                                         GRATIS
                                     @else
-                                        Rp {{ number_format($setting->registration_fee, 0, ',', '.') }}
+                                        Rp {{ number_format($setting?->registration_fee, 0, ',', '.') }}
                                     @endif
                                 @else
                                     -
@@ -499,8 +499,8 @@
 
                     @if($hasDate)
                         @php
-                            $startDate = \Carbon\Carbon::parse($setting->registration_start_date)->translatedFormat('d F Y');
-                            $endDate = \Carbon\Carbon::parse($setting->registration_end_date)->translatedFormat('d F Y');
+                            $startDate = \Carbon\Carbon::parse($setting?->registration_start_date)->translatedFormat('d F Y');
+                            $endDate = \Carbon\Carbon::parse($setting?->registration_end_date)->translatedFormat('d F Y');
                         @endphp
                         <div class="relative inline-block group">
                             <div
@@ -545,36 +545,36 @@
                         $timelineSteps = [
                             [
                                 'name' => 'Pendaftaran',
-                                'date' => $setting->step_1_start_date
-                                    ? ($setting->step_1_start_date->format('d/m/Y') . ($setting->step_1_end_date ? ' - ' . $setting->step_1_end_date->format('d/m/Y') : ''))
+                                'date' => $setting?->step_1_start_date
+                                    ? ($setting?->step_1_start_date->format('d/m/Y') . ($setting?->step_1_end_date ? ' - ' . $setting?->step_1_end_date->format('d/m/Y') : ''))
                                     : 'Belum diatur',
                                 'desc' => 'Calon siswa datang ke sekolah mengambil formulir pendaftaran'
                             ],
                             [
                                 'name' => 'Pengembalian Berkas',
-                                'date' => $setting->step_2_start_date
-                                    ? ($setting->step_2_start_date->format('d/m/Y') . ($setting->step_2_end_date ? ' - ' . $setting->step_2_end_date->format('d/m/Y') : ''))
+                                'date' => $setting?->step_2_start_date
+                                    ? ($setting?->step_2_start_date->format('d/m/Y') . ($setting?->step_2_end_date ? ' - ' . $setting?->step_2_end_date->format('d/m/Y') : ''))
                                     : 'Belum diatur',
                                 'desc' => 'Menyerahkan formulir yang sudah diisi beserta persyaratan lengkap'
                             ],
                             [
                                 'name' => 'Tes Seleksi',
-                                'date' => $setting->step_3_start_date
-                                    ? ($setting->step_3_start_date->format('d/m/Y') . ($setting->step_3_end_date ? ' - ' . $setting->step_3_end_date->format('d/m/Y') : ''))
+                                'date' => $setting?->step_3_start_date
+                                    ? ($setting?->step_3_start_date->format('d/m/Y') . ($setting?->step_3_end_date ? ' - ' . $setting?->step_3_end_date->format('d/m/Y') : ''))
                                     : 'Belum diatur',
                                 'desc' => 'Mengikuti tes Baca Tulis Al-Qur\'an dan Wawancara calon siswa & orang tua'
                             ],
                             [
                                 'name' => 'Pengumuman Hasil',
-                                'date' => $setting->step_4_start_date
-                                    ? ($setting->step_4_start_date->format('d/m/Y') . ($setting->step_4_end_date ? ' - ' . $setting->step_4_end_date->format('d/m/Y') : ''))
+                                'date' => $setting?->step_4_start_date
+                                    ? ($setting?->step_4_start_date->format('d/m/Y') . ($setting?->step_4_end_date ? ' - ' . $setting?->step_4_end_date->format('d/m/Y') : ''))
                                     : 'Belum diatur',
                                 'desc' => 'Melihat hasil seleksi yang ditempel di papan pengumuman sekolah'
                             ],
                             [
                                 'name' => 'Daftar Ulang',
-                                'date' => $setting->step_5_start_date
-                                    ? ($setting->step_5_start_date->format('d/m/Y') . ($setting->step_5_end_date ? ' - ' . $setting->step_5_end_date->format('d/m/Y') : ''))
+                                'date' => $setting?->step_5_start_date
+                                    ? ($setting?->step_5_start_date->format('d/m/Y') . ($setting?->step_5_end_date ? ' - ' . $setting?->step_5_end_date->format('d/m/Y') : ''))
                                     : 'Belum diatur',
                                 'desc' => 'Melakukan pembayaran administrasi dan pengambilan seragam sekolah'
                             ]
@@ -592,7 +592,7 @@
                                     <div
                                         class="group bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 transition-all duration-300">
                                         <div
-                                            class="inline-block px-3 py-1 bg-yellow-400 text-white rounded-md text-[11px] font-black mb-3 shadow-sm uppercase tracking-wider transition-colors duration-300">
+                                            class="inline-block px-4 py-1.5 bg-yellow-400 text-white rounded-md text-sm font-black mb-3 shadow-sm uppercase tracking-wider transition-colors duration-300">
                                             {{ $item['date'] }}
                                         </div>
                                         <h4 class="font-bold text-gray-900 group-hover:text-white dark:text-white text-lg mb-2">
@@ -620,7 +620,7 @@
                                     <div
                                         class="group bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 transition-all duration-300 text-left">
                                         <div
-                                            class="inline-block px-3 py-1 bg-yellow-400 text-white rounded-md text-[11px] font-black mb-3 shadow-sm uppercase tracking-wider transition-colors duration-300">
+                                            class="inline-block px-4 py-1.5 bg-yellow-400 text-white rounded-md text-sm font-black mb-3 shadow-sm uppercase tracking-wider transition-colors duration-300">
                                             {{ $item['date'] }}
                                         </div>
                                         <h4 class="font-bold text-gray-900 group-hover:text-white dark:text-white text-lg mb-2">
@@ -637,7 +637,7 @@
                                     <div
                                         class="md:hidden group bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-6 rounded-xl shadow-md mt-2 hover:shadow-xl hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 transition-all duration-300">
                                         <div
-                                            class="inline-block px-3 py-1 bg-yellow-400 text-white rounded-md text-[10px] font-black mb-3 shadow-sm uppercase tracking-wider transition-colors duration-300">
+                                            class="inline-block px-4 py-1.5 bg-yellow-400 text-white rounded-md text-sm font-black mb-3 shadow-sm uppercase tracking-wider transition-colors duration-300">
                                             {{ $item['date'] }}
                                         </div>
                                         <h4 class="font-bold text-gray-900 group-hover:text-white dark:text-white text-xl mb-2">
@@ -668,7 +668,7 @@
 
                 <div class="flex justify-center items-center">
                     @php
-                        $waNumber = $setting->contact_wa ?? '6282117123456';
+                        $waNumber = $setting?->contact_wa ?? '6282117123456';
                         $waRaw = preg_replace('/[^0-9]/', '', $waNumber);
                         $waBase = preg_replace('/^62|^0/', '', $waRaw);
                         $formattedWa = '+62 ' . substr($waBase, 0, 3) . '-' . substr($waBase, 3, 4) . '-' . substr($waBase, 7);

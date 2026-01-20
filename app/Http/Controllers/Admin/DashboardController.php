@@ -22,13 +22,13 @@ class DashboardController extends Controller
         // Statistics
         $stats = [
             'total_posts' => Post::count(),
-            'published_posts' => Post::where('status', 'published')->count(),
-            'draft_posts' => Post::where('status', 'draft')->count(),
+            'published_posts' => Post::where('status', '=', 'published')->count(),
+            'draft_posts' => Post::where('status', '=', 'draft')->count(),
             'total_comments' => Comment::count(),
-            'unread_comments' => Comment::where('is_read', false)->count(),
-            'pending_comments' => Comment::where('is_approved', false)->count(),
+            'unread_comments' => Comment::where('is_read', '=', false)->count(),
+            'pending_comments' => Comment::where('is_approved', '=', false)->count(),
             'total_messages' => InboxMessage::count(),
-            'unread_messages' => InboxMessage::where('is_read', false)->count(),
+            'unread_messages' => InboxMessage::where('is_read', '=', false)->count(),
             'total_activities' => ActivityPhoto::count(),
             'total_videos' => ActivityVideo::count(),
             'total_announcements' => Announcement::count(),
@@ -44,14 +44,25 @@ class DashboardController extends Controller
 
         // Recent comments - Latest 5 unread
         $recent_comments = Comment::with('post')
-            ->where('is_read', false)
+            ->where('is_read', '=', false)
             ->latest()
             ->take(5)
             ->get();
 
         // Recent messages - Latest 5 unread
-        $recent_messages = InboxMessage::where('is_read', false)
+        $recent_messages = InboxMessage::where('is_read', '=', false)
             ->latest()
+            ->take(5)
+            ->get();
+
+        // Recent announcements - Latest 5
+        $recent_announcements = Announcement::latest('created_at')
+            ->take(5)
+            ->get();
+
+        // Recent schedules - Upcoming 5
+        $recent_schedules = Schedule::where('tanggal_mulai', '>=', now()->toDateString())
+            ->orderBy('tanggal_mulai', 'asc')
             ->take(5)
             ->get();
 
@@ -67,6 +78,8 @@ class DashboardController extends Controller
             'recent_posts',
             'recent_comments',
             'recent_messages',
+            'recent_announcements',
+            'recent_schedules',
             'content_by_type',
             'spmb_setting'
         ));

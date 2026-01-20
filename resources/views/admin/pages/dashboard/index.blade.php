@@ -24,7 +24,7 @@
         {{-- Statistics Cards --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {{-- Total Publikasi --}}
-            <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+            <a href="{{ route('cpanel.publikasi.index') }}" class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm hover:border-green-500 transition-colors group">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-base font-semibold text-slate-500 dark:text-slate-400">Publikasi</p>
@@ -32,8 +32,8 @@
                             {{ $stats['total_posts'] }}
                         </p>
                     </div>
-                    <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-                        <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
+                    <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors text-blue-600 dark:text-blue-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -47,10 +47,10 @@
                     <span class="text-slate-300 dark:text-slate-600">|</span>
                     <span class="text-slate-500 dark:text-slate-400">{{ $stats['draft_posts'] }} Draft</span>
                 </div>
-            </div>
+            </a>
 
             {{-- Komentar --}}
-            <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+            <a href="{{ route('cpanel.comments.index') }}" class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm hover:border-green-500 transition-colors group">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-base font-semibold text-slate-500 dark:text-slate-400">Komentar</p>
@@ -58,8 +58,8 @@
                             {{ $stats['total_comments'] }}
                         </p>
                     </div>
-                    <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl">
-                        <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor"
+                    <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-xl group-hover:bg-green-200 dark:group-hover:bg-green-900/50 transition-colors text-green-600 dark:text-green-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
@@ -78,10 +78,10 @@
                         <span class="text-yellow-600 dark:text-yellow-400">{{ $stats['pending_comments'] }} Pending</span>
                     @endif
                 </div>
-            </div>
+            </a>
 
             {{-- Pesan --}}
-            <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+            <a href="{{ route('cpanel.inbox.index') }}" class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm hover:border-green-500 transition-colors group">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-base font-semibold text-slate-500 dark:text-slate-400">Pesan</p>
@@ -89,8 +89,8 @@
                             {{ $stats['total_messages'] }}
                         </p>
                     </div>
-                    <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl">
-                        <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor"
+                    <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl group-hover:bg-purple-200 dark:group-hover:bg-purple-900/50 transition-colors text-purple-600 dark:text-purple-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
@@ -106,19 +106,19 @@
                         <span class="text-green-600 dark:text-green-400 font-medium">Semua Terbaca</span>
                     @endif
                 </div>
-            </div>
+            </a>
 
-            {{-- Media --}}
-            <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+            {{-- Foto Kegiatan --}}
+            <a href="{{ route('cpanel.foto-kegiatan.index') }}" class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm hover:border-green-500 transition-colors group">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-base font-semibold text-slate-500 dark:text-slate-400">Media</p>
+                        <p class="text-base font-semibold text-slate-500 dark:text-slate-400">Foto Kegiatan</p>
                         <p class="text-3xl font-bold text-slate-900 dark:text-slate-100 mt-2">
-                            {{ $stats['total_activities'] + $stats['total_videos'] }}
+                            {{ $stats['total_activities'] }}
                         </p>
                     </div>
-                    <div class="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl">
-                        <svg class="w-8 h-8 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor"
+                    <div class="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-xl group-hover:bg-pink-200 dark:group-hover:bg-pink-900/50 transition-colors text-pink-600 dark:text-pink-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
@@ -127,12 +127,9 @@
                     </div>
                 </div>
                 <div class="mt-4 flex items-center gap-3 text-sm">
-                    <span class="text-slate-600 dark:text-slate-400 font-medium">{{ $stats['total_activities'] }}
-                        Foto</span>
-                    <span class="text-slate-300 dark:text-slate-600">|</span>
-                    <span class="text-slate-600 dark:text-slate-400 font-medium">{{ $stats['total_videos'] }} Video</span>
+                    <span class="text-slate-600 dark:text-slate-400 font-medium">Kelola Galeri Foto</span>
                 </div>
-            </div>
+            </a>
         </div>
 
         {{-- Quick Actions --}}
@@ -193,18 +190,18 @@
                     <span class="text-base font-semibold text-slate-700 dark:text-white text-center">Buat Agenda</span>
                 </a>
 
-                <a href="{{ route('cpanel.foto-kegiatan.index') }}"
+                <a href="{{ route('cpanel.activity-videos.create') }}"
                     class="group flex flex-col items-center gap-2 p-4 border-2 border-gray-200 dark:border-slate-700 hover:border-green-500 dark:hover:border-green-500 transition-colors rounded">
                     <div
                         class="p-3 bg-pink-50 dark:bg-pink-900/20 group-hover:bg-pink-100 dark:group-hover:bg-pink-900/40 transition-colors rounded-lg">
                         <svg class="w-6 h-6 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
                             </path>
                         </svg>
                     </div>
-                    <span class="text-base font-semibold text-slate-700 dark:text-white text-center">Upload Foto</span>
+                    <span class="text-base font-semibold text-slate-700 dark:text-white text-center">Upload Video</span>
                 </a>
 
                 <a href="{{ route('cpanel.help.index') }}"
@@ -313,8 +310,8 @@
                         <a href="{{ route('cpanel.inbox.show', $message) }}"
                             class="block p-3 border border-gray-200 dark:border-slate-700 hover:border-green-500 dark:hover:border-green-500 transition-colors rounded">
                             <div class="flex items-start gap-3">
-                                <div class="shrink-0">
-                                    <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor"
+                                <div class="shrink-0 text-purple-600 dark:text-purple-400">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
@@ -339,6 +336,75 @@
             @else
                 <p class="text-sm text-slate-500 dark:text-slate-400 text-center py-8">Semua pesan sudah dibaca</p>
             @endif
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {{-- Recent Announcements --}}
+            <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">Pengumuman Terbaru</h2>
+                    <a href="{{ route('cpanel.pengumuman.index') }}"
+                        class="text-sm text-green-600 dark:text-green-400 hover:underline">Lihat Semua</a>
+                </div>
+                @if($recent_announcements->count() > 0)
+                    <div class="space-y-3">
+                        @foreach($recent_announcements as $ann)
+                            <a href="{{ route('cpanel.pengumuman.edit', $ann) }}"
+                                class="block p-3 border border-gray-200 dark:border-slate-700 hover:border-green-500 dark:hover:border-green-500 transition-colors rounded">
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="font-medium text-slate-900 dark:text-slate-100 truncate">{{ $ann->judul }}</h3>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                            {{ $ann->created_at->diffForHumans() }}
+                                        </p>
+                                    </div>
+                                    <span
+                                        class="px-2 py-1 text-xs font-semibold {{ $ann->status === 'publish' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-slate-100 text-slate-700 dark:bg-slate-700/30 dark:text-slate-400' }} rounded-full">
+                                        {{ $ann->status === 'publish' ? 'Aktif' : 'Draft' }}
+                                    </span>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                @else
+                    <p class="text-sm text-slate-500 dark:text-slate-400 text-center py-8">Belum ada pengumuman</p>
+                @endif
+            </div>
+
+            {{-- Recent Agendas --}}
+            <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">Agenda Mendatang</h2>
+                    <a href="{{ route('cpanel.agenda.index') }}"
+                        class="text-sm text-green-600 dark:text-green-400 hover:underline">Lihat Semua</a>
+                </div>
+                @if($recent_schedules->count() > 0)
+                    <div class="space-y-3">
+                        @foreach($recent_schedules as $agenda)
+                            <a href="{{ route('cpanel.agenda.edit', $agenda) }}"
+                                class="block p-3 border border-gray-200 dark:border-slate-700 hover:border-green-500 dark:hover:border-green-500 transition-colors rounded">
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="font-medium text-slate-900 dark:text-slate-100 truncate">{{ $agenda->judul }}</h3>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                            <span class="font-medium">{{ $agenda->tanggal_mulai->format('d M Y') }}</span>
+                                            @if($agenda->lokasi)
+                                                • {{ $agenda->lokasi }}
+                                            @endif
+                                        </p>
+                                    </div>
+                                    <span
+                                        class="px-2 py-1 text-xs font-semibold {{ $agenda->status === 'publish' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' : 'bg-slate-100 text-slate-700 dark:bg-slate-700/30 dark:text-slate-400' }} rounded-full">
+                                        {{ $agenda->status === 'publish' ? 'Aktif' : 'Draft' }}
+                                    </span>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                @else
+                    <p class="text-sm text-slate-500 dark:text-slate-400 text-center py-8">Tidak ada agenda mendatang</p>
+                @endif
+            </div>
         </div>
     </div>
 @endsection

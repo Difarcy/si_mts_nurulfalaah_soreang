@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         // Share School Profile & Visual Identity to all views
         View::composer('*', function ($view) {
             $schoolProfile = \Illuminate\Support\Facades\Cache::remember('school_profile_global', 3600, function () {
-                return SchoolProfile::firstOrCreate([], ['nama_sekolah' => 'MTs Nurul Falaah Soreang']);
+                return SchoolProfile::firstOrCreate([]);
             });
 
             $visualIdentity = \Illuminate\Support\Facades\Cache::remember('visual_identity_global', 3600, function () {

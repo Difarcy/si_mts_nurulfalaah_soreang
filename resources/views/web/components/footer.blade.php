@@ -19,7 +19,7 @@
                     <a href="{{ route('web.home') }}"
                         class="flex items-center gap-3 hover:opacity-90 transition-opacity">
                         <img src="{{ asset($logoPath) }}@if($logoVersion)?v={{ $logoVersion }}@endif"
-                            alt="Logo MTs Nurul Falaah Soreang"
+                            alt="Logo {{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}"
                             class="h-10 w-10 sm:h-12 sm:w-12 object-contain shrink-0">
                         <div class="flex flex-col justify-center">
                             @php
@@ -259,7 +259,7 @@
     <!-- Copyright -->
     <div class="w-full mt-8 pt-6 pb-2">
         <p class="text-xs sm:text-sm md:text-base text-gray-200 text-center">
-            Copyright © MTs Nurul Falaah Soreang
+            Copyright © {{ $globalSchoolProfile->nama_sekolah ?? 'MTs Nurul Falaah Soreang' }}
         </p>
     </div>
 </footer>

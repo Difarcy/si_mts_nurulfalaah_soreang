@@ -21,18 +21,14 @@ class SchoolProfileController extends Controller
 
     public function index(): View
     {
-        $schoolProfile = SchoolProfile::firstOrCreate([], [
-            'nama_sekolah' => 'MTs Nurul Falaah Soreang',
-        ]);
+        $schoolProfile = SchoolProfile::firstOrCreate([]);
 
         return view('admin.pages.profile.index', compact('schoolProfile'));
     }
 
     public function update(Request $request): RedirectResponse
     {
-        $schoolProfile = SchoolProfile::firstOrCreate([], [
-            'nama_sekolah' => 'MTs Nurul Falaah Soreang',
-        ]);
+        $schoolProfile = SchoolProfile::firstOrCreate([]);
 
         $validated = $request->validate([
             'nama_sekolah' => 'required|string|max:255',

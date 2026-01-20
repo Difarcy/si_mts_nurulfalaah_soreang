@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict iCB7URawdxcZxAOkvhXliKjPILsYyRq1CarCxZ14neCJonA5OSAqwtRxy3w5XWk
+\restrict IeusjavimCt9pbdM1fuYBRxFY9nnx3uWNZWL2Zfhz6XpigmABnf2zaLoMkI4tAv
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.1
@@ -19,161 +19,12 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-ALTER TABLE IF EXISTS ONLY public.posts DROP CONSTRAINT IF EXISTS posts_author_id_foreign;
-ALTER TABLE IF EXISTS ONLY public.post_views DROP CONSTRAINT IF EXISTS post_views_post_id_foreign;
-ALTER TABLE IF EXISTS ONLY public.comments DROP CONSTRAINT IF EXISTS comments_post_id_foreign;
-ALTER TABLE IF EXISTS ONLY public.comments DROP CONSTRAINT IF EXISTS comments_parent_id_foreign;
-ALTER TABLE IF EXISTS ONLY public.comment_likes DROP CONSTRAINT IF EXISTS comment_likes_user_id_foreign;
-ALTER TABLE IF EXISTS ONLY public.comment_likes DROP CONSTRAINT IF EXISTS comment_likes_comment_id_foreign;
-DROP INDEX IF EXISTS public.student_achievements_tingkat_prestasi_index;
-DROP INDEX IF EXISTS public.student_achievements_tanggal_prestasi_index;
-DROP INDEX IF EXISTS public.student_achievements_jenis_prestasi_index;
-DROP INDEX IF EXISTS public.student_achievements_is_active_index;
-DROP INDEX IF EXISTS public.spmb_timelines_activity_index;
-DROP INDEX IF EXISTS public.spmb_settings_registration_status_index;
-DROP INDEX IF EXISTS public.spmb_requirements_type_index;
-DROP INDEX IF EXISTS public.sessions_user_id_index;
-DROP INDEX IF EXISTS public.sessions_last_activity_index;
-DROP INDEX IF EXISTS public.posts_type_index;
-DROP INDEX IF EXISTS public.posts_status_index;
-DROP INDEX IF EXISTS public.posts_published_at_index;
-DROP INDEX IF EXISTS public.posts_is_featured_index;
-DROP INDEX IF EXISTS public.post_views_session_id_index;
-DROP INDEX IF EXISTS public.jobs_queue_index;
-DROP INDEX IF EXISTS public.inbox_messages_is_read_index;
-DROP INDEX IF EXISTS public.inbox_messages_email_index;
-DROP INDEX IF EXISTS public.contacts_jenis_index;
-DROP INDEX IF EXISTS public.contacts_is_active_index;
-DROP INDEX IF EXISTS public.comments_is_approved_index;
-DROP INDEX IF EXISTS public.comments_email_index;
-DROP INDEX IF EXISTS public.comment_likes_session_id_index;
-DROP INDEX IF EXISTS public.chatbot_conversations_session_id_index;
-DROP INDEX IF EXISTS public.chatbot_conversations_method_index;
-DROP INDEX IF EXISTS public.chatbot_conversations_intent_matched_index;
-DROP INDEX IF EXISTS public.banners_is_active_index;
-DROP INDEX IF EXISTS public.announcements_tanggal_index;
-DROP INDEX IF EXISTS public.announcements_status_index;
-DROP INDEX IF EXISTS public.agendas_tanggal_mulai_index;
-DROP INDEX IF EXISTS public.agendas_status_index;
-DROP INDEX IF EXISTS public.agendas_judul_index;
-DROP INDEX IF EXISTS public.activity_videos_is_active_index;
-DROP INDEX IF EXISTS public.activity_photos_is_active_index;
-ALTER TABLE IF EXISTS ONLY public.visual_identities DROP CONSTRAINT IF EXISTS visual_identities_pkey;
-ALTER TABLE IF EXISTS ONLY public.users DROP CONSTRAINT IF EXISTS users_username_unique;
-ALTER TABLE IF EXISTS ONLY public.users DROP CONSTRAINT IF EXISTS users_pkey;
-ALTER TABLE IF EXISTS ONLY public.student_achievements DROP CONSTRAINT IF EXISTS student_achievements_pkey;
-ALTER TABLE IF EXISTS ONLY public.spmb_timelines DROP CONSTRAINT IF EXISTS spmb_timelines_pkey;
-ALTER TABLE IF EXISTS ONLY public.spmb_settings DROP CONSTRAINT IF EXISTS spmb_settings_pkey;
-ALTER TABLE IF EXISTS ONLY public.spmb_requirements DROP CONSTRAINT IF EXISTS spmb_requirements_pkey;
-ALTER TABLE IF EXISTS ONLY public.spmb_faqs DROP CONSTRAINT IF EXISTS spmb_faqs_pkey;
-ALTER TABLE IF EXISTS ONLY public.sessions DROP CONSTRAINT IF EXISTS sessions_pkey;
-ALTER TABLE IF EXISTS ONLY public.school_profiles DROP CONSTRAINT IF EXISTS school_profiles_pkey;
-ALTER TABLE IF EXISTS ONLY public.posts DROP CONSTRAINT IF EXISTS posts_slug_unique;
-ALTER TABLE IF EXISTS ONLY public.posts DROP CONSTRAINT IF EXISTS posts_pkey;
-ALTER TABLE IF EXISTS ONLY public.post_views DROP CONSTRAINT IF EXISTS post_views_pkey;
-ALTER TABLE IF EXISTS ONLY public.password_reset_tokens DROP CONSTRAINT IF EXISTS password_reset_tokens_pkey;
-ALTER TABLE IF EXISTS ONLY public.migrations DROP CONSTRAINT IF EXISTS migrations_pkey;
-ALTER TABLE IF EXISTS ONLY public.jobs DROP CONSTRAINT IF EXISTS jobs_pkey;
-ALTER TABLE IF EXISTS ONLY public.job_batches DROP CONSTRAINT IF EXISTS job_batches_pkey;
-ALTER TABLE IF EXISTS ONLY public.info_texts DROP CONSTRAINT IF EXISTS info_texts_pkey;
-ALTER TABLE IF EXISTS ONLY public.info_texts DROP CONSTRAINT IF EXISTS info_texts_key_unique;
-ALTER TABLE IF EXISTS ONLY public.inbox_messages DROP CONSTRAINT IF EXISTS inbox_messages_pkey;
-ALTER TABLE IF EXISTS ONLY public.failed_jobs DROP CONSTRAINT IF EXISTS failed_jobs_uuid_unique;
-ALTER TABLE IF EXISTS ONLY public.failed_jobs DROP CONSTRAINT IF EXISTS failed_jobs_pkey;
-ALTER TABLE IF EXISTS ONLY public.contacts DROP CONSTRAINT IF EXISTS contacts_pkey;
-ALTER TABLE IF EXISTS ONLY public.comments DROP CONSTRAINT IF EXISTS comments_pkey;
-ALTER TABLE IF EXISTS ONLY public.comment_likes DROP CONSTRAINT IF EXISTS comment_likes_pkey;
-ALTER TABLE IF EXISTS ONLY public.chatbot_conversations DROP CONSTRAINT IF EXISTS chatbot_conversations_pkey;
-ALTER TABLE IF EXISTS ONLY public.cache DROP CONSTRAINT IF EXISTS cache_pkey;
-ALTER TABLE IF EXISTS ONLY public.cache_locks DROP CONSTRAINT IF EXISTS cache_locks_pkey;
-ALTER TABLE IF EXISTS ONLY public.banners DROP CONSTRAINT IF EXISTS banners_pkey;
-ALTER TABLE IF EXISTS ONLY public.announcements DROP CONSTRAINT IF EXISTS announcements_pkey;
-ALTER TABLE IF EXISTS ONLY public.agendas DROP CONSTRAINT IF EXISTS agendas_pkey;
-ALTER TABLE IF EXISTS ONLY public.activity_videos DROP CONSTRAINT IF EXISTS activity_videos_pkey;
-ALTER TABLE IF EXISTS ONLY public.activity_photos DROP CONSTRAINT IF EXISTS activity_photos_pkey;
-ALTER TABLE IF EXISTS public.visual_identities ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.users ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.student_achievements ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.spmb_timelines ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.spmb_settings ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.spmb_requirements ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.spmb_faqs ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.school_profiles ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.posts ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.post_views ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.migrations ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.jobs ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.info_texts ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.inbox_messages ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.failed_jobs ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.contacts ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.comments ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.comment_likes ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.chatbot_conversations ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.banners ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.announcements ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.agendas ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.activity_videos ALTER COLUMN id DROP DEFAULT;
-ALTER TABLE IF EXISTS public.activity_photos ALTER COLUMN id DROP DEFAULT;
-DROP SEQUENCE IF EXISTS public.visual_identities_id_seq;
-DROP TABLE IF EXISTS public.visual_identities;
-DROP SEQUENCE IF EXISTS public.users_id_seq;
-DROP TABLE IF EXISTS public.users;
-DROP SEQUENCE IF EXISTS public.student_achievements_id_seq;
-DROP TABLE IF EXISTS public.student_achievements;
-DROP SEQUENCE IF EXISTS public.spmb_timelines_id_seq;
-DROP TABLE IF EXISTS public.spmb_timelines;
-DROP SEQUENCE IF EXISTS public.spmb_settings_id_seq;
-DROP TABLE IF EXISTS public.spmb_settings;
-DROP SEQUENCE IF EXISTS public.spmb_requirements_id_seq;
-DROP TABLE IF EXISTS public.spmb_requirements;
-DROP SEQUENCE IF EXISTS public.spmb_faqs_id_seq;
-DROP TABLE IF EXISTS public.spmb_faqs;
-DROP TABLE IF EXISTS public.sessions;
-DROP SEQUENCE IF EXISTS public.school_profiles_id_seq;
-DROP TABLE IF EXISTS public.school_profiles;
-DROP SEQUENCE IF EXISTS public.posts_id_seq;
-DROP TABLE IF EXISTS public.posts;
-DROP SEQUENCE IF EXISTS public.post_views_id_seq;
-DROP TABLE IF EXISTS public.post_views;
-DROP TABLE IF EXISTS public.password_reset_tokens;
-DROP SEQUENCE IF EXISTS public.migrations_id_seq;
-DROP TABLE IF EXISTS public.migrations;
-DROP SEQUENCE IF EXISTS public.jobs_id_seq;
-DROP TABLE IF EXISTS public.jobs;
-DROP TABLE IF EXISTS public.job_batches;
-DROP SEQUENCE IF EXISTS public.info_texts_id_seq;
-DROP TABLE IF EXISTS public.info_texts;
-DROP SEQUENCE IF EXISTS public.inbox_messages_id_seq;
-DROP TABLE IF EXISTS public.inbox_messages;
-DROP SEQUENCE IF EXISTS public.failed_jobs_id_seq;
-DROP TABLE IF EXISTS public.failed_jobs;
-DROP SEQUENCE IF EXISTS public.contacts_id_seq;
-DROP TABLE IF EXISTS public.contacts;
-DROP SEQUENCE IF EXISTS public.comments_id_seq;
-DROP TABLE IF EXISTS public.comments;
-DROP SEQUENCE IF EXISTS public.comment_likes_id_seq;
-DROP TABLE IF EXISTS public.comment_likes;
-DROP SEQUENCE IF EXISTS public.chatbot_conversations_id_seq;
-DROP TABLE IF EXISTS public.chatbot_conversations;
-DROP TABLE IF EXISTS public.cache_locks;
-DROP TABLE IF EXISTS public.cache;
-DROP SEQUENCE IF EXISTS public.banners_id_seq;
-DROP TABLE IF EXISTS public.banners;
-DROP SEQUENCE IF EXISTS public.announcements_id_seq;
-DROP TABLE IF EXISTS public.announcements;
-DROP SEQUENCE IF EXISTS public.agendas_id_seq;
-DROP TABLE IF EXISTS public.agendas;
-DROP SEQUENCE IF EXISTS public.activity_videos_id_seq;
-DROP TABLE IF EXISTS public.activity_videos;
-DROP SEQUENCE IF EXISTS public.activity_photos_id_seq;
-DROP TABLE IF EXISTS public.activity_photos;
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- Name: activity_photos; Type: TABLE; Schema: public; Owner: -
+-- Name: activity_photos; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.activity_photos (
@@ -188,8 +39,10 @@ CREATE TABLE public.activity_photos (
 );
 
 
+ALTER TABLE public.activity_photos OWNER TO postgres;
+
 --
--- Name: activity_photos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: activity_photos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.activity_photos_id_seq
@@ -200,15 +53,17 @@ CREATE SEQUENCE public.activity_photos_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.activity_photos_id_seq OWNER TO postgres;
+
 --
--- Name: activity_photos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: activity_photos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.activity_photos_id_seq OWNED BY public.activity_photos.id;
 
 
 --
--- Name: activity_videos; Type: TABLE; Schema: public; Owner: -
+-- Name: activity_videos; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.activity_videos (
@@ -223,8 +78,10 @@ CREATE TABLE public.activity_videos (
 );
 
 
+ALTER TABLE public.activity_videos OWNER TO postgres;
+
 --
--- Name: activity_videos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: activity_videos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.activity_videos_id_seq
@@ -235,15 +92,17 @@ CREATE SEQUENCE public.activity_videos_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.activity_videos_id_seq OWNER TO postgres;
+
 --
--- Name: activity_videos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: activity_videos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.activity_videos_id_seq OWNED BY public.activity_videos.id;
 
 
 --
--- Name: agendas; Type: TABLE; Schema: public; Owner: -
+-- Name: agendas; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.agendas (
@@ -265,8 +124,10 @@ CREATE TABLE public.agendas (
 );
 
 
+ALTER TABLE public.agendas OWNER TO postgres;
+
 --
--- Name: agendas_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: agendas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.agendas_id_seq
@@ -277,15 +138,17 @@ CREATE SEQUENCE public.agendas_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.agendas_id_seq OWNER TO postgres;
+
 --
--- Name: agendas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: agendas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.agendas_id_seq OWNED BY public.agendas.id;
 
 
 --
--- Name: announcements; Type: TABLE; Schema: public; Owner: -
+-- Name: announcements; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.announcements (
@@ -302,8 +165,10 @@ CREATE TABLE public.announcements (
 );
 
 
+ALTER TABLE public.announcements OWNER TO postgres;
+
 --
--- Name: announcements_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: announcements_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.announcements_id_seq
@@ -314,15 +179,17 @@ CREATE SEQUENCE public.announcements_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.announcements_id_seq OWNER TO postgres;
+
 --
--- Name: announcements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: announcements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.announcements_id_seq OWNED BY public.announcements.id;
 
 
 --
--- Name: banners; Type: TABLE; Schema: public; Owner: -
+-- Name: banners; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.banners (
@@ -345,8 +212,10 @@ CREATE TABLE public.banners (
 );
 
 
+ALTER TABLE public.banners OWNER TO postgres;
+
 --
--- Name: banners_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: banners_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.banners_id_seq
@@ -357,15 +226,17 @@ CREATE SEQUENCE public.banners_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.banners_id_seq OWNER TO postgres;
+
 --
--- Name: banners_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: banners_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.banners_id_seq OWNED BY public.banners.id;
 
 
 --
--- Name: cache; Type: TABLE; Schema: public; Owner: -
+-- Name: cache; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.cache (
@@ -375,8 +246,10 @@ CREATE TABLE public.cache (
 );
 
 
+ALTER TABLE public.cache OWNER TO postgres;
+
 --
--- Name: cache_locks; Type: TABLE; Schema: public; Owner: -
+-- Name: cache_locks; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.cache_locks (
@@ -386,8 +259,10 @@ CREATE TABLE public.cache_locks (
 );
 
 
+ALTER TABLE public.cache_locks OWNER TO postgres;
+
 --
--- Name: chatbot_conversations; Type: TABLE; Schema: public; Owner: -
+-- Name: chatbot_conversations; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.chatbot_conversations (
@@ -406,8 +281,10 @@ CREATE TABLE public.chatbot_conversations (
 );
 
 
+ALTER TABLE public.chatbot_conversations OWNER TO postgres;
+
 --
--- Name: chatbot_conversations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: chatbot_conversations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.chatbot_conversations_id_seq
@@ -418,15 +295,17 @@ CREATE SEQUENCE public.chatbot_conversations_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.chatbot_conversations_id_seq OWNER TO postgres;
+
 --
--- Name: chatbot_conversations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: chatbot_conversations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.chatbot_conversations_id_seq OWNED BY public.chatbot_conversations.id;
 
 
 --
--- Name: comment_likes; Type: TABLE; Schema: public; Owner: -
+-- Name: comment_likes; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.comment_likes (
@@ -440,8 +319,10 @@ CREATE TABLE public.comment_likes (
 );
 
 
+ALTER TABLE public.comment_likes OWNER TO postgres;
+
 --
--- Name: comment_likes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: comment_likes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.comment_likes_id_seq
@@ -452,15 +333,17 @@ CREATE SEQUENCE public.comment_likes_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.comment_likes_id_seq OWNER TO postgres;
+
 --
--- Name: comment_likes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: comment_likes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.comment_likes_id_seq OWNED BY public.comment_likes.id;
 
 
 --
--- Name: comments; Type: TABLE; Schema: public; Owner: -
+-- Name: comments; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.comments (
@@ -481,8 +364,10 @@ CREATE TABLE public.comments (
 );
 
 
+ALTER TABLE public.comments OWNER TO postgres;
+
 --
--- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.comments_id_seq
@@ -493,15 +378,17 @@ CREATE SEQUENCE public.comments_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.comments_id_seq OWNER TO postgres;
+
 --
--- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.comments_id_seq OWNED BY public.comments.id;
 
 
 --
--- Name: contacts; Type: TABLE; Schema: public; Owner: -
+-- Name: contacts; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.contacts (
@@ -517,8 +404,10 @@ CREATE TABLE public.contacts (
 );
 
 
+ALTER TABLE public.contacts OWNER TO postgres;
+
 --
--- Name: contacts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: contacts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.contacts_id_seq
@@ -529,15 +418,17 @@ CREATE SEQUENCE public.contacts_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.contacts_id_seq OWNER TO postgres;
+
 --
--- Name: contacts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: contacts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.contacts_id_seq OWNED BY public.contacts.id;
 
 
 --
--- Name: failed_jobs; Type: TABLE; Schema: public; Owner: -
+-- Name: failed_jobs; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.failed_jobs (
@@ -551,8 +442,10 @@ CREATE TABLE public.failed_jobs (
 );
 
 
+ALTER TABLE public.failed_jobs OWNER TO postgres;
+
 --
--- Name: failed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: failed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.failed_jobs_id_seq
@@ -563,15 +456,17 @@ CREATE SEQUENCE public.failed_jobs_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.failed_jobs_id_seq OWNER TO postgres;
+
 --
--- Name: failed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: failed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.failed_jobs_id_seq OWNED BY public.failed_jobs.id;
 
 
 --
--- Name: inbox_messages; Type: TABLE; Schema: public; Owner: -
+-- Name: inbox_messages; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.inbox_messages (
@@ -586,8 +481,10 @@ CREATE TABLE public.inbox_messages (
 );
 
 
+ALTER TABLE public.inbox_messages OWNER TO postgres;
+
 --
--- Name: inbox_messages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: inbox_messages_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.inbox_messages_id_seq
@@ -598,15 +495,17 @@ CREATE SEQUENCE public.inbox_messages_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.inbox_messages_id_seq OWNER TO postgres;
+
 --
--- Name: inbox_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: inbox_messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.inbox_messages_id_seq OWNED BY public.inbox_messages.id;
 
 
 --
--- Name: info_texts; Type: TABLE; Schema: public; Owner: -
+-- Name: info_texts; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.info_texts (
@@ -619,8 +518,10 @@ CREATE TABLE public.info_texts (
 );
 
 
+ALTER TABLE public.info_texts OWNER TO postgres;
+
 --
--- Name: info_texts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: info_texts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.info_texts_id_seq
@@ -631,15 +532,17 @@ CREATE SEQUENCE public.info_texts_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.info_texts_id_seq OWNER TO postgres;
+
 --
--- Name: info_texts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: info_texts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.info_texts_id_seq OWNED BY public.info_texts.id;
 
 
 --
--- Name: job_batches; Type: TABLE; Schema: public; Owner: -
+-- Name: job_batches; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.job_batches (
@@ -656,8 +559,10 @@ CREATE TABLE public.job_batches (
 );
 
 
+ALTER TABLE public.job_batches OWNER TO postgres;
+
 --
--- Name: jobs; Type: TABLE; Schema: public; Owner: -
+-- Name: jobs; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.jobs (
@@ -671,8 +576,10 @@ CREATE TABLE public.jobs (
 );
 
 
+ALTER TABLE public.jobs OWNER TO postgres;
+
 --
--- Name: jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.jobs_id_seq
@@ -683,15 +590,17 @@ CREATE SEQUENCE public.jobs_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.jobs_id_seq OWNER TO postgres;
+
 --
--- Name: jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.jobs_id_seq OWNED BY public.jobs.id;
 
 
 --
--- Name: migrations; Type: TABLE; Schema: public; Owner: -
+-- Name: migrations; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.migrations (
@@ -701,8 +610,10 @@ CREATE TABLE public.migrations (
 );
 
 
+ALTER TABLE public.migrations OWNER TO postgres;
+
 --
--- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.migrations_id_seq
@@ -714,15 +625,17 @@ CREATE SEQUENCE public.migrations_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.migrations_id_seq OWNER TO postgres;
+
 --
--- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.migrations_id_seq OWNED BY public.migrations.id;
 
 
 --
--- Name: password_reset_tokens; Type: TABLE; Schema: public; Owner: -
+-- Name: password_reset_tokens; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.password_reset_tokens (
@@ -732,8 +645,10 @@ CREATE TABLE public.password_reset_tokens (
 );
 
 
+ALTER TABLE public.password_reset_tokens OWNER TO postgres;
+
 --
--- Name: post_views; Type: TABLE; Schema: public; Owner: -
+-- Name: post_views; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.post_views (
@@ -747,8 +662,10 @@ CREATE TABLE public.post_views (
 );
 
 
+ALTER TABLE public.post_views OWNER TO postgres;
+
 --
--- Name: post_views_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: post_views_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.post_views_id_seq
@@ -759,15 +676,17 @@ CREATE SEQUENCE public.post_views_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.post_views_id_seq OWNER TO postgres;
+
 --
--- Name: post_views_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: post_views_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.post_views_id_seq OWNED BY public.post_views.id;
 
 
 --
--- Name: posts; Type: TABLE; Schema: public; Owner: -
+-- Name: posts; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.posts (
@@ -793,8 +712,10 @@ CREATE TABLE public.posts (
 );
 
 
+ALTER TABLE public.posts OWNER TO postgres;
+
 --
--- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.posts_id_seq
@@ -805,15 +726,17 @@ CREATE SEQUENCE public.posts_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.posts_id_seq OWNER TO postgres;
+
 --
--- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.posts_id_seq OWNED BY public.posts.id;
 
 
 --
--- Name: school_profiles; Type: TABLE; Schema: public; Owner: -
+-- Name: school_profiles; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.school_profiles (
@@ -834,8 +757,10 @@ CREATE TABLE public.school_profiles (
 );
 
 
+ALTER TABLE public.school_profiles OWNER TO postgres;
+
 --
--- Name: school_profiles_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: school_profiles_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.school_profiles_id_seq
@@ -846,15 +771,17 @@ CREATE SEQUENCE public.school_profiles_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.school_profiles_id_seq OWNER TO postgres;
+
 --
--- Name: school_profiles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: school_profiles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.school_profiles_id_seq OWNED BY public.school_profiles.id;
 
 
 --
--- Name: sessions; Type: TABLE; Schema: public; Owner: -
+-- Name: sessions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.sessions (
@@ -867,8 +794,10 @@ CREATE TABLE public.sessions (
 );
 
 
+ALTER TABLE public.sessions OWNER TO postgres;
+
 --
--- Name: spmb_faqs; Type: TABLE; Schema: public; Owner: -
+-- Name: spmb_faqs; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.spmb_faqs (
@@ -881,8 +810,10 @@ CREATE TABLE public.spmb_faqs (
 );
 
 
+ALTER TABLE public.spmb_faqs OWNER TO postgres;
+
 --
--- Name: spmb_faqs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: spmb_faqs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.spmb_faqs_id_seq
@@ -893,15 +824,17 @@ CREATE SEQUENCE public.spmb_faqs_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.spmb_faqs_id_seq OWNER TO postgres;
+
 --
--- Name: spmb_faqs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: spmb_faqs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.spmb_faqs_id_seq OWNED BY public.spmb_faqs.id;
 
 
 --
--- Name: spmb_requirements; Type: TABLE; Schema: public; Owner: -
+-- Name: spmb_requirements; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.spmb_requirements (
@@ -915,8 +848,10 @@ CREATE TABLE public.spmb_requirements (
 );
 
 
+ALTER TABLE public.spmb_requirements OWNER TO postgres;
+
 --
--- Name: spmb_requirements_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: spmb_requirements_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.spmb_requirements_id_seq
@@ -927,15 +862,17 @@ CREATE SEQUENCE public.spmb_requirements_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.spmb_requirements_id_seq OWNER TO postgres;
+
 --
--- Name: spmb_requirements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: spmb_requirements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.spmb_requirements_id_seq OWNED BY public.spmb_requirements.id;
 
 
 --
--- Name: spmb_settings; Type: TABLE; Schema: public; Owner: -
+-- Name: spmb_settings; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.spmb_settings (
@@ -967,8 +904,10 @@ CREATE TABLE public.spmb_settings (
 );
 
 
+ALTER TABLE public.spmb_settings OWNER TO postgres;
+
 --
--- Name: spmb_settings_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: spmb_settings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.spmb_settings_id_seq
@@ -979,15 +918,17 @@ CREATE SEQUENCE public.spmb_settings_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.spmb_settings_id_seq OWNER TO postgres;
+
 --
--- Name: spmb_settings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: spmb_settings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.spmb_settings_id_seq OWNED BY public.spmb_settings.id;
 
 
 --
--- Name: spmb_timelines; Type: TABLE; Schema: public; Owner: -
+-- Name: spmb_timelines; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.spmb_timelines (
@@ -1002,8 +943,10 @@ CREATE TABLE public.spmb_timelines (
 );
 
 
+ALTER TABLE public.spmb_timelines OWNER TO postgres;
+
 --
--- Name: spmb_timelines_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: spmb_timelines_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.spmb_timelines_id_seq
@@ -1014,15 +957,17 @@ CREATE SEQUENCE public.spmb_timelines_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.spmb_timelines_id_seq OWNER TO postgres;
+
 --
--- Name: spmb_timelines_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: spmb_timelines_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.spmb_timelines_id_seq OWNED BY public.spmb_timelines.id;
 
 
 --
--- Name: student_achievements; Type: TABLE; Schema: public; Owner: -
+-- Name: student_achievements; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.student_achievements (
@@ -1043,8 +988,10 @@ CREATE TABLE public.student_achievements (
 );
 
 
+ALTER TABLE public.student_achievements OWNER TO postgres;
+
 --
--- Name: student_achievements_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: student_achievements_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.student_achievements_id_seq
@@ -1055,15 +1002,17 @@ CREATE SEQUENCE public.student_achievements_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.student_achievements_id_seq OWNER TO postgres;
+
 --
--- Name: student_achievements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: student_achievements_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.student_achievements_id_seq OWNED BY public.student_achievements.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.users (
@@ -1077,8 +1026,10 @@ CREATE TABLE public.users (
 );
 
 
+ALTER TABLE public.users OWNER TO postgres;
+
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.users_id_seq
@@ -1089,15 +1040,17 @@ CREATE SEQUENCE public.users_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.users_id_seq OWNER TO postgres;
+
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: visual_identities; Type: TABLE; Schema: public; Owner: -
+-- Name: visual_identities; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.visual_identities (
@@ -1119,8 +1072,10 @@ CREATE TABLE public.visual_identities (
 );
 
 
+ALTER TABLE public.visual_identities OWNER TO postgres;
+
 --
--- Name: visual_identities_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: visual_identities_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.visual_identities_id_seq
@@ -1131,183 +1086,185 @@ CREATE SEQUENCE public.visual_identities_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.visual_identities_id_seq OWNER TO postgres;
+
 --
--- Name: visual_identities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: visual_identities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.visual_identities_id_seq OWNED BY public.visual_identities.id;
 
 
 --
--- Name: activity_photos id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: activity_photos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.activity_photos ALTER COLUMN id SET DEFAULT nextval('public.activity_photos_id_seq'::regclass);
 
 
 --
--- Name: activity_videos id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: activity_videos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.activity_videos ALTER COLUMN id SET DEFAULT nextval('public.activity_videos_id_seq'::regclass);
 
 
 --
--- Name: agendas id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: agendas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.agendas ALTER COLUMN id SET DEFAULT nextval('public.agendas_id_seq'::regclass);
 
 
 --
--- Name: announcements id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: announcements id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.announcements ALTER COLUMN id SET DEFAULT nextval('public.announcements_id_seq'::regclass);
 
 
 --
--- Name: banners id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: banners id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.banners ALTER COLUMN id SET DEFAULT nextval('public.banners_id_seq'::regclass);
 
 
 --
--- Name: chatbot_conversations id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: chatbot_conversations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.chatbot_conversations ALTER COLUMN id SET DEFAULT nextval('public.chatbot_conversations_id_seq'::regclass);
 
 
 --
--- Name: comment_likes id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: comment_likes id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comment_likes ALTER COLUMN id SET DEFAULT nextval('public.comment_likes_id_seq'::regclass);
 
 
 --
--- Name: comments id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: comments id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comments ALTER COLUMN id SET DEFAULT nextval('public.comments_id_seq'::regclass);
 
 
 --
--- Name: contacts id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: contacts id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.contacts ALTER COLUMN id SET DEFAULT nextval('public.contacts_id_seq'::regclass);
 
 
 --
--- Name: failed_jobs id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: failed_jobs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.failed_jobs ALTER COLUMN id SET DEFAULT nextval('public.failed_jobs_id_seq'::regclass);
 
 
 --
--- Name: inbox_messages id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: inbox_messages id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.inbox_messages ALTER COLUMN id SET DEFAULT nextval('public.inbox_messages_id_seq'::regclass);
 
 
 --
--- Name: info_texts id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: info_texts id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.info_texts ALTER COLUMN id SET DEFAULT nextval('public.info_texts_id_seq'::regclass);
 
 
 --
--- Name: jobs id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: jobs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.jobs ALTER COLUMN id SET DEFAULT nextval('public.jobs_id_seq'::regclass);
 
 
 --
--- Name: migrations id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: migrations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.migrations ALTER COLUMN id SET DEFAULT nextval('public.migrations_id_seq'::regclass);
 
 
 --
--- Name: post_views id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: post_views id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.post_views ALTER COLUMN id SET DEFAULT nextval('public.post_views_id_seq'::regclass);
 
 
 --
--- Name: posts id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: posts id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.posts ALTER COLUMN id SET DEFAULT nextval('public.posts_id_seq'::regclass);
 
 
 --
--- Name: school_profiles id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: school_profiles id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.school_profiles ALTER COLUMN id SET DEFAULT nextval('public.school_profiles_id_seq'::regclass);
 
 
 --
--- Name: spmb_faqs id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: spmb_faqs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_faqs ALTER COLUMN id SET DEFAULT nextval('public.spmb_faqs_id_seq'::regclass);
 
 
 --
--- Name: spmb_requirements id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: spmb_requirements id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_requirements ALTER COLUMN id SET DEFAULT nextval('public.spmb_requirements_id_seq'::regclass);
 
 
 --
--- Name: spmb_settings id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: spmb_settings id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_settings ALTER COLUMN id SET DEFAULT nextval('public.spmb_settings_id_seq'::regclass);
 
 
 --
--- Name: spmb_timelines id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: spmb_timelines id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_timelines ALTER COLUMN id SET DEFAULT nextval('public.spmb_timelines_id_seq'::regclass);
 
 
 --
--- Name: student_achievements id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: student_achievements id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.student_achievements ALTER COLUMN id SET DEFAULT nextval('public.student_achievements_id_seq'::regclass);
 
 
 --
--- Name: users id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
--- Name: visual_identities id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: visual_identities id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.visual_identities ALTER COLUMN id SET DEFAULT nextval('public.visual_identities_id_seq'::regclass);
 
 
 --
--- Data for Name: activity_photos; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: activity_photos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.activity_photos (id, judul, deskripsi, gambar, urutan, is_active, created_at, updated_at) FROM stdin;
@@ -1315,7 +1272,7 @@ COPY public.activity_photos (id, judul, deskripsi, gambar, urutan, is_active, cr
 
 
 --
--- Data for Name: activity_videos; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: activity_videos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.activity_videos (id, judul, youtube_url, youtube_id, urutan, is_active, created_at, updated_at) FROM stdin;
@@ -1323,7 +1280,7 @@ COPY public.activity_videos (id, judul, youtube_url, youtube_id, urutan, is_acti
 
 
 --
--- Data for Name: agendas; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: agendas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.agendas (id, judul, author_name, deskripsi, tanggal_mulai, tanggal_selesai, waktu_mulai, waktu_selesai, lokasi, urutan, status, published_at, views_count, created_at, updated_at) FROM stdin;
@@ -1331,7 +1288,7 @@ COPY public.agendas (id, judul, author_name, deskripsi, tanggal_mulai, tanggal_s
 
 
 --
--- Data for Name: announcements; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: announcements; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.announcements (id, judul, isi, tanggal, urutan, status, author_name, views_count, created_at, updated_at) FROM stdin;
@@ -1339,7 +1296,7 @@ COPY public.announcements (id, judul, isi, tanggal, urutan, status, author_name,
 
 
 --
--- Data for Name: banners; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: banners; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.banners (id, judul, tagline, deskripsi, gambar, link, button_text, urutan, is_active, show_logo, show_tagline, show_title, show_description, show_button, created_at, updated_at) FROM stdin;
@@ -1347,7 +1304,7 @@ COPY public.banners (id, judul, tagline, deskripsi, gambar, link, button_text, u
 
 
 --
--- Data for Name: cache; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: cache; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.cache (key, value, expiration) FROM stdin;
@@ -1355,7 +1312,7 @@ COPY public.cache (key, value, expiration) FROM stdin;
 
 
 --
--- Data for Name: cache_locks; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: cache_locks; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.cache_locks (key, owner, expiration) FROM stdin;
@@ -1363,17 +1320,15 @@ COPY public.cache_locks (key, owner, expiration) FROM stdin;
 
 
 --
--- Data for Name: chatbot_conversations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: chatbot_conversations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.chatbot_conversations (id, session_id, user_message, bot_response, intent_matched, confidence_score, response_time_ms, method, ip_address, user_agent, created_at, updated_at) FROM stdin;
-1	session_1768187867362_ipg9vgo3c	hi	Halo! Selamat datang di layanan informasi digital MTs Nurul Falaah Soreang. Ada yang bisa saya bantu? 😊	built_in_greeting	1.00	603	built-in	127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	2026-01-15 10:57:23	2026-01-15 10:57:23
-2	session_1768187867362_ipg9vgo3c	saya ingin menanyakan apakah website ini sudha ada visi misi?	Mohon maaf, layanan AI kami sedang sibuk. Silakan coba kembali beberapa saat lagi atau hubungi admin sekolah kami untuk bantuan langsung.	\N	0.00	411	fallback	127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	2026-01-15 10:57:42	2026-01-15 10:57:42
 \.
 
 
 --
--- Data for Name: comment_likes; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: comment_likes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.comment_likes (id, comment_id, user_id, session_id, ip_address, created_at, updated_at) FROM stdin;
@@ -1381,7 +1336,7 @@ COPY public.comment_likes (id, comment_id, user_id, session_id, ip_address, crea
 
 
 --
--- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.comments (id, post_id, parent_id, is_admin, name, email, comment, admin_reply_by, admin_reply, admin_replied_at, is_approved, is_read, created_at, updated_at) FROM stdin;
@@ -1389,7 +1344,7 @@ COPY public.comments (id, post_id, parent_id, is_admin, name, email, comment, ad
 
 
 --
--- Data for Name: contacts; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: contacts; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.contacts (id, jenis, label, nilai, icon, urutan, is_active, created_at, updated_at) FROM stdin;
@@ -1397,7 +1352,7 @@ COPY public.contacts (id, jenis, label, nilai, icon, urutan, is_active, created_
 
 
 --
--- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed_at) FROM stdin;
@@ -1405,7 +1360,7 @@ COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed
 
 
 --
--- Data for Name: inbox_messages; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: inbox_messages; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.inbox_messages (id, name, email, phone, message, is_read, created_at, updated_at) FROM stdin;
@@ -1413,7 +1368,7 @@ COPY public.inbox_messages (id, name, email, phone, message, is_read, created_at
 
 
 --
--- Data for Name: info_texts; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: info_texts; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.info_texts (id, key, value, deskripsi, created_at, updated_at) FROM stdin;
@@ -1421,7 +1376,7 @@ COPY public.info_texts (id, key, value, deskripsi, created_at, updated_at) FROM 
 
 
 --
--- Data for Name: job_batches; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: job_batches; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.job_batches (id, name, total_jobs, pending_jobs, failed_jobs, failed_job_ids, options, cancelled_at, created_at, finished_at) FROM stdin;
@@ -1429,7 +1384,7 @@ COPY public.job_batches (id, name, total_jobs, pending_jobs, failed_jobs, failed
 
 
 --
--- Data for Name: jobs; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: jobs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.jobs (id, queue, payload, attempts, reserved_at, available_at, created_at) FROM stdin;
@@ -1437,7 +1392,7 @@ COPY public.jobs (id, queue, payload, attempts, reserved_at, available_at, creat
 
 
 --
--- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.migrations (id, migration, batch) FROM stdin;
@@ -1446,7 +1401,7 @@ COPY public.migrations (id, migration, batch) FROM stdin;
 
 
 --
--- Data for Name: password_reset_tokens; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: password_reset_tokens; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.password_reset_tokens (email, token, created_at) FROM stdin;
@@ -1454,7 +1409,7 @@ COPY public.password_reset_tokens (email, token, created_at) FROM stdin;
 
 
 --
--- Data for Name: post_views; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: post_views; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.post_views (id, post_id, session_id, ip_address, viewed_at, created_at, updated_at) FROM stdin;
@@ -1462,7 +1417,7 @@ COPY public.post_views (id, post_id, session_id, ip_address, viewed_at, created_
 
 
 --
--- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.posts (id, title, slug, type, excerpt, body, thumbnail_path, status, published_at, is_featured, author_id, author_name, meta_description, tags, images, image_metadata, view_count, created_at, updated_at) FROM stdin;
@@ -1470,25 +1425,24 @@ COPY public.posts (id, title, slug, type, excerpt, body, thumbnail_path, status,
 
 
 --
--- Data for Name: school_profiles; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: school_profiles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.school_profiles (id, nama_sekolah, gambar_sekolah, deskripsi_sekolah, sejarah, visi, misi, tujuan, struktur_organisasi, kepala_sekolah_nama, kepala_sekolah_foto, kepala_sekolah_sambutan, created_at, updated_at) FROM stdin;
-1	MTs Nurul Falaah Soreang	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2026-01-15 10:57:06	2026-01-15 10:57:06
+1	MTs Nurul Falaah Soreang	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2026-01-20 11:23:27	2026-01-20 11:23:27
 \.
 
 
 --
--- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.sessions (id, user_id, ip_address, user_agent, payload, last_activity) FROM stdin;
-9YHb01UVukbCH5xdEp9nppQaioGnaI8wfwIZHISY	1	127.0.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	YTo1OntzOjY6Il90b2tlbiI7czo0MDoic3Z2ZUpBanVyaTh5TWFLb2F4M0VEcG95dVV0UWdLd1NTbFBDekF4ZiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jcGFuZWwiO3M6NToicm91dGUiO3M6MTY6ImNwYW5lbC5kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YToxOntzOjg6ImludGVuZGVkIjtzOjI4OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvY3BhbmVsIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9	1768449438
 \.
 
 
 --
--- Data for Name: spmb_faqs; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: spmb_faqs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.spmb_faqs (id, question, answer, urutan, created_at, updated_at) FROM stdin;
@@ -1496,7 +1450,7 @@ COPY public.spmb_faqs (id, question, answer, urutan, created_at, updated_at) FRO
 
 
 --
--- Data for Name: spmb_requirements; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: spmb_requirements; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.spmb_requirements (id, content, type, urutan, created_at, updated_at) FROM stdin;
@@ -1504,16 +1458,15 @@ COPY public.spmb_requirements (id, content, type, urutan, created_at, updated_at
 
 
 --
--- Data for Name: spmb_settings; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: spmb_settings; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.spmb_settings (id, registration_status, academic_year, hero_slogan, registration_start_date, registration_end_date, contact_wa, quota, registration_fee, banner_path, show_brochure, brochure_path, flow_image_path, step_1_start_date, step_1_end_date, step_2_start_date, step_2_end_date, step_3_start_date, step_3_end_date, step_4_start_date, step_4_end_date, step_5_start_date, step_5_end_date, created_at, updated_at) FROM stdin;
-1	closed		\N	\N	\N		\N	0.00	\N	f	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	2026-01-15 10:57:16	2026-01-15 10:57:16
 \.
 
 
 --
--- Data for Name: spmb_timelines; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: spmb_timelines; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.spmb_timelines (id, activity, start_date, end_date, description, urutan, created_at, updated_at) FROM stdin;
@@ -1521,7 +1474,7 @@ COPY public.spmb_timelines (id, activity, start_date, end_date, description, uru
 
 
 --
--- Data for Name: student_achievements; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: student_achievements; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.student_achievements (id, judul, nama_siswa, kelas, jenis_prestasi, tingkat_prestasi, deskripsi, gambar, foto_sertifikat, tanggal_prestasi, urutan, is_active, created_at, updated_at) FROM stdin;
@@ -1529,192 +1482,193 @@ COPY public.student_achievements (id, judul, nama_siswa, kelas, jenis_prestasi, 
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.users (id, name, username, password, remember_token, created_at, updated_at) FROM stdin;
-1	Admin Sekolah	admin_mts_nfs	$2y$12$7fqH/UGXzLA3Rf5jSdvqAO2XhYK6yoYjxavA0BgaUgzMyZrGLrg0W	\N	2026-01-15 10:56:42	2026-01-15 10:56:42
+1	admin	admin_mts_nfs	$2y$12$Nf5bTh0cbB2eYI5cbRdYpOubOKU6MyhCbTB3XhoU33or9GG1KKrP6	\N	2026-01-20 11:23:27	2026-01-20 11:23:27
 \.
 
 
 --
--- Data for Name: visual_identities; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: visual_identities; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.visual_identities (id, logo_path, tagline, judul, deskripsi, link, button_text, show_logo, show_tagline, show_title, show_description, show_button, promosi_banner_path, created_at, updated_at) FROM stdin;
+1	\N	\N	MTs Nurul Falaah Soreang	\N	\N	\N	t	t	t	t	t	\N	2026-01-20 11:23:27	2026-01-20 11:23:27
 \.
 
 
 --
--- Name: activity_photos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: activity_photos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.activity_photos_id_seq', 1, false);
 
 
 --
--- Name: activity_videos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: activity_videos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.activity_videos_id_seq', 1, false);
 
 
 --
--- Name: agendas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: agendas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.agendas_id_seq', 1, false);
 
 
 --
--- Name: announcements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: announcements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.announcements_id_seq', 1, false);
 
 
 --
--- Name: banners_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: banners_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.banners_id_seq', 1, false);
 
 
 --
--- Name: chatbot_conversations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: chatbot_conversations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.chatbot_conversations_id_seq', 2, true);
+SELECT pg_catalog.setval('public.chatbot_conversations_id_seq', 1, false);
 
 
 --
--- Name: comment_likes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: comment_likes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.comment_likes_id_seq', 1, false);
 
 
 --
--- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.comments_id_seq', 1, false);
 
 
 --
--- Name: contacts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: contacts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.contacts_id_seq', 1, false);
 
 
 --
--- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.failed_jobs_id_seq', 1, false);
 
 
 --
--- Name: inbox_messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: inbox_messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.inbox_messages_id_seq', 1, false);
 
 
 --
--- Name: info_texts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: info_texts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.info_texts_id_seq', 1, false);
 
 
 --
--- Name: jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.jobs_id_seq', 1, false);
 
 
 --
--- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.migrations_id_seq', 1, true);
 
 
 --
--- Name: post_views_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: post_views_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.post_views_id_seq', 1, false);
 
 
 --
--- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.posts_id_seq', 1, false);
 
 
 --
--- Name: school_profiles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: school_profiles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.school_profiles_id_seq', 1, true);
+SELECT pg_catalog.setval('public.school_profiles_id_seq', 1, false);
 
 
 --
--- Name: spmb_faqs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: spmb_faqs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.spmb_faqs_id_seq', 1, false);
 
 
 --
--- Name: spmb_requirements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: spmb_requirements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.spmb_requirements_id_seq', 1, false);
 
 
 --
--- Name: spmb_settings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: spmb_settings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.spmb_settings_id_seq', 1, true);
+SELECT pg_catalog.setval('public.spmb_settings_id_seq', 1, false);
 
 
 --
--- Name: spmb_timelines_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: spmb_timelines_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.spmb_timelines_id_seq', 1, false);
 
 
 --
--- Name: student_achievements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: student_achievements_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.student_achievements_id_seq', 1, false);
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.users_id_seq', 1, true);
 
 
 --
--- Name: visual_identities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: visual_identities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.visual_identities_id_seq', 1, false);
 
 
 --
--- Name: activity_photos activity_photos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: activity_photos activity_photos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.activity_photos
@@ -1722,7 +1676,7 @@ ALTER TABLE ONLY public.activity_photos
 
 
 --
--- Name: activity_videos activity_videos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: activity_videos activity_videos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.activity_videos
@@ -1730,7 +1684,7 @@ ALTER TABLE ONLY public.activity_videos
 
 
 --
--- Name: agendas agendas_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: agendas agendas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.agendas
@@ -1738,7 +1692,7 @@ ALTER TABLE ONLY public.agendas
 
 
 --
--- Name: announcements announcements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: announcements announcements_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.announcements
@@ -1746,7 +1700,7 @@ ALTER TABLE ONLY public.announcements
 
 
 --
--- Name: banners banners_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: banners banners_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.banners
@@ -1754,7 +1708,7 @@ ALTER TABLE ONLY public.banners
 
 
 --
--- Name: cache_locks cache_locks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: cache_locks cache_locks_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.cache_locks
@@ -1762,7 +1716,7 @@ ALTER TABLE ONLY public.cache_locks
 
 
 --
--- Name: cache cache_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: cache cache_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.cache
@@ -1770,7 +1724,7 @@ ALTER TABLE ONLY public.cache
 
 
 --
--- Name: chatbot_conversations chatbot_conversations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: chatbot_conversations chatbot_conversations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.chatbot_conversations
@@ -1778,7 +1732,7 @@ ALTER TABLE ONLY public.chatbot_conversations
 
 
 --
--- Name: comment_likes comment_likes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: comment_likes comment_likes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comment_likes
@@ -1786,7 +1740,7 @@ ALTER TABLE ONLY public.comment_likes
 
 
 --
--- Name: comments comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: comments comments_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comments
@@ -1794,7 +1748,7 @@ ALTER TABLE ONLY public.comments
 
 
 --
--- Name: contacts contacts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: contacts contacts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.contacts
@@ -1802,7 +1756,7 @@ ALTER TABLE ONLY public.contacts
 
 
 --
--- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.failed_jobs
@@ -1810,7 +1764,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- Name: failed_jobs failed_jobs_uuid_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: failed_jobs failed_jobs_uuid_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.failed_jobs
@@ -1818,7 +1772,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- Name: inbox_messages inbox_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: inbox_messages inbox_messages_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.inbox_messages
@@ -1826,7 +1780,7 @@ ALTER TABLE ONLY public.inbox_messages
 
 
 --
--- Name: info_texts info_texts_key_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: info_texts info_texts_key_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.info_texts
@@ -1834,7 +1788,7 @@ ALTER TABLE ONLY public.info_texts
 
 
 --
--- Name: info_texts info_texts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: info_texts info_texts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.info_texts
@@ -1842,7 +1796,7 @@ ALTER TABLE ONLY public.info_texts
 
 
 --
--- Name: job_batches job_batches_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: job_batches job_batches_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.job_batches
@@ -1850,7 +1804,7 @@ ALTER TABLE ONLY public.job_batches
 
 
 --
--- Name: jobs jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: jobs jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.jobs
@@ -1858,7 +1812,7 @@ ALTER TABLE ONLY public.jobs
 
 
 --
--- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.migrations
@@ -1866,7 +1820,7 @@ ALTER TABLE ONLY public.migrations
 
 
 --
--- Name: password_reset_tokens password_reset_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: password_reset_tokens password_reset_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.password_reset_tokens
@@ -1874,7 +1828,7 @@ ALTER TABLE ONLY public.password_reset_tokens
 
 
 --
--- Name: post_views post_views_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: post_views post_views_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.post_views
@@ -1882,7 +1836,7 @@ ALTER TABLE ONLY public.post_views
 
 
 --
--- Name: posts posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: posts posts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.posts
@@ -1890,7 +1844,7 @@ ALTER TABLE ONLY public.posts
 
 
 --
--- Name: posts posts_slug_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: posts posts_slug_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.posts
@@ -1898,7 +1852,7 @@ ALTER TABLE ONLY public.posts
 
 
 --
--- Name: school_profiles school_profiles_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: school_profiles school_profiles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.school_profiles
@@ -1906,7 +1860,7 @@ ALTER TABLE ONLY public.school_profiles
 
 
 --
--- Name: sessions sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sessions sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.sessions
@@ -1914,7 +1868,7 @@ ALTER TABLE ONLY public.sessions
 
 
 --
--- Name: spmb_faqs spmb_faqs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: spmb_faqs spmb_faqs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_faqs
@@ -1922,7 +1876,7 @@ ALTER TABLE ONLY public.spmb_faqs
 
 
 --
--- Name: spmb_requirements spmb_requirements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: spmb_requirements spmb_requirements_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_requirements
@@ -1930,7 +1884,7 @@ ALTER TABLE ONLY public.spmb_requirements
 
 
 --
--- Name: spmb_settings spmb_settings_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: spmb_settings spmb_settings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_settings
@@ -1938,7 +1892,7 @@ ALTER TABLE ONLY public.spmb_settings
 
 
 --
--- Name: spmb_timelines spmb_timelines_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: spmb_timelines spmb_timelines_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.spmb_timelines
@@ -1946,7 +1900,7 @@ ALTER TABLE ONLY public.spmb_timelines
 
 
 --
--- Name: student_achievements student_achievements_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: student_achievements student_achievements_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.student_achievements
@@ -1954,7 +1908,7 @@ ALTER TABLE ONLY public.student_achievements
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -1962,7 +1916,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: users users_username_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: users users_username_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -1970,7 +1924,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: visual_identities visual_identities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: visual_identities visual_identities_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.visual_identities
@@ -1978,238 +1932,238 @@ ALTER TABLE ONLY public.visual_identities
 
 
 --
--- Name: activity_photos_is_active_index; Type: INDEX; Schema: public; Owner: -
+-- Name: activity_photos_is_active_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX activity_photos_is_active_index ON public.activity_photos USING btree (is_active);
 
 
 --
--- Name: activity_videos_is_active_index; Type: INDEX; Schema: public; Owner: -
+-- Name: activity_videos_is_active_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX activity_videos_is_active_index ON public.activity_videos USING btree (is_active);
 
 
 --
--- Name: agendas_judul_index; Type: INDEX; Schema: public; Owner: -
+-- Name: agendas_judul_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX agendas_judul_index ON public.agendas USING btree (judul);
 
 
 --
--- Name: agendas_status_index; Type: INDEX; Schema: public; Owner: -
+-- Name: agendas_status_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX agendas_status_index ON public.agendas USING btree (status);
 
 
 --
--- Name: agendas_tanggal_mulai_index; Type: INDEX; Schema: public; Owner: -
+-- Name: agendas_tanggal_mulai_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX agendas_tanggal_mulai_index ON public.agendas USING btree (tanggal_mulai);
 
 
 --
--- Name: announcements_status_index; Type: INDEX; Schema: public; Owner: -
+-- Name: announcements_status_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX announcements_status_index ON public.announcements USING btree (status);
 
 
 --
--- Name: announcements_tanggal_index; Type: INDEX; Schema: public; Owner: -
+-- Name: announcements_tanggal_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX announcements_tanggal_index ON public.announcements USING btree (tanggal);
 
 
 --
--- Name: banners_is_active_index; Type: INDEX; Schema: public; Owner: -
+-- Name: banners_is_active_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX banners_is_active_index ON public.banners USING btree (is_active);
 
 
 --
--- Name: chatbot_conversations_intent_matched_index; Type: INDEX; Schema: public; Owner: -
+-- Name: chatbot_conversations_intent_matched_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX chatbot_conversations_intent_matched_index ON public.chatbot_conversations USING btree (intent_matched);
 
 
 --
--- Name: chatbot_conversations_method_index; Type: INDEX; Schema: public; Owner: -
+-- Name: chatbot_conversations_method_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX chatbot_conversations_method_index ON public.chatbot_conversations USING btree (method);
 
 
 --
--- Name: chatbot_conversations_session_id_index; Type: INDEX; Schema: public; Owner: -
+-- Name: chatbot_conversations_session_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX chatbot_conversations_session_id_index ON public.chatbot_conversations USING btree (session_id);
 
 
 --
--- Name: comment_likes_session_id_index; Type: INDEX; Schema: public; Owner: -
+-- Name: comment_likes_session_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX comment_likes_session_id_index ON public.comment_likes USING btree (session_id);
 
 
 --
--- Name: comments_email_index; Type: INDEX; Schema: public; Owner: -
+-- Name: comments_email_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX comments_email_index ON public.comments USING btree (email);
 
 
 --
--- Name: comments_is_approved_index; Type: INDEX; Schema: public; Owner: -
+-- Name: comments_is_approved_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX comments_is_approved_index ON public.comments USING btree (is_approved);
 
 
 --
--- Name: contacts_is_active_index; Type: INDEX; Schema: public; Owner: -
+-- Name: contacts_is_active_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX contacts_is_active_index ON public.contacts USING btree (is_active);
 
 
 --
--- Name: contacts_jenis_index; Type: INDEX; Schema: public; Owner: -
+-- Name: contacts_jenis_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX contacts_jenis_index ON public.contacts USING btree (jenis);
 
 
 --
--- Name: inbox_messages_email_index; Type: INDEX; Schema: public; Owner: -
+-- Name: inbox_messages_email_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX inbox_messages_email_index ON public.inbox_messages USING btree (email);
 
 
 --
--- Name: inbox_messages_is_read_index; Type: INDEX; Schema: public; Owner: -
+-- Name: inbox_messages_is_read_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX inbox_messages_is_read_index ON public.inbox_messages USING btree (is_read);
 
 
 --
--- Name: jobs_queue_index; Type: INDEX; Schema: public; Owner: -
+-- Name: jobs_queue_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX jobs_queue_index ON public.jobs USING btree (queue);
 
 
 --
--- Name: post_views_session_id_index; Type: INDEX; Schema: public; Owner: -
+-- Name: post_views_session_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX post_views_session_id_index ON public.post_views USING btree (session_id);
 
 
 --
--- Name: posts_is_featured_index; Type: INDEX; Schema: public; Owner: -
+-- Name: posts_is_featured_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX posts_is_featured_index ON public.posts USING btree (is_featured);
 
 
 --
--- Name: posts_published_at_index; Type: INDEX; Schema: public; Owner: -
+-- Name: posts_published_at_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX posts_published_at_index ON public.posts USING btree (published_at);
 
 
 --
--- Name: posts_status_index; Type: INDEX; Schema: public; Owner: -
+-- Name: posts_status_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX posts_status_index ON public.posts USING btree (status);
 
 
 --
--- Name: posts_type_index; Type: INDEX; Schema: public; Owner: -
+-- Name: posts_type_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX posts_type_index ON public.posts USING btree (type);
 
 
 --
--- Name: sessions_last_activity_index; Type: INDEX; Schema: public; Owner: -
+-- Name: sessions_last_activity_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX sessions_last_activity_index ON public.sessions USING btree (last_activity);
 
 
 --
--- Name: sessions_user_id_index; Type: INDEX; Schema: public; Owner: -
+-- Name: sessions_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX sessions_user_id_index ON public.sessions USING btree (user_id);
 
 
 --
--- Name: spmb_requirements_type_index; Type: INDEX; Schema: public; Owner: -
+-- Name: spmb_requirements_type_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX spmb_requirements_type_index ON public.spmb_requirements USING btree (type);
 
 
 --
--- Name: spmb_settings_registration_status_index; Type: INDEX; Schema: public; Owner: -
+-- Name: spmb_settings_registration_status_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX spmb_settings_registration_status_index ON public.spmb_settings USING btree (registration_status);
 
 
 --
--- Name: spmb_timelines_activity_index; Type: INDEX; Schema: public; Owner: -
+-- Name: spmb_timelines_activity_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX spmb_timelines_activity_index ON public.spmb_timelines USING btree (activity);
 
 
 --
--- Name: student_achievements_is_active_index; Type: INDEX; Schema: public; Owner: -
+-- Name: student_achievements_is_active_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX student_achievements_is_active_index ON public.student_achievements USING btree (is_active);
 
 
 --
--- Name: student_achievements_jenis_prestasi_index; Type: INDEX; Schema: public; Owner: -
+-- Name: student_achievements_jenis_prestasi_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX student_achievements_jenis_prestasi_index ON public.student_achievements USING btree (jenis_prestasi);
 
 
 --
--- Name: student_achievements_tanggal_prestasi_index; Type: INDEX; Schema: public; Owner: -
+-- Name: student_achievements_tanggal_prestasi_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX student_achievements_tanggal_prestasi_index ON public.student_achievements USING btree (tanggal_prestasi);
 
 
 --
--- Name: student_achievements_tingkat_prestasi_index; Type: INDEX; Schema: public; Owner: -
+-- Name: student_achievements_tingkat_prestasi_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX student_achievements_tingkat_prestasi_index ON public.student_achievements USING btree (tingkat_prestasi);
 
 
 --
--- Name: comment_likes comment_likes_comment_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: comment_likes comment_likes_comment_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comment_likes
@@ -2217,7 +2171,7 @@ ALTER TABLE ONLY public.comment_likes
 
 
 --
--- Name: comment_likes comment_likes_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: comment_likes comment_likes_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comment_likes
@@ -2225,7 +2179,7 @@ ALTER TABLE ONLY public.comment_likes
 
 
 --
--- Name: comments comments_parent_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: comments comments_parent_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comments
@@ -2233,7 +2187,7 @@ ALTER TABLE ONLY public.comments
 
 
 --
--- Name: comments comments_post_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: comments comments_post_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.comments
@@ -2241,7 +2195,7 @@ ALTER TABLE ONLY public.comments
 
 
 --
--- Name: post_views post_views_post_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: post_views post_views_post_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.post_views
@@ -2249,7 +2203,7 @@ ALTER TABLE ONLY public.post_views
 
 
 --
--- Name: posts posts_author_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: posts posts_author_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.posts
@@ -2260,5 +2214,5 @@ ALTER TABLE ONLY public.posts
 -- PostgreSQL database dump complete
 --
 
-\unrestrict iCB7URawdxcZxAOkvhXliKjPILsYyRq1CarCxZ14neCJonA5OSAqwtRxy3w5XWk
+\unrestrict IeusjavimCt9pbdM1fuYBRxFY9nnx3uWNZWL2Zfhz6XpigmABnf2zaLoMkI4tAv
 

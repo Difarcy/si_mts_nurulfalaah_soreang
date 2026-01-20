@@ -72,8 +72,11 @@
                                 class="block px-4 py-2 text-sm text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400">Tentang
                                 Sekolah</a></li>
                         <li><a href="{{ route('profil.visi-misi') }}"
-                                class="block px-4 py-2 text-sm text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400">Visi
-                                & Misi</a></li>
+                                class="block px-4 py-2 text-sm text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400">Visi,
+                                Misi, Tujuan</a></li>
+                        <li><a href="{{ route('profil.kepala-madrasah') }}"
+                                class="block px-4 py-2 text-sm text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400">Kepala
+                                Madrasah</a></li>
                         <li><a href="{{ route('profil.struktur-organisasi') }}"
                                 class="block px-4 py-2 text-sm text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400">Struktur
                                 Organisasi</a></li>
